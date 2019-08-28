@@ -1,16 +1,13 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: WPO Canvas
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: WPO Canvas
+subheading: Product Engineering is different to other types of software development
 mainpitch:
-  title: Why Kaldi
+  title: Why WPO canvas?
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    Creating a market winning product requires a mammoth of additional knowledge and skills compared to software development. Product engineers require a great sense of the domain and the market, product management techniques, customer engagement ability, superior engineering capabilities, etc. Such skills are not taught at universities nor gained by engaging traditional software development work.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
