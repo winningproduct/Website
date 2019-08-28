@@ -64,8 +64,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.winningproductcanvas.com/',
-        policy: [{ userAgent: '*', disallow: ["/" , "/search"] , allow: '/admin' ,}]
+        host: 'https://www.winningproductcanvas.com',
+        sitemap: 'https://www.winningproductcanvas.com/about',
+        policy: [{ userAgent: '*', disallow: '/'}]
       }
     },
     {
