@@ -2,6 +2,8 @@ var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
+    title: 'WPOCanvas',
+    description: 'WPO',
     siteUrl: 'https://www.winningproductcanvas.com',
   },
   plugins: [
