@@ -2,9 +2,7 @@ var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    siteUrl: 'https://www.winningproductcanvas.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -65,7 +63,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.winningproductcanvas.com/',
-        policy: [{ userAgent: '*', disallow: '/' }]
+        policy: [{ userAgent: '*', disallow: ["/" , "/search"] , allow: '/admin' ,}]
       }
     },
     {
