@@ -4,7 +4,6 @@ title: 'Types of Software'
 indexingField: 1-Introduction
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
-featuredimage: 'image location here'
 description: 'Types of Software'
 
 tags:

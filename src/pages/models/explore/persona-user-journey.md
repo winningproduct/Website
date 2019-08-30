@@ -4,7 +4,6 @@ title: 'persona/user journey'
 indexingField: 3-Explore
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
-featuredimage: 'image location here'
 description: 'persona/user journey'
 
 tags:

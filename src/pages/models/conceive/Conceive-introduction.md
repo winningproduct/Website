@@ -4,7 +4,6 @@ title: 'introduction'
 indexingField: 2-Conceive
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
-featuredimage: 'image location here'
 description: 'introduction'
 
 tags:
