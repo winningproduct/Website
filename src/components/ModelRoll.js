@@ -16,6 +16,8 @@ class ModelRoll extends React.Component {
 
     let indexing = [...new Set(indexingAll)];
 
+    indexing.sort();
+
     let showPost = (index,i) => (
       <div key={i}><h2>{index}</h2>
         <div>{posts.map(({ node: post }) => {

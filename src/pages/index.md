@@ -1,16 +1,16 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
+title: Winning Product Office
+image: /img/daydreaming-desk-hair-6384.jpg
+heading: WPO
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Why Kaldi
+  title: WPO
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    All product development projects go through a set of different "product phases" over time. 
+    During each phase, there are certain "strategic activities" team must engage with. 
+    These strategic activities are diverse and span across different "areas of interest".
+    In order to add value, there is an important "product mindset" every team member should cultivate within to transform them into a 'product engineers'.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
