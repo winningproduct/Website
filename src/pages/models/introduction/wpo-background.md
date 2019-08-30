@@ -1,7 +1,7 @@
 ---
 templateKey: 'model-post'
 title: 'Background WPO'
-indexingField: Introduction
+indexingField: 1-Introduction
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
 description: 'What is WPO Canvas'

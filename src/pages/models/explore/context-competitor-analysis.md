@@ -1,7 +1,7 @@
 ---
 templateKey: 'model-post'
 title: 'context-competitor-analysis'
-indexingField: Explore
+indexingField: 3-Explore
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
 featuredimage: '/img/context-competitor-analysis.jpeg'

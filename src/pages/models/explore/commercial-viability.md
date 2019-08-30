@@ -1,7 +1,7 @@
 ---
 templateKey: 'model-post'
 title: 'commercial-viability'
-indexingField: Explore
+indexingField: 3-Explore
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
 featuredimage: 'image location here'
@@ -15,7 +15,7 @@ tags:
   - Winning product organization
   - Winning products
   - types of software
-  - commercial-viability
+  - commercial viability
 ---
 
 ##What

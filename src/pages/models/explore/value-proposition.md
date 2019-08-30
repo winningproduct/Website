@@ -1,7 +1,7 @@
 ---
 templateKey: 'model-post'
 title: 'value-proposition'
-indexingField: Explore
+indexingField: 3-Explore
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
 featuredimage: 'image location here'

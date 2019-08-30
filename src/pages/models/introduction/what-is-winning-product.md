@@ -1,7 +1,7 @@
 ---
 templateKey: 'model-post'
 title: 'What is winning product'
-indexingField: Introduction
+indexingField: 1-Introduction
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
 featuredimage: '/img/what-is-winning-product.jpeg'

@@ -13,9 +13,9 @@ export const ModelPostTemplate = ({
   tags,
   title,
   helmet,
-  why,
-  what,
-  how
+  // why,
+  // what,
+  // how
 }) => {
   const PostContent = contentComponent || Content
 
@@ -29,12 +29,6 @@ export const ModelPostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            <p><strong>Why?</strong></p>
-            <p>{why}</p>
-            <p><strong>What?</strong></p>
-            <p>{what}</p>
-            <p><strong>How?</strong></p>
-            <p>{how}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -61,9 +55,9 @@ ModelPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  why: PropTypes.string,
-  what: PropTypes.string,
-  how: PropTypes.string
+  // why: PropTypes.string,
+  // what: PropTypes.string,
+  // how: PropTypes.string
 }
 
 const ModelPost = ({ data }) => {
@@ -86,9 +80,9 @@ const ModelPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        why={post.frontmatter.why}
-        what={post.frontmatter.what}
-        how={post.frontmatter.how}
+        // why={post.frontmatter.why}
+        // what={post.frontmatter.what}
+        // how={post.frontmatter.how}
       />
     </Layout>
   )
@@ -111,9 +105,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        why
-        what
-        how
         tags
       }
     }
