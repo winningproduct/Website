@@ -4,7 +4,7 @@ title: 'What is winning product'
 indexingField: 1-Introduction
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
-featuredimage: '/img/what-is-winning-product.jpeg'
+featuredimage: '/img/wpo.png'
 description: 'What is winning product'
 
 tags:
