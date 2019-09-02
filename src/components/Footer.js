@@ -7,6 +7,10 @@ import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'
 
+const alignCenter = {
+  "textAlign": "center"
+}
+
 const Footer = class extends React.Component {
   render() {
     return (
@@ -22,27 +26,12 @@ const Footer = class extends React.Component {
           <div className="container has-background-black has-text-white-ter">
             <div className="columns">
               <div className="column is-4">
-                <section className="menu">
+                <section>
                   <ul className="menu-list">
                     <li>
-                      <Link to="/" className="navbar-item">
+                      <Link style={alignCenter} to="/" className="navbar-item">
                         Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
+                            </Link>
                     </li>
                   </ul>
                 </section>
@@ -51,14 +40,27 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                     <li>
-                      <Link className="navbar-item" to="/blog">
+                      <Link style={alignCenter} className="navbar-item" to="/about">
+                        About
+                            </Link>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+              <div className="column is-4">
+                <section>
+                  <ul className="menu-list">
+                    <li>
+                      <Link style={alignCenter} className="navbar-item" to="/models">
                         Latest Stories
                       </Link>
                     </li>
                   </ul>
                 </section>
               </div>
-              <div className="column is-4 social">
+            </div>
+            <div className="columns">
+              <div className="column is-12 social" style={alignCenter}>
                 <a title="facebook" href="https://facebook.com">
                   <img
                     src={facebook}
@@ -98,3 +100,4 @@ const Footer = class extends React.Component {
 }
 
 export default Footer
+
