@@ -18,18 +18,35 @@ class ModelRoll extends React.Component {
 
     indexing.sort();
 
-    let showPost = (index,i) => (
+    let showPost = (index, i) => (
       <div key={i}><h2>{index}</h2>
-        <div>{posts.map(({ node: post }) => {
+        <div class="column is-multilined" style={styles.main}>{posts.map(({ node: post }) => {
           return content(index, post)
         })}</div> </div>
 
     )
 
+
+
+    let styles = {
+      main: {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexFlow": "wrap",
+      },
+
+      subArticle: {
+        "display": "flex",
+        "flexDirection": "column",
+        "flexGrow": 1
+      }
+
+    }
+
     let content = (index, post, i) => {
       if (post.frontmatter.indexingField === index) {
         return (
-          <div className="is-parent column is-6" key={post.id}>
+          <div className="column is-4" style={styles.subArticle} key={post.id}>
             <article
               className={`blog-list-item tile is-child box notification ${
                 post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -75,13 +92,11 @@ class ModelRoll extends React.Component {
       }
     }
 
-
-
     return (
-      <div className="columns is-multiline">
+      <div>
         {
-          indexing.map((index , i)  => {
-            return showPost(index , i)
+          indexing.map((index, i) => {
+            return showPost(index, i)
           })
         }
       </div>
