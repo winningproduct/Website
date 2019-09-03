@@ -9,13 +9,13 @@ import Content, { HTMLContent } from '../components/Content'
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
+  author,
   tags,
   title,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-
+  console.log(author)
   return (
     <section className="section">
       {helmet || ''}
@@ -25,8 +25,9 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
             <PostContent content={content} />
+            <br />
+            <p>author : {author}</p>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -52,6 +53,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  author: PropTypes.string
 }
 
 const BlogPost = ({ data }) => {
@@ -74,6 +76,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        author={post.frontmatter.author}
       />
     </Layout>
   )
@@ -97,6 +100,7 @@ export const pageQuery = graphql`
         title
         description
         tags
+        author
       }
     }
   }
