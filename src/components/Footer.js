@@ -7,8 +7,15 @@ import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'
 
-const alignCenter = {
-  "textAlign": "center"
+const social = {
+  "align": {
+    "textAlign": "center"
+  }, 
+
+  "pad": {
+    "padding": "30px"
+  }
+  
 }
 
 const Footer = class extends React.Component {
@@ -29,38 +36,14 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                     <li>
-                      <Link style={alignCenter} to="/" className="navbar-item">
+                      <Link style={social.align} to="/" className="navbar-item">
                         Home
                             </Link>
                     </li>
                   </ul>
                 </section>
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link style={alignCenter} className="navbar-item" to="/about">
-                        About
-                            </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link style={alignCenter} className="navbar-item" to="/models">
-                        Models
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-            <div className="columns">
-              <div className="column is-12 social" style={alignCenter}>
+              <div className="column is-4 social" style={social.align && social.pad}>
                 <a title="facebook" href="https://facebook.com">
                   <img
                     src={facebook}
@@ -90,6 +73,17 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
+              </div>
+              <div className="column is-4">
+                <section>
+                  <ul className="menu-list">
+                    <li>
+                      <Link style={social.align} className="navbar-item" to="/models">
+                        Models
+                      </Link>
+                    </li>
+                  </ul>
+                </section>
               </div>
             </div>
           </div>

@@ -61,7 +61,7 @@ class ModelRoll extends React.Component {
                   </span>
                 </p>
               </header>
-              <p class="m-justify">
+              <p className="m-justify">
                 {post.excerpt}
                 <br />
                 <br />
