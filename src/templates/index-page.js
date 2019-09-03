@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({
         }}
       >
         <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet m-center is-size-1-widescreen"
           style={{
             color: 'white',
             lineHeight: '1',
@@ -46,7 +46,7 @@ export const IndexPageTemplate = ({
           {title}
         </h1>
         <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size--widescreen"
+          className="has-text-weight-bold is-size-5-mobile m-center is-size-5-tablet is-size--widescreen"
           style={{
             color: '#1f2532',
             lineHeight: '1',
@@ -81,9 +81,6 @@ export const IndexPageTemplate = ({
                 </div>
                 <Features gridItems={intro.blurbs} />
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/models">
                       Models
