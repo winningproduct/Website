@@ -53,7 +53,7 @@ class ModelRoll extends React.Component {
                     className="title has-text-primary is-size-4"
                     to={post.fields.slug}
                   >
-                    {post.frontmatter.title}
+                    {post.frontmatter.title.replace(/[0-9]*-/g, '')}
                   </Link>
                   <span> &bull; </span>
                   <span className="subtitle is-size-5 is-block">
