@@ -5,7 +5,7 @@
 $kaldi-red: #D64000
 $kaldi-red-invert: #fff
 
-$primary: $kaldi-red
+$primary: #424d65
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
@@ -94,6 +94,28 @@ $menu-list-border-left: 1px solid $kaldi-red-invert
 $menu-label-color: $white-ter
 
 
+// custom
+
+.m-main 
+    display: flex !important;
+    flex-flow: wrap;
+    text-transform: capitalize;
+
+.m-subArticle
+    display: flex !important;
+    flex-direction: column;
+    flex-grow: 1;
+
+.m-justify
+  text-align: justify
+
+.m-article
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    box-shadow: 0px 0px 0px 0px rgba(239, 235, 233, 0), 0px 0px 5px 5px rgba(0, 70, 175, 0.1) !important;
+  
 .menu-label
   font-size: 1em !important
   text-align: left
@@ -115,7 +137,7 @@ $menu-label-color: $white-ter
 // blog roll
 .blog-list-item.is-featured
   background-color: #afc7d833;
-  border-top: inset #6290b7;
+  border-top: inset #75c5ff;
 .blog-list-item header
   display: flex;
   margin-bottom: 1em;

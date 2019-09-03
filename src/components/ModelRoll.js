@@ -19,34 +19,19 @@ class ModelRoll extends React.Component {
     indexing.sort();
 
     let showPost = (index, i) => (
-      <div key={i}><h2>{index}</h2>
-        <div class="column is-multilined" style={styles.main}>{posts.map(({ node: post }) => {
+      <div key={i}><h2>{index.replace(/[0-9]-/g, '')}</h2>
+        <div className="column is-multilined m-main">{posts.map(({ node: post }) => {
           return content(index, post)
         })}</div> </div>
 
     )
 
-    let styles = {
-      main: {
-        "display": "flex",
-        "flexDirection": "row",
-        "flexFlow": "wrap",
-      },
-
-      subArticle: {
-        "display": "flex",
-        "flexDirection": "column",
-        "flexGrow": 1
-      }
-
-    }
-
     let content = (index, post, i) => {
       if (post.frontmatter.indexingField === index) {
         return (
-          <div className="column is-4" style={styles.subArticle} key={post.id}>
+          <div className="column is-4 m-subArticle"  key={post.id}>
             <article
-              className={`blog-list-item tile is-child box notification ${
+              className={`blog-list-item tile is-child box notification m-article ${
                 post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
             >
@@ -76,14 +61,16 @@ class ModelRoll extends React.Component {
                   </span>
                 </p>
               </header>
-              <p>
+              <p class="m-justify">
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className="button" to={post.fields.slug}>
+              </p>
+              <div>
+              <Link className="button" to={post.fields.slug}>
                   Keep Reading →
               </Link>
-              </p>
+              </div>
             </article>
           </div>
         )
