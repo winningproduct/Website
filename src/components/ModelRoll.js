@@ -10,24 +10,48 @@ class ModelRoll extends React.Component {
 
     let indexing = []
 
+    let listToAddArray = []
+
+    let completeList = []
+
     posts.map(({ node: post }) => {
       let ob = {
         id : post.frontmatter.indexingField.split('-')[0],
         name : post.frontmatter.indexingField.split('-')[1]
       }
-      return indexing[ob.id - 1] = ob.name;
+      return indexing[ob.id - 1] = ob;
     })
 
+    indexing.forEach( index => {
+      listToAddArray = []
+      posts.map(({ node: post }) => { 
+        if(post.frontmatter.indexingField.split('-')[1] === index.name) {
+          let content = {
+            id : post.frontmatter.title.split('-')[0],
+            name: post.frontmatter.title.split('-')[1]
+          }
+          return listToAddArray[content.id -1 ] = content.name
+        }
+        return false
+      })
+      return completeList.push(listToAddArray)
+    }
+    )
+
     let showPost = (index, i) => (
-      <div key={i}><h2>{index.replace(/[0-9]*-/g, '')}</h2>
-        <div className="column is-multilined m-main">{posts.map(({ node: post }) => {
-          return content(index, post)
-        })}</div> </div>
+      <div key={i}><h2>{index.name.replace(/[0-9]*-/g, '')}</h2>
+        <div className="column is-multilined m-main">{
+          completeList[index.id-1].map((_el , is ) => {
+            return posts.map(({ node: post }) => {
+              return content(index, post, is)
+            })
+          })
+        }</div> </div>
 
     )
 
-    let content = (index, post, i) => {
-      if (post.frontmatter.indexingField.split('-')[1] === index) {
+    let content = (index, post, is) => {
+      if (post.frontmatter.indexingField.split('-')[1] === index.name && post.frontmatter.title.split('-')[1] === completeList[index.id - 1][is]) {
         return (
           <div className="column is-4 m-subArticle"  key={post.id}>
             <article
