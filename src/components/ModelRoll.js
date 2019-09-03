@@ -26,8 +26,6 @@ class ModelRoll extends React.Component {
 
     )
 
-
-
     let styles = {
       main: {
         "display": "flex",
