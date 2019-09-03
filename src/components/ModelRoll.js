@@ -8,18 +8,18 @@ class ModelRoll extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
-    let indexingAll = []
+    let indexing = []
 
     posts.map(({ node: post }) => {
-      return indexingAll.push(post.frontmatter.indexingField)
+      let ob = {
+        id : post.frontmatter.indexingField.split('-')[0],
+        name : post.frontmatter.indexingField.split('-')[1]
+      }
+      return indexing[ob.id - 1] = ob.name;
     })
 
-    let indexing = [...new Set(indexingAll)];
-
-    indexing.sort();
-
     let showPost = (index, i) => (
-      <div key={i}><h2>{index.replace(/[0-9]-/g, '')}</h2>
+      <div key={i}><h2>{index.replace(/[0-9]*-/g, '')}</h2>
         <div className="column is-multilined m-main">{posts.map(({ node: post }) => {
           return content(index, post)
         })}</div> </div>
@@ -27,7 +27,7 @@ class ModelRoll extends React.Component {
     )
 
     let content = (index, post, i) => {
-      if (post.frontmatter.indexingField === index) {
+      if (post.frontmatter.indexingField.split('-')[1] === index) {
         return (
           <div className="column is-4 m-subArticle"  key={post.id}>
             <article
