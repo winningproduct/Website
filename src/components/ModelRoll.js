@@ -9,103 +9,94 @@ class ModelRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     let indexing = []
-
-    let listToAddArray = []
-
-    let completeList = []
+    let checkList = []
+    let completeCheckList = []
 
     posts.map(({ node: post }) => {
       let ob = {
-        id : post.frontmatter.indexingField.split('-')[0],
-        name : post.frontmatter.indexingField.split('-')[1]
+        id: post.frontmatter.indexingField.split('-')[0],
+        name: post.frontmatter.indexingField.split('-')[1]
       }
       return indexing[ob.id - 1] = ob;
     })
 
-    indexing.forEach( index => {
-      listToAddArray = []
-      posts.map(({ node: post }) => { 
-        if(post.frontmatter.indexingField.split('-')[1] === index.name) {
+    indexing.forEach(index => {
+      checkList = []
+      posts.map(({ node: post }) => {
+        if (post.frontmatter.indexingField.split('-')[1] === index.name) {
           let content = {
-            id : post.frontmatter.title.split('-')[0],
+            id: post.frontmatter.title.split('-')[0],
             name: post.frontmatter.title.split('-')[1]
           }
-          return listToAddArray[content.id -1 ] = content.name
+          checkList[content.id - 1] = post
         }
         return false
       })
-      return completeList.push(listToAddArray)
+      return completeCheckList.push(checkList)
     }
     )
-
-    let showPost = (index, i) => (
-      <div key={i}><h2>{index.name.replace(/[0-9]*-/g, '')}</h2>
-        <div className="column is-multilined m-main">{
-          completeList[index.id-1].map((_el , is ) => {
-            return posts.map(({ node: post }) => {
-              return content(index, post, is)
-            })
-          })
-        }</div> </div>
-
-    )
-
-    let content = (index, post, is) => {
-      if (post.frontmatter.indexingField.split('-')[1] === index.name && post.frontmatter.title.split('-')[1] === completeList[index.id - 1][is]) {
-        return (
-          <div className="column is-4 m-subArticle"  key={post.id}>
-            <article
-              className={`blog-list-item tile is-child box notification m-article ${
-                post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-            >
-              <header>
-                {post.frontmatter.featuredimage ? (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${
-                          post.title
-                          }`,
-                      }}
-                    />
-                  </div>
-                ) : null}
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
-                    {post.frontmatter.title.replace(/[0-9]*-/g, '')}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </p>
-              </header>
-              <p className="m-justify">
-                {post.excerpt}
-                <br />
-                <br />
-              </p>
-              <div>
-              <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-              </Link>
-              </div>
-            </article>
-          </div>
-        )
-      }
-    }
 
     return (
       <div>
         {
-          indexing.map((index, i) => {
-            return showPost(index, i)
+          completeCheckList.map((index, i) => {
+            return (
+              <div key={i}>
+                <h2>{indexing[i].name}</h2>
+                <div className="column is-multilined m-main">
+                  {
+                    index.map(post => {
+                      return (
+                        <div className="column is-4 m-subArticle" key={post.id}>
+                          <article
+                            className={`blog-list-item tile is-child box notification m-article ${
+                              post.frontmatter.featuredpost ? 'is-featured' : ''
+                              }`}
+                          >
+                            <header>
+                              {post.frontmatter.featuredimage ? (
+                                <div className="featured-thumbnail">
+                                  <PreviewCompatibleImage
+                                    imageInfo={{
+                                      image: post.frontmatter.featuredimage,
+                                      alt: `featured image thumbnail for post ${
+                                        post.title
+                                        }`,
+                                    }}
+                                  />
+                                </div>
+                              ) : null}
+                              <p className="post-meta">
+                                <Link
+                                  className="title has-text-primary is-size-4"
+                                  to={post.fields.slug}
+                                >
+                                  {post.frontmatter.title.replace(/[0-9]*-/g, '')}
+                                </Link>
+                                <span> &bull; </span>
+                                <span className="subtitle is-size-5 is-block">
+                                  {post.frontmatter.date}
+                                </span>
+                              </p>
+                            </header>
+                            <p className="m-justify">
+                              {post.excerpt}
+                              <br />
+                              <br />
+                            </p>
+                            <div>
+                              <Link className="button" to={post.fields.slug}>
+                                Keep Reading →
+                    </Link>
+                            </div>
+                          </article>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+            )
           })
         }
       </div>
