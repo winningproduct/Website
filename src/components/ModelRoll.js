@@ -40,6 +40,9 @@ class ModelRoll extends React.Component {
       <div>
         {
           completeCheckList.map((index, i) => {
+            if(indexing[i].name === 'Introduction') {
+              return false 
+            }
             return (
               <div key={i}>
                 <h2>{indexing[i].name}</h2>
