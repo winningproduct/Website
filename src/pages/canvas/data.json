@@ -1,0 +1,99 @@
+{
+    "nodes": [
+        {
+            "id": "Personas",
+            "group": "1-Explore",
+            "type": "1-userExperience",
+            "order": 3,
+            "url":"google.com",
+            "to":["Value Proposition Design"]
+        },
+        {
+            "id": "Context / Competitor Analysis",
+            "group": "1-Explore",
+            "type": "2-marketSense",
+            "order": 1,
+            "url":"google.com",
+            "to":["Personas" , "Commercial Viability"]
+        },
+        {
+            "id": "Value Proposition Design",
+            "group": "1-Explore",
+            "type": "2-marketSense",
+            "order": 4,
+            "url":"google.com",
+            "to":["Brand Story Development" , "Business Model Desing" , "Service Blueprint / User Journey"]
+        },
+        {
+            "id": "Commercial Viability",
+            "group": "1-Explore",
+            "type": "2-marketSense",
+            "order": 2,
+            "url":"google.com",
+            "to":[]
+        },
+        {
+            "id": "Service Blueprint / User Journey",
+            "group": "1-Explore",
+            "type": "4-customerSuccess",
+            "order": 5,
+            "url":"google.com",
+            "to":["Product Architecture" , "Low-fidelity Prototype", "Platform Architecture" ]
+        },        {
+            "id": "Brand Story Development",
+            "group": "2-Focus",
+            "type": "2-marketSense",
+            "order": 4,
+            "url":"google.com",
+            "to":[]
+        },
+        {
+            "id": "Business Model Design",
+            "group": "2-Focus",
+            "type": "2-marketSense",
+            "order": 3,
+            "url":"google.com",
+            "to":[]
+        },
+        {
+            "id": "Product Architecture",
+            "group": "2-Focus",
+            "type": "3-technologyExcellence",
+            "order": 6,
+            "url":"google.com",
+            "to":[]
+        },
+        {
+            "id": "Problem Solution Fit Testing",
+            "group": "2-Focus",
+            "type": "4-customerSuccess",
+            "order": 7,
+            "url":"google.com",
+            "to":[]
+        },
+        {
+            "id": "Low-ﬁdelity Prototype",
+            "group": "2-Focus",
+            "type": "1-userExperience",
+            "order": 1,
+            "url":"google.com",
+            "to":["Problem Solution Fit Testing"]
+        },
+        {
+            "id": "Platform Architecture",
+            "group": "2-Focus",
+            "type": "3-technologyExcellence",
+            "order": 5,
+            "url":"google.com",
+            "to":[]
+        },
+        {
+            "id": "MVP Identiﬁcation",
+            "group": "2-Focus",
+            "type": "3-technologyExcellence",
+            "order": 2,
+            "url":"google.com",
+            "to":["Problem Solution Fit Testing"]
+        }
+    ]
+}
