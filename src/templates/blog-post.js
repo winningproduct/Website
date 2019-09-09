@@ -5,17 +5,33 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import axios from 'axios';
+
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   author,
+  slug,
   tags,
   title,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-  console.log(author)
+  console.log(slug.split('/')[2])
+ // axios.get().then(res=>console.log(res.data))
+ //http://api.github.com/repos/:owner/:repo/commits?path=PATH_TO_FILE
+ //https://api.github.com/repos/izuzak/pmrpc/commits?path=README.markdown
+ 
+ let url = 'https://api.github.com/repos/WPOcanvas/Model/commits?path=blogs/'+slug.split('/')[2]+'.md'
+
+    // let url = 'https://api.github.com/repos/WPOcanvas/Model/commits?path=blogs/happy-architecture-creating-a-culture.md'
+
+   axios.get(url, { headers: { "Accept": "application/vnd.github.cloak-preview"} }).then(res=>
+    console.log(res.data)
+  )
+ 
+ 
   return (
     <section className="section">
       {helmet || ''}
@@ -53,7 +69,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  author: PropTypes.string
+  author: PropTypes.string,
 }
 
 const BlogPost = ({ data }) => {
@@ -77,6 +93,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         author={post.frontmatter.author}
+        slug={post.fields.slug}
       />
     </Layout>
   )
@@ -102,6 +119,9 @@ export const pageQuery = graphql`
         tags
         author
       }
+      fields {
+        slug
+      }
     }
-  }
+  },
 `

@@ -31,6 +31,16 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        token: "hunter2",
+        variables: {
+          q: "author:ldd state:closed type:pr sort:comments",
+          nFirst: 2
+        }
+      }
+    },
+    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
