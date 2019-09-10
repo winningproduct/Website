@@ -4,8 +4,8 @@ import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import styled from 'styled-components'
 import data from "./data.json";
 
-import build from '../../img/Build.svg';
-import explore from '../../img/Explore.svg';
+import build from '../../img/build.svg';
+import explore from '../../img/explore.svg';
 import focus from '../../img/Focus.svg';
 import harvest from '../../img/Harvest.svg';
 import immerse from '../../img/Immerse.svg';
@@ -13,7 +13,6 @@ import optimize from '../../img/Optimize.svg';
 import plan from '../../img/Plan.svg';
 import retier from '../../img/Retier.svg';
 import stabilize from '../../img/Stabilize.svg';
-
 
 let nodes = data.nodes;
 let nody = {}
