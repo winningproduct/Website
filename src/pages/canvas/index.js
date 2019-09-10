@@ -21,7 +21,7 @@ let color = (type) => {
         case '3-technologyExcellence':
             return 'rgb(106, 168, 79)';
         default:
-            return null;
+            return '#9a8d8d1a';
     }
 }
 
@@ -30,11 +30,11 @@ let xPos = (type) => {
         case '1-userExperience':
             return 0;
         case '2-marketSense':
-            return 150;
+            return 400;
         case '4-customerSuccess':
-            return 300;
+            return 800;
         case '3-technologyExcellence':
-            return 450;
+            return 1200;
         default:
             return null;
     }
@@ -46,6 +46,20 @@ let yPos = (type) => {
             return { y: 0 };
         case '2-Focus':
             return { y: 800 };
+        case '3-immerse':
+            return { y: 1850 };
+        case '4-Plan':
+            return { y: 3050 };
+        case '5-Build':
+            return { y: 4700 };
+        case '6-Stabilize':
+            return { y: 6950 };
+        case '7-Optimize':
+            return { y: 8900 };
+        case '8-Harvest':
+            return { y: 10700 };
+        case '9-Retire':
+            return { y: 11800 };
         default:
             return null;
     }
@@ -84,7 +98,7 @@ nodes.map((node, i) => {
         type: "default",
         url: node.url,
         position: {
-            x: 50 + xPos(node.type),
+            x: 50 + xPos(node.type) + node.order * 10,
             y: node.order * 150 + pos.y
         },
         ports: ports
@@ -114,7 +128,7 @@ nodes.map((node, i) => {
 
 const complexChart = {
     offset: {
-        x: 600,
+        x: 0,
         y: 0
     },
     nodes: bigNode,
@@ -136,7 +150,7 @@ const CanvasOuterCustom = styled.div`
   background-size: 10px 10px;
   background-color: #fff;
   width: 100%;
-  height: 100%;
+  height: 13500px;
   overflow: hidden;
   cursor: not-allowed;
   outline: none !important;
@@ -157,12 +171,13 @@ const NodeInnerCustom = ({ node }) => {
     }
 }
 
+console.log(complexChart)
 export default class CanvasIndexPage extends React.Component {
     render() {
         return (
             <Layout>
                 <div>
-                    <FlowChartWithState Components={{
+                    <FlowChartWithState config={{ readonly: true }} Components={{
                         NodeInner: NodeInnerCustom,
                         CanvasOuter: CanvasOuterCustom,
                     }} initialValue={complexChart} />
