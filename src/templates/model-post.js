@@ -16,7 +16,9 @@ export const ModelPostTemplate = ({
   title,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+ const PostContent = contentComponent || Content
+
+ //use state for keep authors
  const [authors,setAuthors]=useState([]);
  let commiters = [];
   useEffect(() => {
@@ -27,17 +29,36 @@ export const ModelPostTemplate = ({
       .then(({ data }) => {
    
       data.map( item => {
-        commiters.push({name:item.author.login},{url:item.author.url});
+        commiters.push({name:item.author.login,url:item.author.url});
 
       })
-      setAuthors(commiters.filter(function(item, pos) {
-        return commiters.indexOf(item) == pos;
-       }));
+
+      function getUnique(arr, comp) {
+
+        const unique = arr
+             .map(e => e[comp])
+      
+           // store the keys of the unique objects
+          .map((e, i, final) => final.indexOf(e) === i && i)
+      
+          // eliminate the dead keys & store unique objects
+          .filter(e => arr[e]).map(e => arr[e]);
+      
+         return unique;
+      }
+
+      setAuthors(getUnique(commiters,'name'))
+     
+
+      //avoid duplications
+      
+      // setAuthors(commiters.filter(function(item, pos) {
+      //   return commiters.indexOf(item) == pos;
+      //  }));
+      
       });
   }, []);
 
-  console.log(slug)
-  console.log(slug.split('/')[1]+'/'+slug.split('/')[2]+'/'+slug.split('/')[3]+'.md')
   return (
     <section className="section">
       {helmet || ''}

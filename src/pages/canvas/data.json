@@ -1,0 +1,692 @@
+{
+  "nodes": [
+    {
+      "id": "Personas",
+      "group": "1-Explore",
+      "type": "1-userExperience",
+      "order": 3,
+      "url": "google.com",
+      "to": ["Value Proposition Design"]
+    },
+    {
+      "id": "Context / Competitor Analysis",
+      "group": "1-Explore",
+      "type": "2-marketSense",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Personas", "Commercial Viability"]
+    },
+    {
+      "id": "Value Proposition Design",
+      "group": "1-Explore",
+      "type": "2-marketSense",
+      "order": 4,
+      "url": "google.com",
+      "to": [
+        "Brand Story Development",
+        "Business Model Desing",
+        "Service Blueprint / User Journey"
+      ]
+    },
+    {
+      "id": "Commercial Viability",
+      "group": "1-Explore",
+      "type": "2-marketSense",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Service Blueprint / User Journey",
+      "group": "1-Explore",
+      "type": "4-customerSuccess",
+      "order": 5,
+      "url": "google.com",
+      "to": [
+        "Product Architecture",
+        "Low-fidelity Prototype",
+        "Platform Architecture"
+      ]
+    },
+    {
+      "id": "Brand Story Development",
+      "group": "2-Focus",
+      "type": "2-marketSense",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Brand Guide", "Positioning Messages"]
+    },
+    {
+      "id": "Business Model Design",
+      "group": "2-Focus",
+      "type": "2-marketSense",
+      "order": 3,
+      "url": "google.com",
+      "to": ["Product Market-Fit Validation"]
+    },
+    {
+      "id": "Product Architecture",
+      "group": "2-Focus",
+      "type": "3-technologyExcellence",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Engineering Estimations"]
+    },
+    {
+      "id": "Problem Solution Fit Testing",
+      "group": "2-Focus",
+      "type": "4-customerSuccess",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Low-ﬁdelity Prototype",
+      "group": "2-Focus",
+      "type": "1-userExperience",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Problem Solution Fit Testing", "Information Architecture"]
+    },
+    {
+      "id": "Platform Architecture",
+      "group": "2-Focus",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": ["Engineering Estimations", "Operational Estimation"]
+    },
+    {
+      "id": "MVP Identiﬁcation",
+      "group": "2-Focus",
+      "type": "3-technologyExcellence",
+      "order": 2,
+      "url": "google.com",
+      "to": ["Problem Solution Fit Testing", "Product Roadmap"]
+    },
+    {
+      "id": "Positioning Messages",
+      "group": "3-immerse",
+      "type": "3-technologyExcellence",
+      "order": 3,
+      "url": "google.com",
+      "to": ["Sales Interface"]
+    },
+    {
+      "id": "Product Market-Fit Validation",
+      "group": "3-immerse",
+      "type": "3-technologyExcellence",
+      "order": 7,
+      "url": "google.com",
+      "to": ["Go-To-Market Planning"]
+    },
+    {
+      "id": "Brand Guide",
+      "group": "3-immerse",
+      "type": "1-userExperience",
+      "order": 1,
+      "url": "google.com",
+      "to": ["High-fidelity Prototype"]
+    },
+    {
+      "id": "High-fidelity Prototype",
+      "group": "3-immerse",
+      "type": "1-userExperience",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Product Theme Integration"]
+    },
+    {
+      "id": "Information Architecture",
+      "group": "3-immerse",
+      "type": "1-userExperience",
+      "order": 2,
+      "url": "google.com",
+      "to": ["High-fidelity Prototype", "Data Schema Design"]
+    },
+    {
+      "id": "Product Roadmap",
+      "group": "3-immerse",
+      "type": "4-customerSuccess",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Engineering Estimations",
+      "group": "3-immerse",
+      "type": "3-technologyExcellence",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Product Roadmap"]
+    },
+    {
+      "id": "Operational Estimation",
+      "group": "3-immerse",
+      "type": "4-customerSuccess",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Sales Interface",
+      "group": "4-Plan",
+      "type": "1-userExperience",
+      "order": 9,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Growth Hacking Plan",
+      "group": "4-Plan",
+      "type": "2-marketSense",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Digital Marketing Plan"]
+    },
+    {
+      "id": "Digital Marketing Plan",
+      "group": "4-Plan",
+      "type": "2-marketSense",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Go-To-Market Planning",
+      "group": "4-Plan",
+      "type": "2-marketSense",
+      "order": 1,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Engineering Process/team structure",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Product Theme Integration",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 10,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Architecture Blueprint in code",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 2,
+      "url": "google.com",
+      "to": ["CI/CD Pipelines", "Product Theme Integration"]
+    },
+    {
+      "id": "Quality Assurance Plan",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 7,
+      "url": "google.com",
+      "to": ["Define Key Metric Tests"]
+    },
+    {
+      "id": "Data Schema Design",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 3,
+      "url": "google.com",
+      "to": ["Architecture Blueprint in code"]
+    },
+    {
+      "id": "CI/CD Pipelines",
+      "group": "4-Plan",
+      "type": "4-customerSuccess",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Define Key Metric Tests",
+      "group": "4-Plan",
+      "type": "4-customerSuccess",
+      "order": 11,
+      "url": "google.com",
+      "to": ["Test Automation Setup"]
+    },
+    {
+      "id": "Lead Capture/CMS",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 4,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "User Behaviour Analysis",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 9,
+      "url": "google.com",
+      "to": ["Feature Prioritization Process"]
+    },
+    {
+      "id": "Innovation Accounting",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 11,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Product Pricing Plan",
+      "group": "5-Build",
+      "type": "2-marketSense",
+      "order": 14,
+      "url": "google.com",
+      "to": ["User License Management"]
+    },
+    {
+      "id": "Market Feedback Capture",
+      "group": "5-Build",
+      "type": "2-marketSense",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Feature Prioritization Process"]
+    },
+    {
+      "id": "Code Quality Process",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 1,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Feature Prioritization Process",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 10,
+      "url": "google.com",
+      "to": ["Release Gate Reviews"]
+    },
+    {
+      "id": "User License Management",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 15,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Technical Debt Management",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Team Onboarding & Learning Plan",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 12,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Test Automation Setup",
+      "group": "5-Build",
+      "type": "4-customerSuccess",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Data Privacy Protection",
+      "group": "5-Build",
+      "type": "4-customerSuccess",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Release Gate Reviews",
+      "group": "5-Build",
+      "type": "4-customerSuccess",
+      "order": 13,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Visitor Behaviour Analysis",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Inbound Marketing Plan",
+      "group": "6-Stabilize",
+      "type": "2-marketSense",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Lead Nurture pipeline", "Adward Design"]
+    },
+    {
+      "id": "Public relations plan",
+      "group": "6-Stabilize",
+      "type": "2-marketSense",
+      "order": 9,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Lead Nurture pipeline",
+      "group": "6-Stabilize",
+      "type": "1-userExperience",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Architectural Runway",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 1,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Projections and Budgeting",
+      "group": "6-Stabilize",
+      "type": "2-marketSense",
+      "order": 10,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Portfolio Management",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Release Management",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 12,
+      "url": "google.com",
+      "to": ["Projections and Budgeting"]
+    },
+    {
+      "id": "Vulnerability Assessment",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Error and Exception Handling",
+      "group": "6-Stabilize",
+      "type": "4-customerSuccess",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Hotﬁx Process",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 13,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Scalability Assessment",
+      "group": "6-Stabilize",
+      "type": "4-customerSuccess",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "IP Rights Protection",
+      "group": "6-Stabilize",
+      "type": "4-customerSuccess",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Contingency and Reliability Reviews",
+      "group": "6-Stabilize",
+      "type": "4-customerSuccess",
+      "order": 11,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Documentation and User Training",
+      "group": "7-Optimize",
+      "type": "1-userExperience",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Product Support Organization"]
+    },
+    {
+      "id": "Promotions Plan",
+      "group": "7-Optimize",
+      "type": "2-marketSense",
+      "order": 2,
+      "url": "google.com",
+      "to": ["Adward Design", "Tech Team Branding"]
+    },
+    {
+      "id": "Compliances and Approvals",
+      "group": "7-Optimize",
+      "type": "3-technologyExcellence",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Data Analytics Plan",
+      "group": "7-Optimize",
+      "type": "4-customerSuccess",
+      "order": 4,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Tech Team Branding",
+      "group": "7-Optimize",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Customer Contract Management",
+      "group": "7-Optimize",
+      "type": "2-marketSense",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Product Support Organization"]
+    },
+    {
+      "id": "Adward Design",
+      "group": "7-Optimize",
+      "type": "1-userExperience",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Performance Tuning Plan",
+      "group": "7-Optimize",
+      "type": "3-technologyExcellence",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Log Indexing and Analysis",
+      "group": "7-Optimize",
+      "type": "4-customerSuccess",
+      "order": 9,
+      "url": "google.com",
+      "to": ["Performance Tuning Plan", "Feature Usage Analysis"]
+    },
+    {
+      "id": "Product Support Organization",
+      "group": "7-Optimize",
+      "type": "4-customerSuccess",
+      "order": 10,
+      "url": "google.com",
+      "to": ["Support Issue Tracking"]
+    },
+    {
+      "id": "Web Optimization Plan",
+      "group": "7-Optimize",
+      "type": "1-userExperience",
+      "order": 11,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Support Issue Tracking",
+      "group": "7-Optimize",
+      "type": "3-technologyExcellence",
+      "order": 12,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Invent OR Improve Decision",
+      "group": "8-Harvest",
+      "type": "2-marketSense",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Technology Updation/ Migration Plan"]
+    },
+    {
+      "id": "Referrals and Upsales Plan",
+      "group": "8-Harvest",
+      "type": "2-marketSense",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Systems monitoring",
+      "group": "8-Harvest",
+      "type": "4-customerSuccess",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Technology Updation/ Migration Plan",
+      "group": "8-Harvest",
+      "type": "3-technologyExcellence",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Data Migration Plan"]
+    },
+    {
+      "id": "Data Migration Plan",
+      "group": "8-Harvest",
+      "type": "4-customerSuccess",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Stakeholder Retirement Consent",
+      "group": "8-Harvest",
+      "type": "2-marketSense",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Account Migration Plan"]
+    },
+    {
+      "id": "Feature Usage Analysis",
+      "group": "8-Harvest",
+      "type": "1-userExperience",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Account Migration Plan",
+      "group": "9-Retire",
+      "type": "3-technologyExcellence",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Digital Data Shredding"]
+    },
+    {
+      "id": "Competitor Analysis",
+      "group": "9-Retire",
+      "type": "",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Digital Data Shredding",
+      "group": "9-Retire",
+      "type": "4-customerSuccess",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Commercial-Viability",
+      "group": "9-Retire",
+      "type": "",
+      "order": 4,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Team Knowledge Transfer Plan",
+      "group": "9-Retire",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Persona/ User Journey",
+      "group": "9-Retire",
+      "type": "",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Side-by-side Operation Plan",
+      "group": "9-Retire",
+      "type": "4-customerSuccess",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Derive UVP",
+      "group": "9-Retire",
+      "type": "",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    }
+  ]
+}
