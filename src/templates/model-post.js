@@ -27,35 +27,25 @@ export const ModelPostTemplate = ({
         "https://api.github.com/repos/WPOcanvas/Model/commits?path="+slug.split('/')[1]+'/'+slug.split('/')[2]+'/'+slug.split('/')[3]+'.md'
       )
       .then(({ data }) => {
-   
+      console.log(data)
       data.map( item => {
-        commiters.push({name:item.author.login,url:item.author.url});
+        commiters.push({name:item.author.login,url:item.author.html_url,img:item.author.avatar_url});
 
       })
 
+      // get unique author by commits
       function getUnique(arr, comp) {
-
         const unique = arr
-             .map(e => e[comp])
-      
+             .map(e => e[comp])    
            // store the keys of the unique objects
-          .map((e, i, final) => final.indexOf(e) === i && i)
-      
+          .map((e, i, final) => final.indexOf(e) === i && i)     
           // eliminate the dead keys & store unique objects
-          .filter(e => arr[e]).map(e => arr[e]);
-      
+          .filter(e => arr[e]).map(e => arr[e]);    
          return unique;
       }
 
       setAuthors(getUnique(commiters,'name'))
-     
 
-      //avoid duplications
-      
-      // setAuthors(commiters.filter(function(item, pos) {
-      //   return commiters.indexOf(item) == pos;
-      //  }));
-      
       });
   }, []);
 
@@ -71,6 +61,7 @@ export const ModelPostTemplate = ({
             <PostContent content={content} />
             {authors.map(author => <div>{author.name}</div>)}
             {authors.map(author => <div>{author.url}</div>)}
+            {authors.map(author => <div>{author.img}</div>)}
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
