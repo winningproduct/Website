@@ -4,6 +4,17 @@ import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import styled from 'styled-components'
 import data from "./data.json";
 
+import build from '../../img/Build.svg';
+import explore from '../../img/Explore.svg';
+import focus from '../../img/Focus.svg';
+import harvest from '../../img/Harvest.svg';
+import immerse from '../../img/Immerse.svg';
+import optimize from '../../img/Optimize.svg';
+import plan from '../../img/Plan.svg';
+import retier from '../../img/Retier.svg';
+import stabilize from '../../img/Stabilize.svg';
+
+
 let nodes = data.nodes;
 let nody = {}
 let allLinks = {}
@@ -154,6 +165,37 @@ const CanvasOuterCustom = styled.div`
   overflow: hidden;
   cursor: not-allowed;
   outline: none !important;
+  background-position:
+      top 0px left 0px,
+      top 800px left 0px,
+      top 1850px left 0px,
+      top 3050px left 0px,
+      top 4700px left 0px,
+      top 6950px left 0px,
+      top 8900px left 0px,
+      top 10700px left 0px,
+      top 11800px left 0px;
+  background-repeat: no-repeat;
+  background-size: 
+    100% 800px ,
+    100% 1050px,
+    100% 1200px,
+    100% 1650px,
+    100% 2250px,
+    100% 1950px,
+    100% 1800px,
+    100% 1100px,
+    100% 1700px;
+  background-image:
+    url(${explore}),
+    url(${focus}),
+    url(${immerse}),
+    url(${plan}),
+    url(${build}),
+    url(${stabilize}),
+    url(${optimize}),
+    url(${harvest}),
+    url(${retier});
 `
 
 const NodeInnerCustom = ({ node }) => {
@@ -171,7 +213,6 @@ const NodeInnerCustom = ({ node }) => {
     }
 }
 
-console.log(complexChart)
 export default class CanvasIndexPage extends React.Component {
     render() {
         return (
