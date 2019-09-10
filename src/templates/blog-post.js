@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import axios from 'axios';
+;
 
 
 export const BlogPostTemplate = ({
@@ -18,20 +18,7 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-  console.log(slug.split('/')[2])
- // axios.get().then(res=>console.log(res.data))
- //http://api.github.com/repos/:owner/:repo/commits?path=PATH_TO_FILE
- //https://api.github.com/repos/izuzak/pmrpc/commits?path=README.markdown
- 
- let url = 'https://api.github.com/repos/WPOcanvas/Model/commits?path=blogs/'+slug.split('/')[2]+'.md'
 
-    // let url = 'https://api.github.com/repos/WPOcanvas/Model/commits?path=blogs/happy-architecture-creating-a-culture.md'
-
-   axios.get(url, { headers: { "Accept": "application/vnd.github.cloak-preview"} }).then(res=>
-    console.log(res.data)
-  )
- 
- 
   return (
     <section className="section">
       {helmet || ''}
@@ -43,7 +30,8 @@ export const BlogPostTemplate = ({
             </h1>
             <PostContent content={content} />
             <br />
-            <p>Author : {author}</p>
+            <p>{author}</p>
+            
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -62,6 +50,8 @@ export const BlogPostTemplate = ({
     </section>
   )
 }
+
+
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,

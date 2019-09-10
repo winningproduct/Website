@@ -1,24 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import axios from 'axios';
 
 export const ModelPostTemplate = ({
   content,
   contentComponent,
   description,
+  slug,
   tags,
   title,
   helmet,
-  // why,
-  // what,
-  // how
 }) => {
   const PostContent = contentComponent || Content
+ const [authors,setAuthors]=useState([]);
+ let commiters = [];
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.github.com/repos/WPOcanvas/Model/commits?path="+slug.split('/')[1]+'/'+slug.split('/')[2]+'/'+slug.split('/')[3]+'.md'
+      )
+      .then(({ data }) => {
+   
+      data.map( item => {
+        commiters.push({name:item.author.login},{url:item.author.url});
 
+      })
+      setAuthors(commiters.filter(function(item, pos) {
+        return commiters.indexOf(item) == pos;
+       }));
+      });
+  }, []);
+
+  console.log(slug)
+  console.log(slug.split('/')[1]+'/'+slug.split('/')[2]+'/'+slug.split('/')[3]+'.md')
   return (
     <section className="section">
       {helmet || ''}
@@ -29,6 +48,8 @@ export const ModelPostTemplate = ({
               {title.replace(/[0-9]*-/g, '')}
             </h1>
             <PostContent content={content} />
+            {authors.map(author => <div>{author.name}</div>)}
+            {authors.map(author => <div>{author.url}</div>)}
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -86,6 +107,7 @@ const ModelPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        slug={post.fields.slug}
         // why={post.frontmatter.why}
         // what={post.frontmatter.what}
         // how={post.frontmatter.how}
@@ -112,6 +134,9 @@ export const pageQuery = graphql`
         title
         description
         tags
+      }
+      fields {
+        slug
       }
     }
   }
