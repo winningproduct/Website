@@ -14,7 +14,6 @@ import plan from '../../img/Plan.svg';
 import retier from '../../img/Retier.svg';
 import stabilize from '../../img/Stabilize.svg';
 
-
 let nodes = data.nodes;
 let nody = {}
 let allLinks = {}
