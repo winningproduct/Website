@@ -165,25 +165,25 @@ const CanvasOuterCustom = styled.div`
   cursor: not-allowed;
   outline: none !important;
   background-position:
-      top 0px left 0px,
-      top 800px left 0px,
-      top 1850px left 0px,
-      top 3050px left 0px,
-      top 4700px left 0px,
-      top 6950px left 0px,
-      top 8900px left 0px,
-      top 10700px left 0px,
-      top 11800px left 0px;
+      top 0px left 0px, // explore
+      top 950px left 0px, // focus
+      top 1950px left 0px, // immerse
+      top 3100px left 0px, //plan
+      top 4750px left 0px, //build
+      top 6950px left 0px, //stabilize
+      top 8950px left 0px,
+      top 10800px left 0px,
+      top 12000px left 0px;
   background-repeat: no-repeat;
   background-size: 
-    100% 800px ,
-    100% 1050px,
-    100% 1200px,
-    100% 1650px,
-    100% 2250px,
-    100% 1950px,
-    100% 1800px,
-    100% 1100px,
+    100% 800px ,  // explore
+    100% 1050px, // focus
+    100% 1250px, // immerse
+    100% 1750px, // plan
+    100% 2350px, // build
+    100% 2100px, // stabilize
+    100% 1900px, // optimize
+    100% 1300px,
     100% 1700px;
   background-image:
     url(${explore}),
