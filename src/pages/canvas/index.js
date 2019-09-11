@@ -45,7 +45,7 @@ const CanvasOuterCustom = styled.div`
       top 6950px left 0px, //stabilize
       top 8950px left 0px, // optimize
       top 10800px left 0px, // harvest
-      top 12000px left 0px; // retier
+      top 12050px left 0px; // retier
   background-repeat: no-repeat;
   background-size: 
     100% 800px ,  // explore
@@ -55,8 +55,8 @@ const CanvasOuterCustom = styled.div`
     100% 2350px, // build
     100% 2100px, // stabilize
     100% 1900px, // optimize
-    100% 1300px, // harvest
-    100% 1700px; // retier
+    100% 1150px, // harvest
+    100% 1450px; // retier
   background-image:
     url(${explore}),
     url(${focus}),
@@ -291,53 +291,50 @@ const style = {
         width: window.innerWidth * 0.2
     },
     contentExplore: {
-        height: "800px",
-        textAlign: "center",
-        lineHeight: "800px"
+        height: "950px",
+        textAlign: "center"
     },
     contentFocus: {
+        backgroundColor: "#f3f3f3",
         height: "1050px",
-        textAlign: "center",
-        lineHeight: "1050px"
+        textAlign: "center"
     },
     contentImmerse: {
-        height: "1250px",
-        textAlign: "center",
-        lineHeight: "1250px"
+        height: "1200px",
+        textAlign: "center"
     },
     contentPlan: {
-        height: "1750px",
-        textAlign: "center",
-        lineHeight: "1750px"
+        backgroundColor: "#f3f3f3",
+        height: "1650px",
+        textAlign: "center"
     },
     contentBuild: {
-        height: "2350px",
-        textAlign: "center",
-        lineHeight: "2350px"
+        height: "2250px",
+        textAlign: "center"
     },
     contentStabilize: {
-        height: "2100px",
-        textAlign: "center",
-        lineHeight: "2100px"
+        backgroundColor: "#f3f3f3",
+        height: "1950px",
+        textAlign: "center"
     },
     contentOptimize: {
-        height: "1900px",
-        textAlign: "center",
-        lineHeight: "1900px"
+        height: "1800px",
+        textAlign: "center"
     },
     contentHarvest: {
-        height: "1300px",
-        textAlign: "center",
-        lineHeight: "1300px"
+        backgroundColor: "#f3f3f3",
+        height: "1100px",
+        textAlign: "center"
     },
     contentRetier: {
-        height: "1700px",
-        textAlign: "center",
-        lineHeight: "1700px"
+        height: "1450px",
+        textAlign: "center"
     },
     text: {
+        "writingMode": "vertical-rl",
+        textOrientation: "mixed",
         fontFamily: "sans-serif",
-        fontSize: window.innerWidth * 0.2 * 0.15,
+        fontSize: window.innerWidth * 0.2 * 0.5,
         fontWeight: "600"
     }
 }
