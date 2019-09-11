@@ -151,8 +151,8 @@ const complexChart = {
 const Outer = styled.div`
     padding: 30px;
     border-radius: 4px;
-    box-shadow: 0px 0px 0px 0px rgba(239, 235, 233, 0),
-    0px 0px 5px 5px rgba(144, 148, 154, 0.38);
+    box-shadow: 0px 0px 0px 0px rgba(239,235,233,0), 
+        10px -10px 20px -4px rgba(144,148,154,0.38);
 `
 const CanvasOuterCustom = styled.div`
   text-align: center
@@ -204,12 +204,9 @@ cursor: move;
 `
 
 const NodeInnerCustom = ({ node }) => {
-    let style = {
-        "backgroundColor": node.color
-    }
     if (node.type) {
         return (
-            <Outer style={style}>
+            <Outer style={{background: `linear-gradient(to bottom , ${node.color} , white )`}}>
                 {node.id.replace(/_/g, ' ')}
                 <br />
                 <a href={node.url}>Link</a>
