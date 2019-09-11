@@ -23,6 +23,7 @@ export const ModelPostTemplate = ({
   const [authors, setAuthors] = useState([]);
   let commiters = [];
   useEffect(() => {
+    //API call for getting commits for the particular model post
     axios
       .get(
         "https://api.github.com/repos/WPOcanvas/Model/commits?path=" + slug.split('/')[1] + '/' + slug.split('/')[2] + '/' + slug.split('/')[3] + '.md'
