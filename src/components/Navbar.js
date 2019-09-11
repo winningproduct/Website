@@ -37,6 +37,7 @@ const Navbar = class extends React.Component {
         className="navbar is-transparent"
         role="navigation"
         aria-label="main-navigation"
+        
       >
         <div className="container">
           <div className="navbar-brand">
@@ -64,6 +65,9 @@ const Navbar = class extends React.Component {
               </Link>
               <Link className="navbar-item" to="/blogs">
                 Blog
+              </Link>
+              <Link className="navbar-item" to="/about">
+                About
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
