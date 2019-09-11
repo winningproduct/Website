@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+;
+
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   author,
+  slug,
   tags,
   title,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-  console.log(author)
+
   return (
     <section className="section">
       {helmet || ''}
@@ -27,7 +30,8 @@ export const BlogPostTemplate = ({
             </h1>
             <PostContent content={content} />
             <br />
-            <p>Author : {author}</p>
+            <p>{author}</p>
+            
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -47,13 +51,15 @@ export const BlogPostTemplate = ({
   )
 }
 
+
+
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  author: PropTypes.string
+  author: PropTypes.string,
 }
 
 const BlogPost = ({ data }) => {
@@ -77,6 +83,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         author={post.frontmatter.author}
+        slug={post.fields.slug}
       />
     </Layout>
   )
@@ -102,6 +109,9 @@ export const pageQuery = graphql`
         tags
         author
       }
+      fields {
+        slug
+      }
     }
-  }
+  },
 `

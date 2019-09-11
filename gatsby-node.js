@@ -85,3 +85,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
+  // We'll make the newNode object here for clarity
+  const newNode = {
+    title: 'Test Node!',
+    description: 'This is a test node with static data',
+    id: createNodeId('TestNode-testid'), // required by Gatsby
+    internal: {
+      type: 'TestNode', // required by Gatsby
+      contentDigest: createContentDigest('testnode') // required by Gatsby, must be unique
+    }
+  };
+  // This is where we actually create the data node, by passing in the newNode object.
+  actions.createNode(newNode);
+};

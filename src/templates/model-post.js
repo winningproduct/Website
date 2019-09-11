@@ -1,23 +1,54 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import ExampleComponent from "react-rounded-image";
+import axios from 'axios';
 
 export const ModelPostTemplate = ({
   content,
   contentComponent,
   description,
+  slug,
   tags,
   title,
   helmet,
-  // why,
-  // what,
-  // how
 }) => {
   const PostContent = contentComponent || Content
+
+  //use state for keep authors
+  const [authors, setAuthors] = useState([]);
+  let commiters = [];
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.github.com/repos/WPOcanvas/Model/commits?path=" + slug.split('/')[1] + '/' + slug.split('/')[2] + '/' + slug.split('/')[3] + '.md'
+      )
+      .then(({ data }) => {
+        console.log(data)
+        data.map(item => {
+          commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date});
+
+        })
+
+        // get unique author by commits
+        function getUnique(arr, comp) {
+          const unique = arr
+            .map(e => e[comp])
+            // store the keys of the unique objects
+            .map((e, i, final) => final.indexOf(e) === i && i)
+            // eliminate the dead keys & store unique objects
+            .filter(e => arr[e]).map(e => arr[e]);
+          return unique;
+        }
+
+        setAuthors(getUnique(commiters, 'name'))
+
+      });
+  }, []);
 
   return (
     <section className="section">
@@ -29,6 +60,37 @@ export const ModelPostTemplate = ({
               {title.replace(/[0-9]*-/g, '')}
             </h1>
             <PostContent content={content} />
+            <br/>
+
+            <h4>Contributors</h4>
+            <div class="topContainer">
+              {authors.map(author => <div class="contributorCards">
+
+
+                <a href={author.url} target="_blank" rel="noopener norefferer">
+                  <div class="roundedImage">
+                  <ExampleComponent
+                    image={author.img}
+                    roundedSize="0"
+                    imageWidth="60"
+                    imageHeight="60"
+                    href="#"
+                  />
+                  </div>
+            
+                </a>
+                <br/>
+                {author.name}
+                <br/>
+                {author.date.split("T")[0]}
+               
+               
+
+              </div>)}
+
+            </div>
+
+
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -86,9 +148,10 @@ const ModelPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        // why={post.frontmatter.why}
-        // what={post.frontmatter.what}
-        // how={post.frontmatter.how}
+        slug={post.fields.slug}
+      // why={post.frontmatter.why}
+      // what={post.frontmatter.what}
+      // how={post.frontmatter.how}
       />
     </Layout>
   )
@@ -112,6 +175,9 @@ export const pageQuery = graphql`
         title
         description
         tags
+      }
+      fields {
+        slug
       }
     }
   }
