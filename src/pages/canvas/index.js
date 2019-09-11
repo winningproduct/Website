@@ -4,15 +4,15 @@ import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import styled from 'styled-components'
 import data from "./data.json";
 
-import build from '../../img/build.svg';
-import explore from '../../img/explore.svg';
-import focus from '../../img/Focus.svg';
-import harvest from '../../img/Harvest.svg';
-import immerse from '../../img/Immerse.svg';
-import optimize from '../../img/Optimize.svg';
-import plan from '../../img/Plan.svg';
-import retier from '../../img/Retier.svg';
-import stabilize from '../../img/Stabilize.svg';
+import build from '../../img/build-2.svg';
+import explore from '../../img/explore-2.svg';
+import focus from '../../img/focus-2.svg';
+import harvest from '../../img/harvest-2.svg';
+import immerse from '../../img/immerse-2.svg';
+import optimize from '../../img/optimize-2.svg';
+import plan from '../../img/plan-2.svg';
+import retier from '../../img/retier-2.svg';
+import stabilize from '../../img/stabilize-2.svg';
 
 let nodes = data.nodes;
 let nody = {}
@@ -40,11 +40,11 @@ let xPos = (type) => {
         case '1-userExperience':
             return 0;
         case '2-marketSense':
-            return 400;
+            return 300;
         case '4-customerSuccess':
-            return 800;
+            return 700;
         case '3-technologyExcellence':
-            return 1200;
+            return 1100;
         default:
             return null;
     }
@@ -161,7 +161,7 @@ const CanvasOuterCustom = styled.div`
   background-color: #fff;
   width: 100%;
   height: 13500px;
-  overflow: hidden;
+  overflow-x: scroll;
   cursor: not-allowed;
   outline: none !important;
   background-position:
@@ -197,6 +197,12 @@ const CanvasOuterCustom = styled.div`
     url(${retier});
 `
 
+const CanvasInnerCustom = styled.div`
+width: 100%;
+position: relative;
+cursor: move;
+`
+
 const NodeInnerCustom = ({ node }) => {
     let style = {
         "backgroundColor": node.color
@@ -220,6 +226,7 @@ export default class CanvasIndexPage extends React.Component {
                     <FlowChartWithState config={{ readonly: true }} Components={{
                         NodeInner: NodeInnerCustom,
                         CanvasOuter: CanvasOuterCustom,
+                        CanvasInner: CanvasInnerCustom
                     }} initialValue={complexChart} />
                 </div>
             </Layout>
