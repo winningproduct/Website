@@ -162,7 +162,7 @@ export default class CanvasIndexPage extends React.Component {
 
         return {
             offset: {
-                x: 0,
+                x: this.state.windowWidth > 600 ? this.state.windowWidth * 0.1 : 0,
                 y: 0
             },
             nodes: bigNode,
