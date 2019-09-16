@@ -1,5 +1,7 @@
 path {
     stroke: cornflowerblue !important;
+    stroke-dasharray : 10;
+    stroke-width: 2;
 }
 
 path:hover{
