@@ -3,6 +3,7 @@ import Layout from '../../components/Layout'
 import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import styled from 'styled-components'
 import data from "./data.json";
+import { Helmet } from 'react-helmet'
 
 import build from '../../img/build-2.svg';
 import explore from '../../img/explore-2.svg';
@@ -84,11 +85,11 @@ export default class CanvasIndexPage extends React.Component {
             case '1-userExperience':
                 return 0;
             case '2-marketSense':
-                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.1 : 200;
+                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.1 : 100;
             case '4-customerSuccess':
-                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.3 : 500;
+                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.3 : 150;
             case '3-technologyExcellence':
-                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.5 : 700;
+                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.5 : 200;
             default:
                 return null;
         }
@@ -250,7 +251,7 @@ export default class CanvasIndexPage extends React.Component {
                 "writingMode": "vertical-rl",
                 textOrientation: "mixed",
                 fontFamily: "sans-serif",
-                fontSize:  this.state.windowWidth > 600 ? this.state.windowWidth * 0.2 * 0.25 : "60px",
+                fontSize: this.state.windowWidth > 600 ? this.state.windowWidth * 0.2 * 0.25 : "60px",
                 fontWeight: "600",
                 position: "relative",
                 top: "50%",
@@ -263,7 +264,7 @@ export default class CanvasIndexPage extends React.Component {
             position: relative;
             background-size: 10px 10px;
             background-color: #fff;
-            width: 100%;
+            width: auto;
             height: 13500px;
             overflow-x: scroll;
             cursor: not-allowed;
@@ -300,11 +301,16 @@ export default class CanvasIndexPage extends React.Component {
                 url(${harvest}),
                 url(${retier});
     `
-    
 
-    
+
+
         return (
             <Layout>
+                <div>
+                    <Helmet>
+                        <meta name="viewport" content="width=device-width, initial-scale=0.1, shrink-to-fit=no" />
+                    </Helmet>
+                </div>
                 <div key={this.state.windowWidth} style={style.row}  >
                     <div style={style.left} >
                         <FlowChartWithState config={{ readonly: true }} Components={{
