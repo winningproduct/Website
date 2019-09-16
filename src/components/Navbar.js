@@ -66,12 +66,13 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/blogs">
                 Blog
               </Link>
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
               <Link className="navbar-item" to="/canvas">
                 Canvas
               </Link>
+              <Link className="navbar-item" to="/about">
+                About
+              </Link>
+
             </div>
             <div className="navbar-end has-text-centered">
               <a
