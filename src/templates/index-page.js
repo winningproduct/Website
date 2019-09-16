@@ -8,10 +8,8 @@ import Features from '../components/Features'
 export const IndexPageTemplate = ({
   image,
   title,
-  heading,
   subheading,
   mainpitch,
-  description,
   edges
 }) => (
     <div>
@@ -162,13 +160,6 @@ query IndexPageTemplate {
       description
       intro {
         blurbs {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
           text
         }
         heading
