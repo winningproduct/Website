@@ -10,13 +10,13 @@ export default class ModelIndexPage extends React.Component {
         <div
           className="full-width-image-container margin-top-0"
           style={{
-            backgroundImage: `url('/img/alpine-dawn-dusk-2835436.jpg')`,
+            backgroundImage: `url('/img/modelpic.jpg')`,
           }}
         >
           <h1
             className="has-text-weight-bold is-size-1"
             style={{
-              color: 'white',
+              color: '#4e84ab',
               padding: '1rem',
             }}
           >
