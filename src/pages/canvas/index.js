@@ -5,16 +5,6 @@ import styled from 'styled-components'
 import data from "./data.json";
 import { Helmet } from 'react-helmet'
 
-import build from '../../img/build-2.svg';
-import explore from '../../img/explore-2.svg';
-import focus from '../../img/focus-2.svg';
-import harvest from '../../img/harvest-2.svg';
-import immerse from '../../img/immerse-2.svg';
-import optimize from '../../img/optimize-2.svg';
-import plan from '../../img/plan-2.svg';
-import retier from '../../img/retier-2.svg';
-import stabilize from '../../img/stabilize-2.svg';
-
 let nodes = data.nodes;
 let singleNode = {}
 let allLinks = {}
@@ -269,37 +259,28 @@ export default class CanvasIndexPage extends React.Component {
             overflow-x: scroll;
             cursor: not-allowed;
             outline: none !important;
-            background-position:
-                top 0px left 0px, // explore
-                top 950px left 0px, // focus
-                top 1950px left 0px, // immerse
-                top 3100px left 0px, //plan
-                top 4750px left 0px, //build
-                top 6950px left 0px, //stabilize
-                top 8950px left 0px, // optimize
-                top 10800px left 0px, // harvest
-                top 12050px left 0px; // retier
             background-repeat: no-repeat;
-            background-size: 
-                100% 800px ,  // explore
-                100% 1050px, // focus
-                100% 1250px, // immerse
-                100% 1750px, // plan
-                100% 2350px, // build
-                100% 2100px, // stabilize
-                100% 1900px, // optimize
-                100% 1150px, // harvest
-                100% 1450px; // retier
-            background-image:
-                url(${explore}),
-                url(${focus}),
-                url(${immerse}),
-                url(${plan}),
-                url(${build}),
-                url(${stabilize}),
-                url(${optimize}),
-                url(${harvest}),
-                url(${retier});
+            background: 
+                linear-gradient(
+                    180deg,
+                    #fff 0px,
+                    #fff 950px, 
+                    #f3f3f3 950px,
+                    #f3f3f3 2000px, 
+                    #fff 2000px,
+                    #fff 3200px, 
+                    #f3f3f3 3200px,
+                    #f3f3f3 4850px, 
+                    #fff 4850px,
+                    #fff 7100px,
+                    #f3f3f3 7100px,
+                    #f3f3f3 9050px,
+                    #fff 9050px,
+                    #fff 10850px,
+                    #f3f3f3 10850px,
+                    #f3f3f3 11950px,
+                    #fff 11950px
+                    );
     `
 
 
