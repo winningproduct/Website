@@ -20,7 +20,7 @@ export default class ModelIndexPage extends React.Component {
               padding: '1rem',
             }}
           >
-              Models
+              Canvas Models
           </h1>
         </div>
         <section className="section">
