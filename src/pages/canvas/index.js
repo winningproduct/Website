@@ -18,7 +18,7 @@ const NodeInnerCustom = ({ node }) => {
             <Outer style={{ background: `linear-gradient(to bottom , ${node.color} , white )` }}>
                 {node.id.replace(/_/g, ' ')}
                 <br />
-                <a href={node.url}>Link</a>
+                <a href={`../models/explore/${node.url}`}>Read More</a>
             </Outer>
         )
     }
