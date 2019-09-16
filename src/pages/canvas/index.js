@@ -15,7 +15,7 @@ import retier from '../../img/retier-2.svg';
 import stabilize from '../../img/stabilize-2.svg';
 
 let nodes = data.nodes;
-let nody = {}
+let singleNode = {}
 let allLinks = {}
 let bigNode = {};
 let linkCount = 0;
@@ -24,13 +24,12 @@ const Outer = styled.div`
     padding: 30px;
     border-radius: 4px;
     box-shadow: 0px 0px 0px 0px rgba(239,235,233,0), 
-        10px -12px 20px -4px rgba(144,148,154,0.38);
-`
-
+    10px -12px 20px -4px rgba(144,148,154,0.38);
+    `
 const CanvasInnerCustom = styled.div`
-width: 100%;
-position: relative;
-cursor: move;
+    width: 100%;
+    position: relative;
+    cursor: move;
 `
 
 const NodeInnerCustom = ({ node }) => {
@@ -50,20 +49,11 @@ export default class CanvasIndexPage extends React.Component {
         windowWidth: 1920
     }
 
-    constructor() {
-        super();
-        this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
-    };
-
-    forceUpdateHandler() {
-        this.forceUpdate();
-    };
-
     handleResize = () => {
         this.setState({
-        windowWidth: window.innerWidth
-    });
-};
+            windowWidth: window.innerWidth
+        });
+    };
 
     componentDidMount() {
         this.handleResize();
@@ -156,7 +146,7 @@ export default class CanvasIndexPage extends React.Component {
             }
             ports = Object.assign(ports, input);
 
-            nody = {
+            singleNode = {
                 id: node.id,
                 title: node.title,
                 color: colorType,
@@ -169,7 +159,7 @@ export default class CanvasIndexPage extends React.Component {
                 ports: ports
             };
 
-            bigNode[`${node.id}`] = nody;
+            bigNode[`${node.id}`] = singleNode;
 
             // link structure
             node.to.map((link, i) => {
@@ -202,146 +192,154 @@ export default class CanvasIndexPage extends React.Component {
             hovered: {}
         }
     }
-    style = {
-        row: {
-            display: "flex"
-        },
-        left: {
-            width: this.state.windowWidth * 0.8
-        },
-        right: {
-            width: this.state.windowWidth * 0.2
-        },
-        contentExplore: {
-            height: "950px",
-            textAlign: "center"
-        },
-        contentFocus: {
-            backgroundColor: "#f3f3f3",
-            height: "1050px",
-            textAlign: "center"
-        },
-        contentImmerse: {
-            height: "1200px",
-            textAlign: "center"
-        },
-        contentPlan: {
-            backgroundColor: "#f3f3f3",
-            height: "1650px",
-            textAlign: "center"
-        },
-        contentBuild: {
-            height: "2250px",
-            textAlign: "center"
-        },
-        contentStabilize: {
-            backgroundColor: "#f3f3f3",
-            height: "1950px",
-            textAlign: "center"
-        },
-        contentOptimize: {
-            height: "1800px",
-            textAlign: "center"
-        },
-        contentHarvest: {
-            backgroundColor: "#f3f3f3",
-            height: "1100px",
-            textAlign: "center"
-        },
-        contentRetier: {
-            height: "1450px",
-            textAlign: "center"
-        },
-        text: {
-            "writingMode": "vertical-rl",
-            textOrientation: "mixed",
-            fontFamily: "sans-serif",
-            fontSize: this.state.windowWidth * 0.2 * 0.3,
-            fontWeight: "600"
-        }
-    }
 
-    CanvasOuterCustom = styled.div`
-        text-align: center
-        position: relative;
-        background-size: 10px 10px;
-        background-color: #fff;
-        width: ${this.state.windowWidth * 0.8}px;
-        height: 13500px;
-        overflow-x: scroll;
-        cursor: not-allowed;
-        outline: none !important;
-        background-position:
-            top 0px left 0px, // explore
-            top 950px left 0px, // focus
-            top 1950px left 0px, // immerse
-            top 3100px left 0px, //plan
-            top 4750px left 0px, //build
-            top 6950px left 0px, //stabilize
-            top 8950px left 0px, // optimize
-            top 10800px left 0px, // harvest
-            top 12050px left 0px; // retier
-        background-repeat: no-repeat;
-        background-size: 
-            100% 800px ,  // explore
-            100% 1050px, // focus
-            100% 1250px, // immerse
-            100% 1750px, // plan
-            100% 2350px, // build
-            100% 2100px, // stabilize
-            100% 1900px, // optimize
-            100% 1150px, // harvest
-            100% 1450px; // retier
-        background-image:
-            url(${explore}),
-            url(${focus}),
-            url(${immerse}),
-            url(${plan}),
-            url(${build}),
-            url(${stabilize}),
-            url(${optimize}),
-            url(${harvest}),
-            url(${retier});
-`
 
     render() {
+
+        let style = {
+            row: {
+                display: "flex"
+            },
+            left: {
+                width: this.state.windowWidth * 0.8
+            },
+            right: {
+                width: this.state.windowWidth * 0.2
+            },
+            contentExplore: {
+                height: "950px",
+                textAlign: "center"
+            },
+            contentFocus: {
+                backgroundColor: "#f3f3f3",
+                height: "1050px",
+                textAlign: "center"
+            },
+            contentImmerse: {
+                height: "1200px",
+                textAlign: "center"
+            },
+            contentPlan: {
+                backgroundColor: "#f3f3f3",
+                height: "1650px",
+                textAlign: "center"
+            },
+            contentBuild: {
+                height: "2250px",
+                textAlign: "center"
+            },
+            contentStabilize: {
+                backgroundColor: "#f3f3f3",
+                height: "1950px",
+                textAlign: "center"
+            },
+            contentOptimize: {
+                height: "1800px",
+                textAlign: "center"
+            },
+            contentHarvest: {
+                backgroundColor: "#f3f3f3",
+                height: "1100px",
+                textAlign: "center"
+            },
+            contentRetier: {
+                height: "1450px",
+                textAlign: "center"
+            },
+            text: {
+                "writingMode": "vertical-rl",
+                textOrientation: "mixed",
+                fontFamily: "sans-serif",
+                fontSize:  this.state.windowWidth > 600 ? this.state.windowWidth * 0.2 * 0.25 : "60px",
+                fontWeight: "600",
+                position: "relative",
+                top: "50%",
+                transform: "translateY(-50%)"
+            }
+        }
+
+        let CanvasOuterCustom = styled.div`
+            text-align: center
+            position: relative;
+            background-size: 10px 10px;
+            background-color: #fff;
+            width: 100%;
+            height: 13500px;
+            overflow-x: scroll;
+            cursor: not-allowed;
+            outline: none !important;
+            background-position:
+                top 0px left 0px, // explore
+                top 950px left 0px, // focus
+                top 1950px left 0px, // immerse
+                top 3100px left 0px, //plan
+                top 4750px left 0px, //build
+                top 6950px left 0px, //stabilize
+                top 8950px left 0px, // optimize
+                top 10800px left 0px, // harvest
+                top 12050px left 0px; // retier
+            background-repeat: no-repeat;
+            background-size: 
+                100% 800px ,  // explore
+                100% 1050px, // focus
+                100% 1250px, // immerse
+                100% 1750px, // plan
+                100% 2350px, // build
+                100% 2100px, // stabilize
+                100% 1900px, // optimize
+                100% 1150px, // harvest
+                100% 1450px; // retier
+            background-image:
+                url(${explore}),
+                url(${focus}),
+                url(${immerse}),
+                url(${plan}),
+                url(${build}),
+                url(${stabilize}),
+                url(${optimize}),
+                url(${harvest}),
+                url(${retier});
+    `
+    
+
+    
         return (
             <Layout>
-                <div key={this.state.windowWidth} style={this.style.row}  >
-                    <div style={this.style.left} >
-                    <FlowChartWithState config={{ readonly: true }} Components={{
-                        NodeInner: NodeInnerCustom,
-                        CanvasOuter: this.CanvasOuterCustom,
-                        CanvasInner: CanvasInnerCustom
-                    }} initialValue={this.complexChart()} />
+                <div key={this.state.windowWidth} style={style.row}  >
+                    <div style={style.left} >
+                        <FlowChartWithState config={{ readonly: true }} Components={{
+                            NodeInner: NodeInnerCustom,
+                            CanvasOuter: CanvasOuterCustom,
+                            CanvasInner: CanvasInnerCustom
+                        }} initialValue={this.complexChart()} />
                     </div>
-                    <div style={this.style.right}>
-                        <div style={this.style.contentExplore}>
-                            <span style={this.style.text}>Explore</span>
+                    <div style={style.right}>
+                        <div style={style.contentExplore}>
+                            <span style={style.text}>Explore</span>
                         </div>
-                        <div style={this.style.contentFocus}>
-                            <span style={this.style.text}>Focus</span>
+                        <div style={style.contentFocus}>
+                            <span style={style.text}>Focus</span>
                         </div>
-                        <div style={this.style.contentImmerse}>
-                            <span style={this.style.text}>Immerse</span>
+                        <div style={style.contentImmerse}>
+                            <span style={style.text}>Immerse</span>
                         </div>
-                        <div style={this.style.contentPlan}>
-                            <span style={this.style.text}>Plan</span>
+                        <div style={style.contentPlan}>
+                            <span style={style.text}>Plan</span>
                         </div>
-                        <div style={this.style.contentBuild}>
-                            <span style={this.style.text}>Build</span>
+                        <div style={style.contentBuild}>
+                            <span style={style.text}>Build</span>
                         </div>
-                        <div style={this.style.contentStabilize}>
-                            <span style={this.style.text}>Stabilize</span>
+                        <div style={style.contentStabilize}>
+                            <span style={style.text}>Stabilize</span>
                         </div>
-                        <div style={this.style.contentOptimize}>
-                            <span style={this.style.text}>Optimize</span>
+                        <div style={style.contentOptimize}>
+                            <span style={style.text}>Optimize</span>
                         </div>
-                        <div style={this.style.contentHarvest}>
-                            <span style={this.style.text}>Harvest</span>
+                        <div style={style.contentHarvest}>
+                            <span style={style.text}>Harvest</span>
                         </div>
-                        <div style={this.style.contentRetier}>
-                            <span style={this.style.text}>Retier</span>
+                        <div style={style.contentRetier}>
+                            <span style={style.text}>Retier</span>
                         </div>
                     </div>
                 </div>
