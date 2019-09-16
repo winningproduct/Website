@@ -22,7 +22,8 @@ export const IndexPageTemplate = ({
             !!image.childImageSharp ? image.childImageSharp.fluid.src : image
             })`,
           backgroundPosition: `top left`,
-          backgroundAttachment: `fixed`,
+          backgroundAttachment: `fixed`
+
         }}
       >
         <div
@@ -33,12 +34,13 @@ export const IndexPageTemplate = ({
             justifyContent: 'space-around',
             alignItems: 'left',
             flexDirection: 'column',
+            filter: "none"
           }}
         >
           <h1
             className="has-text-weight-bold is-size-3-mobile is-size-2-tablet m-center is-size-1-widescreen"
             style={{
-              color: 'white',
+              color: '#3c3b58',
               lineHeight: '1',
               padding: '0.25em',
             }}
@@ -48,7 +50,7 @@ export const IndexPageTemplate = ({
           <h3
             className="has-text-weight-bold is-size-5-mobile m-center is-size-5-tablet is-size--widescreen"
             style={{
-              color: '#1f2532',
+              color: '#3f495bc7',
               lineHeight: '1',
               padding: '0.25em',
             }}
