@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-;
-
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import ExampleComponent from "react-rounded-image";
+import Content, { HTMLContent } from "../components/Content";
 
 export const BlogPostTemplate = ({
   content,
@@ -16,22 +15,31 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  githubId
 }) => {
-  const PostContent = contentComponent || Content
-
+  const PostContent = contentComponent || Content;
+  
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light m-capitalize">
-              {title.replace(/[0-9]*-/g, '')}
+              {title.replace(/[0-9]*-/g, "")}
             </h1>
             <PostContent content={content} />
             <br />
+        
+            <ExampleComponent
+              image={'https://github.com/'+githubId+'.png'}
+              roundedColor="#321124"
+              imageWidth="60"
+              imageHeight="60"
+              roundedSize="0"
+            />
             <p>{author}</p>
-            
+
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -48,10 +56,8 @@ export const BlogPostTemplate = ({
         </div>
       </div>
     </section>
-  )
-}
-
-
+  );
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -60,10 +66,11 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
   helmet: PropTypes.object,
   author: PropTypes.string,
-}
+  githubId: PropTypes.string
+};
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -83,19 +90,20 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         author={post.frontmatter.author}
+        githubId={post.frontmatter.githubId}
         slug={post.fields.slug}
       />
     </Layout>
-  )
-}
+  );
+};
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    markdownRemark: PropTypes.object
+  })
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -108,10 +116,11 @@ export const pageQuery = graphql`
         description
         tags
         author
+        githubId
       }
       fields {
         slug
       }
     }
-  },
-`
+  }
+`;

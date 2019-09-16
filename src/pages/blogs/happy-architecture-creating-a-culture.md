@@ -1,6 +1,7 @@
 ---
 title: Happy Architecture, creating a culture of happiness by building excellence in to your products
 author: 'Sammani palansuriya'
+githubId: 'SammaniPalan'
 templateKey: 'blog-post'
 date: 2019-07-25T15:04:10.000Z
 featuredimage: '/img/blog-happy-architecture-main.png'

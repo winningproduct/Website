@@ -2,6 +2,7 @@
 templateKey: 'blog-post'
 date: 2019-07-25T15:04:10.000Z
 featuredimage: '/img/blog-how-to-build-a-product.jpeg'
+githubId: 'mjzone'
 title: How to Build a Product that Dominates the Market!
 author: 'Manoj Fernando'
 ---
