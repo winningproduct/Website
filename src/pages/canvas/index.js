@@ -4,7 +4,7 @@ import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import data from "./data.json";
 import { Helmet } from 'react-helmet'
 import './canvas.css'
-import { CanvasInnerCustom, Outer, CanvasOuterCustom} from './styleComponents'
+import { CanvasInnerCustom, Outer, CanvasOuterCustom} from '../../components/styleComponents'
 
 let nodes = data.nodes;
 let singleNode = {}
