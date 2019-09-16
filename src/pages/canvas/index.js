@@ -15,7 +15,7 @@ import retier from '../../img/retier-2.svg';
 import stabilize from '../../img/stabilize-2.svg';
 
 let nodes = data.nodes;
-let nody = {}
+let singleNode = {}
 let allLinks = {}
 let bigNode = {};
 let linkCount = 0;
@@ -146,7 +146,7 @@ export default class CanvasIndexPage extends React.Component {
             }
             ports = Object.assign(ports, input);
 
-            nody = {
+            singleNode = {
                 id: node.id,
                 title: node.title,
                 color: colorType,
@@ -159,7 +159,7 @@ export default class CanvasIndexPage extends React.Component {
                 ports: ports
             };
 
-            bigNode[`${node.id}`] = nody;
+            bigNode[`${node.id}`] = singleNode;
 
             // link structure
             node.to.map((link, i) => {
@@ -263,7 +263,7 @@ export default class CanvasIndexPage extends React.Component {
             position: relative;
             background-size: 10px 10px;
             background-color: #fff;
-            width: ${this.state.windowWidth * 0.8}px;
+            width: 100%;
             height: 13500px;
             overflow-x: scroll;
             cursor: not-allowed;
