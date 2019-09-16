@@ -20,7 +20,7 @@ export default class BlogIndexPage extends React.Component {
               padding: '1rem',
             }}
           >
-            Blogs
+          Read the latest on WPO
           </h1>
         </div>
         <section className="section">
