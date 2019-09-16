@@ -46,7 +46,7 @@ const NodeInnerCustom = ({ node }) => {
 
 export default class CanvasIndexPage extends React.Component {
     state = {
-        windowWidth: window.innerWidth
+        windowWidth: 1920
     }
 
     handleResize = () => {
