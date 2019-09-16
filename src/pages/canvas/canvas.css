@@ -1,0 +1,10 @@
+path {
+    stroke: cornflowerblue !important;
+}
+
+path:hover{
+    stroke: crimson !important;
+    pointer-events: all;
+    stroke-opacity: 0.2;
+    stroke-width: 10px;
+}
