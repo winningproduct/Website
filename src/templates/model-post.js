@@ -31,7 +31,7 @@ export const ModelPostTemplate = ({
       .then(({ data }) => {
         console.log(data)
         data.map(item => {
-          commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date});
+         return commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date});
 
         })
 
@@ -49,7 +49,7 @@ export const ModelPostTemplate = ({
         setAuthors(getUnique(commiters, 'name'))
 
       });
-  }, []);
+  },);
 
   return (
     <section className="section">
@@ -68,7 +68,7 @@ export const ModelPostTemplate = ({
               {authors.map(author => <div class="contributorCards">
 
 
-                <a href={author.url} target="_blank" rel="noopener norefferer">
+                <a href={author.url} target="_blank" rel="noopener noreferrer">
                   <div class="roundedImage">
                   <ExampleComponent
                     image={author.img}
