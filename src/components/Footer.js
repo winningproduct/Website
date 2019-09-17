@@ -26,22 +26,13 @@ const Footer = class extends React.Component {
           <img
             src={logo}
             alt="Kaldi"
-            style={{ width: '5em', height: '5em' }}
+            style={{ width: '5em', height: '4.7em' }}
           />
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div className="columns">
               <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link style={social.align} to="/" className="navbar-item">
-                        Home
-                            </Link>
-                    </li>
-                  </ul>
-                </section>
               </div>
               <div className="column is-4 social" style={social.align && social.pad}>
                 <a title="facebook" href="https://facebook.com">
@@ -75,15 +66,6 @@ const Footer = class extends React.Component {
                 </a>
               </div>
               <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link style={social.align} className="navbar-item" to="/models">
-                        Models
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
               </div>
             </div>
           </div>
