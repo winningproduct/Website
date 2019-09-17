@@ -45,12 +45,13 @@ export const ModelPostTemplate = ({
             .filter(e => arr[e]).map(e => arr[e]);
           return unique;
         }
-
-        setAuthors(getUnique(commiters, 'name'))
+            //setAuthors(commiters)
+          setAuthors(getUnique(commiters, 'name'))
 
       });
-  },);
-
+  },[]);
+  
+ 
   return (
     <section className="section">
       {helmet || ''}
