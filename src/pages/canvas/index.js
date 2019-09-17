@@ -1,10 +1,12 @@
 import React from 'react';
-import Layout from '../../components/Layout'
+import Layout from '../../components/Layout';
 import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import data from "./data.json";
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
+import * as print from './print.css';
 import './canvas.css'
-import { CanvasInnerCustom, Outer, CanvasOuterCustom} from '../../components/styleComponents'
+import { CanvasInnerCustom, Outer, CanvasOuterCustom } from '../../components/styleComponents';
+import ReactToPrint from 'react-to-print';
 
 let nodes = data.nodes;
 let singleNode = {}
@@ -25,12 +27,16 @@ const NodeInnerCustom = ({ node }) => {
 }
 export default class CanvasIndexPage extends React.Component {
     state = {
-        windowWidth: 1920
+        windowWidth: 1920,
+        windowHeight: 1440,
+        shouldRender: 1
     }
 
     handleResize = () => {
         this.setState({
-            windowWidth: window.innerWidth
+            windowWidth: window.innerWidth,
+            windowHeight: window.innerHeight,
+            shouldRender: window.innerHeight * window.innerWidth
         });
     };
 
@@ -41,6 +47,12 @@ export default class CanvasIndexPage extends React.Component {
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize)
+    }
+    shouldComponentUpdate(_nextProps, nextState) {
+        if (this.state.shouldRender === nextState.shouldRender) {
+            return false;
+        }
+        return true
     }
 
     color = (type) => {
@@ -172,7 +184,6 @@ export default class CanvasIndexPage extends React.Component {
         }
     }
 
-
     render() {
         let style = {
             row: {
@@ -192,7 +203,6 @@ export default class CanvasIndexPage extends React.Component {
                 textAlign: "center"
             },
             contentFocus: {
-                backgroundColor: "#f3f3f3",
                 height: "1050px",
                 textAlign: "center"
             },
@@ -201,7 +211,6 @@ export default class CanvasIndexPage extends React.Component {
                 textAlign: "center"
             },
             contentPlan: {
-                backgroundColor: "#f3f3f3",
                 height: "1650px",
                 textAlign: "center"
             },
@@ -210,7 +219,6 @@ export default class CanvasIndexPage extends React.Component {
                 textAlign: "center"
             },
             contentStabilize: {
-                backgroundColor: "#f3f3f3",
                 height: "1950px",
                 textAlign: "center"
             },
@@ -219,7 +227,6 @@ export default class CanvasIndexPage extends React.Component {
                 textAlign: "center"
             },
             contentHarvest: {
-                backgroundColor: "#f3f3f3",
                 height: "1100px",
                 textAlign: "center"
             },
@@ -245,42 +252,57 @@ export default class CanvasIndexPage extends React.Component {
                         <meta name="viewport" content="width=device-width, initial-scale=0.1, shrink-to-fit=no" />
                     </Helmet>
                 </div>
-                <div key={this.state.windowWidth} style={style.row}  >
-                    <div style={style.left} >
-                        <FlowChartWithState config={{ readonly: true }} Components={{
-                            NodeInner: NodeInnerCustom,
-                            CanvasOuter: CanvasOuterCustom,
-                            CanvasInner: CanvasInnerCustom
-                        }} initialValue={this.complexChart()} />
+                <div className="background" ref={el => (this.componentRef = el)}>
+                <div className="toggleColor">
+                    <div key={this.state.shouldRender} style={style.row}  >
+                        <div style={style.left} >
+                            <FlowChartWithState config={{ readonly: true }} Components={{
+                                NodeInner: NodeInnerCustom,
+                                CanvasOuter: CanvasOuterCustom,
+                                CanvasInner: CanvasInnerCustom
+                            }} initialValue={this.complexChart()} />
+                        </div>
+                        <div style={style.right}>
+                            <ReactToPrint
+                                trigger={() => <div className="button-container">
+                                    <div className="button-flipper hide">
+                                        <button className="front-button">Print</button>
+                                        <button className="back-button">Print</button>
+                                    </div>
+                                </div>}
+                                content={() => this.componentRef}
+                                pageStyle={print}
+                            />
+
+                            <div style={style.contentExplore}>
+                                <span style={style.text}>Explore</span>
+                            </div>
+                            <div style={style.contentFocus}>
+                                <span style={style.text}>Focus</span>
+                            </div>
+                            <div style={style.contentImmerse}>
+                                <span style={style.text}>Immerse</span>
+                            </div>
+                            <div style={style.contentPlan}>
+                                <span style={style.text}>Plan</span>
+                            </div>
+                            <div style={style.contentBuild}>
+                                <span style={style.text}>Build</span>
+                            </div>
+                            <div style={style.contentStabilize}>
+                                <span style={style.text}>Stabilize</span>
+                            </div>
+                            <div style={style.contentOptimize}>
+                                <span style={style.text}>Optimize</span>
+                            </div>
+                            <div style={style.contentHarvest}>
+                                <span style={style.text}>Harvest</span>
+                            </div>
+                            <div style={style.contentRetier}>
+                                <span style={style.text}>Retier</span>
+                            </div>
+                        </div>
                     </div>
-                    <div style={style.right}>
-                        <div style={style.contentExplore}>
-                            <span style={style.text}>Explore</span>
-                        </div>
-                        <div style={style.contentFocus}>
-                            <span style={style.text}>Focus</span>
-                        </div>
-                        <div style={style.contentImmerse}>
-                            <span style={style.text}>Immerse</span>
-                        </div>
-                        <div style={style.contentPlan}>
-                            <span style={style.text}>Plan</span>
-                        </div>
-                        <div style={style.contentBuild}>
-                            <span style={style.text}>Build</span>
-                        </div>
-                        <div style={style.contentStabilize}>
-                            <span style={style.text}>Stabilize</span>
-                        </div>
-                        <div style={style.contentOptimize}>
-                            <span style={style.text}>Optimize</span>
-                        </div>
-                        <div style={style.contentHarvest}>
-                            <span style={style.text}>Harvest</span>
-                        </div>
-                        <div style={style.contentRetier}>
-                            <span style={style.text}>Retier</span>
-                        </div>
                     </div>
                 </div>
             </Layout>

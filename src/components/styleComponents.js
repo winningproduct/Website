@@ -17,32 +17,11 @@ export const CanvasOuterCustom = styled.div`
     text-align: center
     position: relative;
     background-size: 10px 10px;
-    background-color: #fff;
     width: auto;
     height: 13500px;
     overflow-x: scroll;
     cursor: not-allowed;
     outline: none !important;
     background-repeat: no-repeat;
-    background: 
-        linear-gradient(
-            180deg,
-            #fff 0px,
-            #fff 950px, 
-            #f3f3f3 950px,
-            #f3f3f3 2000px, 
-            #fff 2000px,
-            #fff 3200px, 
-            #f3f3f3 3200px,
-            #f3f3f3 4850px, 
-            #fff 4850px,
-            #fff 7100px,
-            #f3f3f3 7100px,
-            #f3f3f3 9050px,
-            #fff 9050px,
-            #fff 10850px,
-            #f3f3f3 10850px,
-            #f3f3f3 11950px,
-            #fff 11950px
-    );
+    back
 `;
