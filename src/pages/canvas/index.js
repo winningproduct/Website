@@ -18,7 +18,7 @@ const NodeInnerCustom = ({ node }) => {
             <Outer style={{ background: `linear-gradient(to bottom , ${node.color} , white )` }}>
                 {node.id.replace(/_/g, ' ')}
                 <br />
-                <a href={node.url}>Link</a>
+                <a href={`../models/explore/${node.url}`}>Read More</a>
             </Outer>
         )
     }
@@ -162,7 +162,7 @@ export default class CanvasIndexPage extends React.Component {
 
         return {
             offset: {
-                x: 0,
+                x: this.state.windowWidth > 600 ? this.state.windowWidth * 0.1 : 0,
                 y: 0
             },
             nodes: bigNode,
