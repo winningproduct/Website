@@ -7,7 +7,7 @@ import * as print from './print.css';
 import './canvas.css'
 import { CanvasInnerCustom, Outer, CanvasOuterCustom } from '../../components/styleComponents';
 import ReactToPrint from 'react-to-print';
-import {isMobile} from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 let nodes = data.nodes;
 let singleNode = {}
@@ -30,7 +30,8 @@ export default class CanvasIndexPage extends React.Component {
     state = {
         windowWidth: 1920,
         windowHeight: 1440,
-        shouldRender: 1
+        shouldRender: 1,
+        mobileCount: 0
     }
 
     handleResize = () => {
@@ -49,8 +50,12 @@ export default class CanvasIndexPage extends React.Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize)
     }
+
     shouldComponentUpdate(_nextProps, nextState) {
-        if (this.state.shouldRender === nextState.shouldRender || isMobile) {
+        if ( isMobile && this.state.windowWidth === nextState.windowHeight) {
+            return false;
+        }
+        if (this.state.shouldRender === nextState.shouldRender) {
             return false;
         }
         return true
