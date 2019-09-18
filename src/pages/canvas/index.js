@@ -31,7 +31,7 @@ export default class CanvasIndexPage extends React.Component {
         windowWidth: 1920,
         windowHeight: 1440,
         shouldRender: 1,
-        mobileCount: 0
+        fliped: false
     }
 
     handleResize = () => {
@@ -52,10 +52,13 @@ export default class CanvasIndexPage extends React.Component {
     }
 
     shouldComponentUpdate(_nextProps, nextState) {
-        if ( isMobile && this.state.windowWidth === nextState.windowHeight) {
+        if (isMobile && this.state.windowWidth === nextState.windowHeight) {
             return false;
         }
-        if (this.state.shouldRender === nextState.shouldRender) {
+        if (this.state.fliped !== nextState.fliped) {
+            return true;
+        }
+        if (this.state.shouldRender === nextState.shouldRende) {
             return false;
         }
         return true
@@ -79,15 +82,15 @@ export default class CanvasIndexPage extends React.Component {
     xPos = (type) => {
         switch (type) {
             case '1-userExperience':
-                return 0;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth * 0.2) - 200)/2) : 0;
             case '2-marketSense':
-                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.1 : 100;
-            case '4-customerSuccess':
-                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.3 : 150;
+                return this.state.windowWidth > 800 ? ((this.state.windowWidth * 0.25 * 0.8) + (((this.state.windowWidth * 0.2) - 200)/2)): 100;
             case '3-technologyExcellence':
-                return this.state.windowWidth > 600 ? this.state.windowWidth * 0.5 : 200;
+                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.5 * 0.8 + (((this.state.windowWidth * 0.2) - 200)/2)) : 200;
+            case '4-customerSuccess':
+                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.75 * 0.8 + (((this.state.windowWidth * 0.2) - 200)/2)) : 300;
             default:
-                return null;
+                return 0;
         }
     }
 
@@ -150,7 +153,7 @@ export default class CanvasIndexPage extends React.Component {
                 type: "default",
                 url: node.url,
                 position: {
-                    x: 10 + this.xPos(node.type) + node.order * 10,
+                    x: this.xPos(node.type),
                     y: node.order * 150 + pos.y
                 },
                 ports: ports
@@ -159,7 +162,7 @@ export default class CanvasIndexPage extends React.Component {
             bigNode[`${node.id}`] = singleNode;
 
             // link structure
-            node.to.map((link, i) => {
+            node.to.map((link) => {
                 let linkd = {
                     id: `link${linkCount + 1}`,
                     from: {
@@ -180,7 +183,7 @@ export default class CanvasIndexPage extends React.Component {
 
         return {
             offset: {
-                x: this.state.windowWidth > 600 ? this.state.windowWidth * 0.1 : 0,
+                x: 0,
                 y: 0
             },
             nodes: bigNode,
@@ -190,7 +193,16 @@ export default class CanvasIndexPage extends React.Component {
         }
     }
 
+    onClicked = () => {
+        this.setState({
+            fliped: !this.state.fliped
+        });
+    }
+
     render() {
+        let rotateClass = this.state.fliped ? "rotateDiv" : "notRotate";
+        let rotateClassName = this.state.fliped ? "vertical" : "horizontal";
+        let rotateCSSClassName = this.state.fliped ?  "back-button" : "front-button" ;
         let style = {
             row: {
                 display: "flex"
@@ -203,6 +215,34 @@ export default class CanvasIndexPage extends React.Component {
             },
             right: {
                 width: this.state.windowWidth * 0.2
+            },
+            userExpireence: {
+                backgroundColor: 'rgb(255, 171, 64)',
+                width: '33%',
+                color: 'white',
+                height: '50px',
+                lineHeight: '50px'
+            },
+            marketSense: {
+                backgroundColor: 'rgb(142, 124, 195)',
+                width: '33%',
+                color: 'white',
+                height: '50px',
+                lineHeight: '50px'
+            },
+            technologyExcellence: {
+                backgroundColor: 'rgb(106, 168, 79)',
+                width: '33%',
+                color: 'white',
+                height: '50px',
+                lineHeight: '50px'
+            },
+            customerSuccess: {
+                backgroundColor: 'rgb(109, 158, 235)',
+                width: '33%',
+                color: 'white',
+                height: '50px',
+                lineHeight: '50px'
             },
             contentExplore: {
                 height: "950px",
@@ -249,6 +289,19 @@ export default class CanvasIndexPage extends React.Component {
                 position: "relative",
                 top: "50%",
                 transform: "translateY(-50%)"
+            },
+            tags: {
+                display: 'flex',
+                textAlign: 'center'
+            }
+        }
+        let rotate = {
+            rotateDiv : {
+                transform: "rotateZ(-90deg)",
+                overflow: "scroll",
+            },
+            notRotate : {
+                transform: "none"
             }
         }
         return (
@@ -258,57 +311,71 @@ export default class CanvasIndexPage extends React.Component {
                         <meta name="viewport" content="width=device-width, initial-scale=0.1, shrink-to-fit=no" />
                     </Helmet>
                 </div>
-                <div className="background" ref={el => (this.componentRef = el)}>
-                <div className="toggleColor">
-                    <div key={this.state.shouldRender} style={style.row}  >
-                        <div style={style.left} >
-                            <FlowChartWithState config={{ readonly: true }} Components={{
-                                NodeInner: NodeInnerCustom,
-                                CanvasOuter: CanvasOuterCustom,
-                                CanvasInner: CanvasInnerCustom
-                            }} initialValue={this.complexChart()} />
-                        </div>
-                        <div style={style.right}>
-                            <ReactToPrint
-                                trigger={() => <div className="button-container">
-                                    <div className="button-flipper hide">
-                                        <button className="front-button">Print</button>
-                                        <button className="back-button">Print</button>
+                <div>
+                    <div className="background" ref={el => (this.componentRef = el)}>
+                        <div className="toggleColor">
+                            <div key={this.state.shouldRender} style={style.row}  >
+                                <div style={style.left} >
+                                    <div style={style.tags}>
+                                        <div style={style.userExpireence}>User Experience</div>
+                                        <div style={style.marketSense}>Market Sense</div>
+                                        <div style={style.technologyExcellence}>Technology Excellence</div>
+                                        <div style={style.customerSuccess}>Customer Success</div>
                                     </div>
-                                </div>}
-                                content={() => this.componentRef}
-                                pageStyle={print}
-                            />
-
-                            <div style={style.contentExplore}>
-                                <span style={style.text}>Explore</span>
-                            </div>
-                            <div style={style.contentFocus}>
-                                <span style={style.text}>Focus</span>
-                            </div>
-                            <div style={style.contentImmerse}>
-                                <span style={style.text}>Immerse</span>
-                            </div>
-                            <div style={style.contentPlan}>
-                                <span style={style.text}>Plan</span>
-                            </div>
-                            <div style={style.contentBuild}>
-                                <span style={style.text}>Build</span>
-                            </div>
-                            <div style={style.contentStabilize}>
-                                <span style={style.text}>Stabilize</span>
-                            </div>
-                            <div style={style.contentOptimize}>
-                                <span style={style.text}>Optimize</span>
-                            </div>
-                            <div style={style.contentHarvest}>
-                                <span style={style.text}>Harvest</span>
-                            </div>
-                            <div style={style.contentRetier}>
-                                <span style={style.text}>Retier</span>
+                                    <FlowChartWithState config={{ readonly: true }} Components={{
+                                        NodeInner: NodeInnerCustom,
+                                        CanvasOuter: CanvasOuterCustom,
+                                        CanvasInner: CanvasInnerCustom
+                                    }} initialValue={this.complexChart()} />
+                                </div>
+                                <div style={style.right}>
+                                    <div style={{ display: "flex" }}>
+                                        <div className="button-container leftAlign">
+                                            <div className="hide textAlign">
+                                                <button className={rotateCSSClassName} onClick={this.onClicked}>{rotateClassName}</button>
+                                            </div>
+                                        </div>
+                                        <ReactToPrint
+                                            trigger={() => <div className="button-container rightAlign">
+                                                <div className="button-flipper hide textAlign">
+                                                    <button className="front-button">Print</button>
+                                                    <button className="back-button">Print</button>
+                                                </div>
+                                            </div>}
+                                            content={() => this.componentRef}
+                                            pageStyle={print}
+                                        />
+                                    </div>
+                                    <div style={style.contentExplore}>
+                                        <span style={style.text}>Explore</span>
+                                    </div>
+                                    <div style={style.contentFocus}>
+                                        <span style={style.text}>Focus</span>
+                                    </div>
+                                    <div style={style.contentImmerse}>
+                                        <span style={style.text}>Immerse</span>
+                                    </div>
+                                    <div style={style.contentPlan}>
+                                        <span style={style.text}>Plan</span>
+                                    </div>
+                                    <div style={style.contentBuild}>
+                                        <span style={style.text}>Build</span>
+                                    </div>
+                                    <div style={style.contentStabilize}>
+                                        <span style={style.text}>Stabilize</span>
+                                    </div>
+                                    <div style={style.contentOptimize}>
+                                        <span style={style.text}>Optimize</span>
+                                    </div>
+                                    <div style={style.contentHarvest}>
+                                        <span style={style.text}>Harvest</span>
+                                    </div>
+                                    <div style={style.contentRetier}>
+                                        <span style={style.text}>Retier</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </Layout>

@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const CanvasInnerCustom = styled.div`
-width: 100%;
+width: 200px;
 position: relative;
 cursor: move;
+height: auto;
 `;
 
 export const Outer = styled.div`
@@ -23,5 +24,13 @@ export const CanvasOuterCustom = styled.div`
     cursor: not-allowed;
     outline: none !important;
     background-repeat: no-repeat;
-    back
+    background: linear-gradient(90deg, 
+        rgb(255, 171, 64 , 0.1) 0%,
+        rgb(255, 171, 64 , 0.1) 25%,
+        rgb(142, 124, 195 , 0.1) 25%, 
+        rgb(142, 124, 195 , 0.1) 50%,
+        rgb(106, 168, 79 , 0.1) 50%,
+        rgb(106, 168, 79 , 0.1) 75%,
+        rgb(109, 158, 235 , 0.1) 75%,
+        rgb(109, 158, 235 , 0.1) 75%);
 `;

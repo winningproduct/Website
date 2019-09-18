@@ -1,53 +1,86 @@
 path {
-    stroke: cornflowerblue !important;
-    stroke-dasharray : 10;
-    stroke-width: 2;
+  stroke: cornflowerblue !important;
+  stroke-dasharray: 10;
+  stroke-width: 2;
 }
 
-path:hover{
-    stroke: crimson !important;
-    pointer-events: all;
-    stroke-opacity: 0.2;
-    stroke-width: 10px;
+path:hover {
+  stroke: crimson !important;
+  pointer-events: all;
+  stroke-opacity: 0.2;
+  stroke-width: 10px;
 }
 .background {
-    background: linear-gradient(
-      180deg,
-      rgb(255, 255, 255) 0px,
-      rgb(255, 255, 255) 950px,
-      #f3f3f3 950px,
-      #f3f3f3 2000px,
-      #fff 2000px,
-      #fff 3200px,
-      #f3f3f3 3200px,
-      #f3f3f3 4850px,
-      #fff 4850px,
-      #fff 7100px,
-      #f3f3f3 7100px,
-      #f3f3f3 9050px,
-      #fff 9050px,
-      #fff 10850px,
-      #f3f3f3 10850px,
-      #f3f3f3 11950px,
-      #fff 11950px
-    );
-  }
-  .button-container {
-    display: flex;
-    justify-content: center;
-  }
-  .button-container .button-flipper {
-    transition: 0.8s cubic-bezier(0.775, 0.07, 0.575, 0.995);
-    transform-style: preserve-3d;
-    position: absolute;
-  }
-  .button-container .button-flipper:hover {
-    transform: rotateX(180deg);
-  }
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 255) 0px,
+    rgb(255, 255, 255) 950px,
+    #f3f3f3 950px,
+    #f3f3f3 2000px,
+    #fff 2000px,
+    #fff 3200px,
+    #f3f3f3 3200px,
+    #f3f3f3 4850px,
+    #fff 4850px,
+    #fff 7100px,
+    #f3f3f3 7100px,
+    #f3f3f3 9050px,
+    #fff 9050px,
+    #fff 10850px,
+    #f3f3f3 10850px,
+    #f3f3f3 11950px,
+    #fff 11950px
+  );
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+.button-container .button-flipper {
+  transition: 0.8s cubic-bezier(0.775, 0.07, 0.575, 0.995);
+  transform-style: preserve-3d;
+  position: absolute;
+}
+.button-container .button-flipper:hover {
+  transform: rotateX(180deg);
+}
+.button-container .front-button {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1em;
+  color: #fff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  position: absolute;
+  box-shadow: 0px 8px 12px #ccc;
+}
+.button-container .back-button {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  background-color: #26C281;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1em;
+  color: #fff;
+  backface-visibility: hidden;
+  transform: rotateX(-180deg);
+  position: relative;
+  box-shadow: 0px 8px 12px #ccc;
+}
+
+@media screen and (max-width: 600px) {
   .button-container .front-button {
     cursor: pointer;
-    width: 150px;
-    height: 40px;
+    width: 75px;
+    height: 20px;
     background-color: cornflowerblue;
     border: none;
     border-radius: 2rem;
@@ -63,8 +96,8 @@ path:hover{
   }
   .button-container .back-button {
     cursor: pointer;
-    width: 150px;
-    height: 40px;
+    width: 75px;
+    height: 20px;
     background-color: #26C281;
     border: none;
     border-radius: 2rem;
@@ -75,37 +108,14 @@ path:hover{
     position: relative;
     box-shadow: 0px 8px 12px #ccc;
   }
-  
-  @media screen and (max-width: 600px) {
-    .button-container .front-button {
-      cursor: pointer;
-      width: 75px;
-      height: 20px;
-      background-color: cornflowerblue;
-      border: none;
-      border-radius: 2rem;
-      font-size: 1em;
-      color: #fff;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      z-index: 2;
-      -webkit-transform: rotateX(0deg);
-      transform: rotateX(0deg);
-      position: absolute;
-      box-shadow: 0px 8px 12px #ccc;
-    }
-    .button-container .back-button {
-      cursor: pointer;
-      width: 75px;
-      height: 20px;
-      background-color: #26C281;
-      border: none;
-      border-radius: 2rem;
-      font-size: 1em;
-      color: #fff;
-      backface-visibility: hidden;
-      transform: rotateX(-180deg);
-      position: relative;
-      box-shadow: 0px 8px 12px #ccc;
-    }
-  }
+}
+.leftAlign {
+  width: 50%;
+}
+.rightAlign {
+  width: 50%;
+}
+
+.textAlign {
+  text-align: center
+}
