@@ -200,9 +200,9 @@ export default class CanvasIndexPage extends React.Component {
         this.setState({
             fliped: false
         });
-        // this.state.rotateClass = this.state.fliped ? "notRotate" : "rotateDiv";
-        // this.state.rotateClassName = this.state.fliped ? "vertical" : "horizontal";
-        // this.state.rotateButtonName = this.state.fliped ? "vertical-button" : "horizontal-button";
+        this.state.rotateClass = this.state.fliped ? "notRotate" : "rotateDiv";
+        this.state.rotateClassName = this.state.fliped ? "vertical" : "horizontal";
+        this.state.rotateButtonName = this.state.fliped ? "vertical-button" : "horizontal-button";
     }
 
     render() {
@@ -317,17 +317,19 @@ export default class CanvasIndexPage extends React.Component {
                             <div className="toggleColor">
                                 <div key={this.state.shouldRender} style={style.row}  >
                                     <div style={style.left} >
-                                        <div style={style.tags}>
+                                        <div className="zoomCanvas" style={style.tags}>
                                             <div style={style.userExpireence}>User Experience</div>
                                             <div style={style.marketSense}>Market Sense</div>
                                             <div style={style.technologyExcellence}>Technology Excellence</div>
                                             <div style={style.customerSuccess}>Customer Success</div>
                                         </div>
+                                        <div>
                                         <FlowChartWithState config={{ readonly: true }} Components={{
                                             NodeInner: NodeInnerCustom,
                                             CanvasOuter: CanvasOuterCustom,
                                             CanvasInner: CanvasInnerCustom
                                         }} initialValue={this.complexChart()} />
+                                        </div>
                                     </div>
                                     <div style={style.right}>
                                         <div style={{ display: "flex" }}>
