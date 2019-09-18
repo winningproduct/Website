@@ -4,31 +4,58 @@
 }
 
 @media print {
-    .toggleColor {
-        background: linear-gradient(
-          180deg,
-          rgb(255, 255, 255) 0px,
-          rgb(255, 255, 255) 900px,
-          #f3f3f3 900px,
-          #f3f3f3 1950px,
-          #fff 1950px,
-          #fff 3160px,
-          #f3f3f3 3160px,
-          #f3f3f3 4750px,
-          #fff 4750px,
-          #fff 7050px,
-          #f3f3f3 7050px,
-          #f3f3f3 9000px,
-          #fff 9000px,
-          #fff 10790px,
-          #f3f3f3 10790px,
-          #f3f3f3 11850px,
-          #fff 11850px
-        );
-    }
-    .hide {
-        display: none;
-    }
+  .toggleColor {
+    zoom: 0.31;
+    background: linear-gradient(
+      180deg,
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 950px,
+      #f3f3f3 950px,
+      #f3f3f3 1950px,
+      #fff 1950px,
+      #fff 3160px,
+      #f3f3f3 3160px,
+      #f3f3f3 4750px,
+      #fff 4750px,
+      #fff 7050px,
+      #f3f3f3 7050px,
+      #f3f3f3 9000px,
+      #fff 9000px,
+      #fff 10790px,
+      #f3f3f3 10790px,
+      #f3f3f3 11850px,
+      #fff 11850px
+    );
+  }
+  .hide {
+    display: none;
+  }
+
+  /* .contentExplore {
+    height: 950px;
+  }
+  .contentFocus {
+    height: 1050px;
+  }
+  .contentImmerse {
+    height: 1200px;
+  }
+  .contentPlan {
+    height: 1650px;
+  }
+  .contentBuild {
+    height: 2120px !important;
+  }
+  .contentStabilize {
+    height: 1700px !important;
+  }
+  .contentOptimize {
+    height: 1580px !important;
+  }
+  .contentHarvest {
+    height: 900px !important;
+  }
+  .contentRetier {
+    height: 1450px;
+  } */
 }
-
-

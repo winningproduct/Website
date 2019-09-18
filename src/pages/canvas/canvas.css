@@ -76,6 +76,35 @@ path:hover {
   box-shadow: 0px 8px 12px #ccc;
 }
 
+.button-container .vertical-button {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1em;
+  color: #fff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2;
+  position: absolute;
+  box-shadow: 0px 8px 12px #ccc;
+}
+
+.button-container .horizontal-button {
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  background-color: #26C281;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1em;
+  color: #fff;
+  position: relative;
+  box-shadow: 0px 8px 12px #ccc;
+}
+
 @media screen and (max-width: 600px) {
   .button-container .front-button {
     cursor: pointer;
@@ -119,3 +148,49 @@ path:hover {
 .textAlign {
   text-align: center
 }
+
+.contentExplore {
+    height: 950px;
+    text-align: center;
+  }
+  .contentFocus {
+    height: 1050px;
+    text-align: center;
+  }
+  .contentImmerse {
+    height: 1200px;
+    text-align: center;
+  }
+  .contentPlan {
+    height: 1650px;
+    text-align: center;
+  }
+  .contentBuild {
+    height: 2250px;
+    text-align: center;
+  }
+  .contentStabilize {
+    height: 1950px;
+    text-align: center;
+  }
+  .contentOptimize {
+    height: 1600px;
+    text-align: center;
+  }
+  .contentHarvest {
+    height: 1100px;
+    text-align: center;
+  }
+  .contentRetier {
+    height: 1450px;
+    text-align: center;
+  }
+
+  .rotateDiv {
+    transform-origin: 50% 0%;
+    transform: translate(-50%, 9%) rotate(-90deg) scale(1);
+    overflow: scroll;
+  }
+  .notRotate  {
+    transform: none
+  }

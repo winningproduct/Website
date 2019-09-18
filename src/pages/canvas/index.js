@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import data from "./data.json";
 import { Helmet } from 'react-helmet';
-import * as print from './print.css';
+import print from './print.css';
 import './canvas.css'
 import { CanvasInnerCustom, Outer, CanvasOuterCustom } from '../../components/styleComponents';
 import ReactToPrint from 'react-to-print';
@@ -31,6 +31,9 @@ export default class CanvasIndexPage extends React.Component {
         windowWidth: 1920,
         windowHeight: 1440,
         shouldRender: 1,
+        rotateClassName: 'vertical',
+        rotateButtonName: 'horizontal-button',
+        rotateClass: 'notRotate',
         fliped: false
     }
 
@@ -82,13 +85,13 @@ export default class CanvasIndexPage extends React.Component {
     xPos = (type) => {
         switch (type) {
             case '1-userExperience':
-                return this.state.windowWidth > 800 ? (((this.state.windowWidth * 0.2) - 200)/2) : 0;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth * 0.2) - 200) / 2) : 0;
             case '2-marketSense':
-                return this.state.windowWidth > 800 ? ((this.state.windowWidth * 0.25 * 0.8) + (((this.state.windowWidth * 0.2) - 200)/2)): 100;
+                return this.state.windowWidth > 800 ? ((this.state.windowWidth * 0.25 * 0.8) + (((this.state.windowWidth * 0.2) - 200) / 2)) : 100;
             case '3-technologyExcellence':
-                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.5 * 0.8 + (((this.state.windowWidth * 0.2) - 200)/2)) : 200;
+                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.5 * 0.8 + (((this.state.windowWidth * 0.2) - 200) / 2)) : 200;
             case '4-customerSuccess':
-                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.75 * 0.8 + (((this.state.windowWidth * 0.2) - 200)/2)) : 300;
+                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.75 * 0.8 + (((this.state.windowWidth * 0.2) - 200) / 2)) : 300;
             default:
                 return 0;
         }
@@ -154,7 +157,7 @@ export default class CanvasIndexPage extends React.Component {
                 url: node.url,
                 position: {
                     x: this.xPos(node.type),
-                    y: node.order * 150 + pos.y
+                    y: (node.order - 1) * 150 + pos.y
                 },
                 ports: ports
             };
@@ -184,7 +187,7 @@ export default class CanvasIndexPage extends React.Component {
         return {
             offset: {
                 x: 0,
-                y: 0
+                y: 70
             },
             nodes: bigNode,
             links: allLinks,
@@ -195,14 +198,15 @@ export default class CanvasIndexPage extends React.Component {
 
     onClicked = () => {
         this.setState({
-            fliped: !this.state.fliped
+            fliped: false
         });
+        // this.state.rotateClass = this.state.fliped ? "notRotate" : "rotateDiv";
+        // this.state.rotateClassName = this.state.fliped ? "vertical" : "horizontal";
+        // this.state.rotateButtonName = this.state.fliped ? "vertical-button" : "horizontal-button";
     }
 
     render() {
-        let rotateClass = this.state.fliped ? "rotateDiv" : "notRotate";
-        let rotateClassName = this.state.fliped ? "vertical" : "horizontal";
-        let rotateCSSClassName = this.state.fliped ?  "back-button" : "front-button" ;
+
         let style = {
             row: {
                 display: "flex"
@@ -220,29 +224,33 @@ export default class CanvasIndexPage extends React.Component {
                 backgroundColor: 'rgb(255, 171, 64)',
                 width: '33%',
                 color: 'white',
-                height: '50px',
-                lineHeight: '50px'
+                height: '80px',
+                lineHeight: '80px',
+                fontSize: '20px'
             },
             marketSense: {
                 backgroundColor: 'rgb(142, 124, 195)',
                 width: '33%',
                 color: 'white',
-                height: '50px',
-                lineHeight: '50px'
+                height: '80px',
+                lineHeight: '80px',
+                fontSize: '20px'
             },
             technologyExcellence: {
                 backgroundColor: 'rgb(106, 168, 79)',
                 width: '33%',
                 color: 'white',
-                height: '50px',
-                lineHeight: '50px'
+                height: '80px',
+                lineHeight: '80px',
+                fontSize: '20px'
             },
             customerSuccess: {
                 backgroundColor: 'rgb(109, 158, 235)',
                 width: '33%',
                 color: 'white',
-                height: '50px',
-                lineHeight: '50px'
+                height: '80px',
+                lineHeight: '80px',
+                fontSize: '20px'
             },
             contentExplore: {
                 height: "950px",
@@ -282,6 +290,7 @@ export default class CanvasIndexPage extends React.Component {
             },
             text: {
                 "writingMode": "vertical-rl",
+                color: '#333333b0',
                 textOrientation: "mixed",
                 fontFamily: "sans-serif",
                 fontSize: this.state.windowWidth > 600 ? this.state.windowWidth * 0.2 * 0.25 : "60px",
@@ -295,15 +304,6 @@ export default class CanvasIndexPage extends React.Component {
                 textAlign: 'center'
             }
         }
-        let rotate = {
-            rotateDiv : {
-                transform: "rotateZ(-90deg)",
-                overflow: "scroll",
-            },
-            notRotate : {
-                transform: "none"
-            }
-        }
         return (
             <Layout>
                 <div>
@@ -312,66 +312,68 @@ export default class CanvasIndexPage extends React.Component {
                     </Helmet>
                 </div>
                 <div>
-                    <div className="background" ref={el => (this.componentRef = el)}>
-                        <div className="toggleColor">
-                            <div key={this.state.shouldRender} style={style.row}  >
-                                <div style={style.left} >
-                                    <div style={style.tags}>
-                                        <div style={style.userExpireence}>User Experience</div>
-                                        <div style={style.marketSense}>Market Sense</div>
-                                        <div style={style.technologyExcellence}>Technology Excellence</div>
-                                        <div style={style.customerSuccess}>Customer Success</div>
-                                    </div>
-                                    <FlowChartWithState config={{ readonly: true }} Components={{
-                                        NodeInner: NodeInnerCustom,
-                                        CanvasOuter: CanvasOuterCustom,
-                                        CanvasInner: CanvasInnerCustom
-                                    }} initialValue={this.complexChart()} />
-                                </div>
-                                <div style={style.right}>
-                                    <div style={{ display: "flex" }}>
-                                        <div className="button-container leftAlign">
-                                            <div className="hide textAlign">
-                                                <button className={rotateCSSClassName} onClick={this.onClicked}>{rotateClassName}</button>
-                                            </div>
+                    <div className={this.state.rotateClass}>
+                        <div className="background" ref={el => (this.componentRef = el)}>
+                            <div className="toggleColor">
+                                <div key={this.state.shouldRender} style={style.row}  >
+                                    <div style={style.left} >
+                                        <div style={style.tags}>
+                                            <div style={style.userExpireence}>User Experience</div>
+                                            <div style={style.marketSense}>Market Sense</div>
+                                            <div style={style.technologyExcellence}>Technology Excellence</div>
+                                            <div style={style.customerSuccess}>Customer Success</div>
                                         </div>
-                                        <ReactToPrint
-                                            trigger={() => <div className="button-container rightAlign">
-                                                <div className="button-flipper hide textAlign">
-                                                    <button className="front-button">Print</button>
-                                                    <button className="back-button">Print</button>
+                                        <FlowChartWithState config={{ readonly: true }} Components={{
+                                            NodeInner: NodeInnerCustom,
+                                            CanvasOuter: CanvasOuterCustom,
+                                            CanvasInner: CanvasInnerCustom
+                                        }} initialValue={this.complexChart()} />
+                                    </div>
+                                    <div style={style.right}>
+                                        <div style={{ display: "flex" }}>
+                                            <div className="button-container leftAlign">
+                                                <div className="hide textAlign">
+                                                    <button className={this.state.rotateButtonName} onClick={this.onClicked}>{this.state.rotateClassName}</button> 
                                                 </div>
-                                            </div>}
-                                            content={() => this.componentRef}
-                                            pageStyle={print}
-                                        />
-                                    </div>
-                                    <div style={style.contentExplore}>
-                                        <span style={style.text}>Explore</span>
-                                    </div>
-                                    <div style={style.contentFocus}>
-                                        <span style={style.text}>Focus</span>
-                                    </div>
-                                    <div style={style.contentImmerse}>
-                                        <span style={style.text}>Immerse</span>
-                                    </div>
-                                    <div style={style.contentPlan}>
-                                        <span style={style.text}>Plan</span>
-                                    </div>
-                                    <div style={style.contentBuild}>
-                                        <span style={style.text}>Build</span>
-                                    </div>
-                                    <div style={style.contentStabilize}>
-                                        <span style={style.text}>Stabilize</span>
-                                    </div>
-                                    <div style={style.contentOptimize}>
-                                        <span style={style.text}>Optimize</span>
-                                    </div>
-                                    <div style={style.contentHarvest}>
-                                        <span style={style.text}>Harvest</span>
-                                    </div>
-                                    <div style={style.contentRetier}>
-                                        <span style={style.text}>Retier</span>
+                                            </div>
+                                            <ReactToPrint
+                                                trigger={() => <div className="button-container rightAlign">
+                                                    <div className="button-flipper hide textAlign">
+                                                        <button className="front-button">Print</button>
+                                                        <button className="back-button">Print</button>
+                                                    </div>
+                                                </div>}
+                                                content={() => this.componentRef}
+                                                pageStyle={print}
+                                            />
+                                        </div>
+                                        <div className='contentExplore'>
+                                            <span style={style.text}>Explore</span>
+                                        </div>
+                                        <div className='contentFocus'>
+                                            <span style={style.text}>Focus</span>
+                                        </div>
+                                        <div className='contentImmerse'>
+                                            <span style={style.text}>Immerse</span>
+                                        </div>
+                                        <div className='contentPlan'>
+                                            <span style={style.text}>Plan</span>
+                                        </div>
+                                        <div className='contentBuild'>
+                                            <span style={style.text}>Build</span>
+                                        </div>
+                                        <div className='contentStabilize'>
+                                            <span style={style.text}>Stabilize</span>
+                                        </div>
+                                        <div className='contentOptimize'>
+                                            <span style={style.text}>Optimize</span>
+                                        </div>
+                                        <div className='contentHarvest'>
+                                            <span style={style.text}>Harvest</span>
+                                        </div>
+                                        <div className='contentRetier'>
+                                            <span style={style.text}  >Retier</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
