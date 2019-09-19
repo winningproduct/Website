@@ -4,6 +4,7 @@ title: '1-context competitor analysis'
 indexingField: 3-Explore
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: marketSense
 featuredimage: '/img/context-competitor-analysis-img-1.jpeg'
 description: 'context-competitor-analysis'
 

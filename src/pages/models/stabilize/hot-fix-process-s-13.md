@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '3-hot fix process s 13'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: technologyExcellence
 indexingField: 9-Stabilize
 featuredimage: '/img/default-image.png'
 description: 'hot fix process s 13'

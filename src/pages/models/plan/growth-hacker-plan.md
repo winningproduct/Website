@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '1-growth hacker plan'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: marketSense
 indexingField: 8-Plan
 featuredimage: '/img/growth-hacker-plan-img-1.png'
 description: 'growth-hacker-plan'

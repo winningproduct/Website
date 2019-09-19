@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '8-Team On-boarding & Learning Plan'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: technologyExcellence
 indexingField: 5-Build
 featuredimage: '/img/default-image.png'
 description: 'Team On-boarding & Learning Plan'

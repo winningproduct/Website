@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '7-digital marketing design'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: marketSense
 indexingField: 8-Plan
 featuredimage: '/img/default-image.png'
 description: 'value-proposition'
