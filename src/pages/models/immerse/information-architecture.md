@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '9-information architecture'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: userExperience
 indexingField: 7-Immerse
 featuredimage: '/img/default-image.png'
 description: 'information architecture'

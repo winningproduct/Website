@@ -2,6 +2,7 @@
 templateKey: 'model-post'
 title: '4-code quality process'
 date: 2019-07-25T15:04:10.000Z
+type: technologyExcellence
 featuredpost: true
 indexingField: 5-Build
 featuredimage: '/img/code-quality-process-img-1.jpeg'

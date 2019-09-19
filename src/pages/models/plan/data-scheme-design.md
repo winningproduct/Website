@@ -4,6 +4,7 @@ title: '5-data scheme design'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
 indexingField: 8-Plan
+type: technologyExcellence
 featuredimage: '/img/default-image.png'
 description: 'data scheme design'
 

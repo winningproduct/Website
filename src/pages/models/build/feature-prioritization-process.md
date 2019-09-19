@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '7-feature prioritization process'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: technologyExcellence
 indexingField: 5-Build
 featuredimage: '/img/feature-prioritization-process-img-1.jpeg'
 description: 'feature prioritization process'

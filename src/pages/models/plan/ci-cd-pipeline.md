@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '6-ci cd pipeline'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: customerSuccess
 indexingField: 8-Plan
 featuredimage: '/img/default-image.png'
 description: 'value-proposition'

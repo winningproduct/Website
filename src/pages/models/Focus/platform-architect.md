@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '6-platform architect'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: technologyExcellence
 indexingField: 4-Focus
 featuredimage: '/img/default-image.png'
 description: 'platform architect'

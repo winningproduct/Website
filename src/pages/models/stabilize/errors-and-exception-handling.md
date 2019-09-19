@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '4-error and exception handling'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: customerSuccess
 indexingField: 9-Stabilize
 featuredimage: '/img/default-image.png'
 description: 'error and exception handling'

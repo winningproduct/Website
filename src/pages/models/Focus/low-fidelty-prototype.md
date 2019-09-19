@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '4-low fidelty prototype'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: userExperience
 indexingField: 4-Focus
 featuredimage: '/img/default-image.png'
 description: 'low fidelty prototype'

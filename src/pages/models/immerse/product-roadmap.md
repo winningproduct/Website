@@ -3,6 +3,7 @@ templateKey: 'model-post'
 title: '10-product roadmap'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
+type: customerSuccess
 indexingField: 7-Immerse
 featuredimage: '/img/default-image.png'
 description: 'product roadmap'
