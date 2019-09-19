@@ -30,7 +30,7 @@ export default class CanvasIndexPage extends React.Component {
         windowHeight: 1440,
         shouldRender: 1,
         rotateClassName: 'Vertical',
-        rotateButtonName: 'horizontal-button',
+        rotateButtonName: 'vertical-button',
         rotateClass: 'notRotate',
         fliped: false
     }
@@ -52,7 +52,8 @@ export default class CanvasIndexPage extends React.Component {
         window.removeEventListener('resize', this.handleResize)
     }
 
-    shouldComponentUpdate(_nextProps, nextState) {
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(this.state , nextState , nextProps )
         if (isMobile && this.state.windowWidth === nextState.windowHeight) {
             return false;
         }
@@ -196,11 +197,11 @@ export default class CanvasIndexPage extends React.Component {
 
     onClicked = () => {
         this.setState({
-            fliped: false
+            fliped: !this.state.fliped,
+            rotateClass: this.state.fliped ? "notRotate" : "rotateDiv",
+            rotateClassName: this.state.fliped ? "Vertical" : "Horizontal",
+            rotateButtonName: this.state.fliped ? "vertical-button" : "horizontal-button"
         });
-        this.state.rotateClass = this.state.fliped ? "notRotate" : "rotateDiv";
-        this.state.rotateClassName = this.state.fliped ? "Vertical" : "Horizontal";
-        this.state.rotateButtonName = this.state.fliped ? "vertical-button" : "horizontal-button";
     }
     printDocument() {
         const input = document.getElementById('divToPrint');
