@@ -12,6 +12,7 @@ export const ModelPostTemplate = ({
   content,
   contentComponent,
   description,
+  type,
   slug,
   tags,
   title,
@@ -61,6 +62,9 @@ export const ModelPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light m-capitalize">
               {title.replace(/[0-9]*-/g, '')}
             </h1>
+            <h6>
+              {type}
+            </h6>
             <PostContent content={content} />
             <br/>
 
@@ -124,6 +128,7 @@ ModelPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  type: PropTypes.string,
   helmet: PropTypes.object,
   // why: PropTypes.string,
   // what: PropTypes.string,
@@ -150,6 +155,7 @@ const ModelPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        type={post.frontmatter.type}
         slug={post.fields.slug}
       // why={post.frontmatter.why}
       // what={post.frontmatter.what}
@@ -175,6 +181,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        type
         description
         tags
       }
