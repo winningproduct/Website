@@ -3,13 +3,9 @@ import Layout from '../../components/Layout';
 import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import data from "./data.json";
 import { Helmet } from 'react-helmet';
-import print from './print.css';
 import './canvas.css'
 import { CanvasInnerCustom, Outer, CanvasOuterCustom } from '../../components/styleComponents';
-import ReactToPrint from 'react-to-print';
 import { isMobile } from 'react-device-detect';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 
 let nodes = data.nodes;
 let singleNode = {}
@@ -49,7 +45,7 @@ export default class CanvasIndexPage extends React.Component {
 
     componentDidMount() {
         this.handleResize();
-        window.addEventListener('resize', this.handleResize)
+        window.addEventListener('resize', this.handleResize);
     }
 
     componentWillUnmount() {
@@ -209,8 +205,9 @@ export default class CanvasIndexPage extends React.Component {
     printDocument() {
         const input = document.getElementById('divToPrint');
         const inputWidth = document.getElementById('getTheWidth');
-    
         const width = inputWidth.clientWidth;
+        const jsPDF = require('jspdf');
+        const html2canvas = require('html2canvas');
         html2canvas(input, ({ foreignObjectRendering: true, y: 0, x: 0 }))
             .then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
