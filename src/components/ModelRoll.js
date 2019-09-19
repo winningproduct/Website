@@ -80,6 +80,9 @@ class ModelRoll extends React.Component {
                                 <span className="subtitle is-size-5 is-block">
                                   {post.frontmatter.date}
                                 </span>
+                                <h6>
+                                  {post.frontmatter.type}
+                                </h6>
                               </p>
                             </header>
                             <p className="m-justify">
@@ -132,6 +135,7 @@ export default () => (
               }
               frontmatter {
                 title
+                type
                 templateKey
                 indexingField
                 date(formatString: "MMMM DD, YYYY")
