@@ -8,6 +8,8 @@ import './canvas.css'
 import { CanvasInnerCustom, Outer, CanvasOuterCustom } from '../../components/styleComponents';
 import ReactToPrint from 'react-to-print';
 import { isMobile } from 'react-device-detect';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 let nodes = data.nodes;
 let singleNode = {}
@@ -31,7 +33,7 @@ export default class CanvasIndexPage extends React.Component {
         windowWidth: 1920,
         windowHeight: 1440,
         shouldRender: 1,
-        rotateClassName: 'vertical',
+        rotateClassName: 'Vertical',
         rotateButtonName: 'horizontal-button',
         rotateClass: 'notRotate',
         fliped: false
@@ -85,13 +87,13 @@ export default class CanvasIndexPage extends React.Component {
     xPos = (type) => {
         switch (type) {
             case '1-userExperience':
-                return this.state.windowWidth > 800 ? (((this.state.windowWidth * 0.2) - 200) / 2) : 0;
+                return this.state.windowWidth > 800 ? ((((this.state.windowWidth - 100) * 0.25) - 200) / 2) : 0;
             case '2-marketSense':
-                return this.state.windowWidth > 800 ? ((this.state.windowWidth * 0.25 * 0.8) + (((this.state.windowWidth * 0.2) - 200) / 2)) : 100;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.25) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 100;
             case '3-technologyExcellence':
-                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.5 * 0.8 + (((this.state.windowWidth * 0.2) - 200) / 2)) : 200;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.5) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 200;
             case '4-customerSuccess':
-                return this.state.windowWidth > 800 ? (this.state.windowWidth * 0.75 * 0.8 + (((this.state.windowWidth * 0.2) - 200) / 2)) : 300;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.75) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 300;
             default:
                 return 0;
         }
@@ -201,8 +203,25 @@ export default class CanvasIndexPage extends React.Component {
             fliped: false
         });
         this.state.rotateClass = this.state.fliped ? "notRotate" : "rotateDiv";
-        this.state.rotateClassName = this.state.fliped ? "vertical" : "horizontal";
+        this.state.rotateClassName = this.state.fliped ? "Vertical" : "Horizontal";
         this.state.rotateButtonName = this.state.fliped ? "vertical-button" : "horizontal-button";
+    }
+    printDocument() {
+        const input = document.getElementById('divToPrint');
+        const inputWidth = document.getElementById('getTheWidth');
+    
+        const width = inputWidth.clientWidth;
+        html2canvas(input, ({ foreignObjectRendering: true, y: 0, x: 0 }))
+            .then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({
+                    unit: 'px',
+                    format: [width*0.8, 10000]
+                });
+                pdf.addImage(imgData, 'JPEG', 0, 0);
+                pdf.save("download.pdf");
+            })
+            ;
     }
 
     render() {
@@ -215,10 +234,10 @@ export default class CanvasIndexPage extends React.Component {
                 stroke: "black !important"
             },
             left: {
-                width: this.state.windowWidth * 0.8
+                width: `${this.state.windowWidth - 100}px`
             },
             right: {
-                width: this.state.windowWidth * 0.2
+                width: '100px'
             },
             userExpireence: {
                 backgroundColor: 'rgb(255, 171, 64)',
@@ -293,7 +312,7 @@ export default class CanvasIndexPage extends React.Component {
                 color: '#333333b0',
                 textOrientation: "mixed",
                 fontFamily: "sans-serif",
-                fontSize: this.state.windowWidth > 600 ? this.state.windowWidth * 0.2 * 0.25 : "60px",
+                fontSize: "60px",
                 fontWeight: "600",
                 position: "relative",
                 top: "50%",
@@ -312,43 +331,39 @@ export default class CanvasIndexPage extends React.Component {
                     </Helmet>
                 </div>
                 <div>
-                    <div className={this.state.rotateClass}>
-                        <div className="background" ref={el => (this.componentRef = el)}>
+                    <div className="buttonBox">
+                        <div className="button-container leftAlign">
+                            <div className="hide textAlign">
+                                <button className={this.state.rotateButtonName} onClick={this.onClicked}>{this.state.rotateClassName}</button>
+                            </div>
+                        </div>
+                        <div className="button-container rightAlign">
+                            <div className="button-flipper hide textAlign">
+                                <button onClick={this.printDocument} className="front-button">Print</button>
+                                <button className="back-button">Print</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divToPrint" className={this.state.rotateClass}>
+                        <div className="background">
                             <div className="toggleColor">
                                 <div key={this.state.shouldRender} style={style.row}  >
-                                    <div style={style.left} >
+                                    <div id="getTheWidth" style={style.left} >
                                         <div className="zoomCanvas" style={style.tags}>
-                                            <div style={style.userExpireence}>User Experience</div>
-                                            <div style={style.marketSense}>Market Sense</div>
-                                            <div style={style.technologyExcellence}>Technology Excellence</div>
-                                            <div style={style.customerSuccess}>Customer Success</div>
+                                            <div className="canvasFont" style={style.userExpireence}>User Experience</div>
+                                            <div className="canvasFont" style={style.marketSense}>Market Sense</div>
+                                            <div className="canvasFont" style={style.technologyExcellence}>Technology Excellence</div>
+                                            <div className="canvasFont" style={style.customerSuccess}>Customer Success</div>
                                         </div>
                                         <div>
-                                        <FlowChartWithState config={{ readonly: true }} Components={{
-                                            NodeInner: NodeInnerCustom,
-                                            CanvasOuter: CanvasOuterCustom,
-                                            CanvasInner: CanvasInnerCustom
-                                        }} initialValue={this.complexChart()} />
+                                            <FlowChartWithState config={{ readonly: true }} Components={{
+                                                NodeInner: NodeInnerCustom,
+                                                CanvasOuter: CanvasOuterCustom,
+                                                CanvasInner: CanvasInnerCustom
+                                            }} initialValue={this.complexChart()} />
                                         </div>
                                     </div>
-                                    <div style={style.right}>
-                                        <div style={{ display: "flex" }}>
-                                            <div className="button-container leftAlign">
-                                                <div className="hide textAlign">
-                                                    <button className={this.state.rotateButtonName} onClick={this.onClicked}>{this.state.rotateClassName}</button> 
-                                                </div>
-                                            </div>
-                                            <ReactToPrint
-                                                trigger={() => <div className="button-container rightAlign">
-                                                    <div className="button-flipper hide textAlign">
-                                                        <button className="front-button">Print</button>
-                                                        <button className="back-button">Print</button>
-                                                    </div>
-                                                </div>}
-                                                content={() => this.componentRef}
-                                                pageStyle={print}
-                                            />
-                                        </div>
+                                    <div className="textCanvas" style={style.right}>
                                         <div className='contentExplore'>
                                             <span style={style.text}>Explore</span>
                                         </div>

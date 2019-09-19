@@ -10,6 +10,13 @@ path:hover {
   stroke-opacity: 0.2;
   stroke-width: 10px;
 }
+.buttonBox {
+  display: flex ;
+  margin: 10px ;
+  justify-content: flex-end ;
+  margin-right: 100px;
+}
+
 .background {
   background: linear-gradient(
     180deg,
@@ -139,10 +146,10 @@ path:hover {
   }
 }
 .leftAlign {
-  width: 50%;
+  width: 10%;
 }
 .rightAlign {
-  width: 50%;
+  width: 10%;
 }
 
 .textAlign {
@@ -194,3 +201,4 @@ path:hover {
   .notRotate  {
     transform: none
   }
+
