@@ -53,7 +53,7 @@ export default class CanvasIndexPage extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(this.state , nextState , nextProps )
+        console.log(this.state, nextState, nextProps)
         if (isMobile && this.state.windowWidth === nextState.windowHeight) {
             return false;
         }
@@ -203,23 +203,25 @@ export default class CanvasIndexPage extends React.Component {
             rotateButtonName: this.state.fliped ? "vertical-button" : "horizontal-button"
         });
     }
-    printDocument() {
+    printDocument = async () => {
         const input = document.getElementById('divToPrint');
-        const inputWidth = document.getElementById('getTheWidth');
-        const width = inputWidth.clientWidth;
         const jsPDF = require('jspdf');
         const html2canvas = require('html2canvas');
-        html2canvas(input, ({ foreignObjectRendering: true, y: 0, x: 0 }))
-            .then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF({
-                    unit: 'px',
-                    format: [width*0.8, 10000]
-                });
-                pdf.addImage(imgData, 'JPEG', 0, 0);
-                pdf.save("download.pdf");
-            })
-            ;
+        const Wwidth = input.getBoundingClientRect().width;
+        const Wheight = input.getBoundingClientRect().height;
+        const scaleX = 1920 / Wwidth;
+        const scaleY = 13580 / Wheight;
+        input.style.transformOrigin = 'top left';
+        input.style.transform = `scale(${scaleX}, ${scaleY})`;
+        const ratio = 792 / Wwidth;
+        const ratioY = 6600 / Wheight;
+        input.style.transform = `scale(${ratio}, ${ratioY})`;
+        const canvas = await html2canvas(input, ({ foreignObjectRendering: true, y: 0, x: 0 }));
+        const imgData = canvas.toDataURL('image/png');
+        input.style.transform = 'scale(1,1)';
+        const pdf = new jsPDF('p', 'mm', [600, 5000]);
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        pdf.save("download.pdf");
     }
 
     render() {

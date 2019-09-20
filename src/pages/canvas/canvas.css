@@ -4,6 +4,11 @@ path {
   stroke-width: 2;
 }
 
+page[size="A4"] {  
+  width: 21cm;
+  height: 29.7cm; 
+}
+
 path:hover {
   stroke: crimson !important;
   pointer-events: all;
@@ -65,7 +70,7 @@ path:hover {
   z-index: 2;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
-  position: absolute;
+  position: relative;
   box-shadow: 0px 8px 12px #ccc;
 }
 .button-container .back-button {
@@ -127,7 +132,7 @@ path:hover {
     z-index: 2;
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    position: absolute;
+    position: relative;
     box-shadow: 0px 8px 12px #ccc;
   }
   .button-container .back-button {
@@ -203,4 +208,3 @@ path:hover {
   .notRotate  {
     transform: none
   }
-
