@@ -20,7 +20,7 @@ export const CanvasOuterCustom = styled.div`
     background-size: 10px 10px;
     width: auto;
     height: 13500px;
-    overflow-x: scroll;
+    overflow: hidden;
     cursor: not-allowed;
     outline: none !important;
     background-repeat: no-repeat;

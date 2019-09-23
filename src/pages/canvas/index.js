@@ -4,8 +4,10 @@ import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import data from "./data.json";
 import { Helmet } from 'react-helmet';
 import './canvas.css'
+import * as print from './print.css'
 import { CanvasInnerCustom, Outer, CanvasOuterCustom } from '../../components/styleComponents';
 import { isMobile } from 'react-device-detect';
+import ReactToPrint from 'react-to-print';
 
 let nodes = data.nodes;
 let singleNode = {}
@@ -43,17 +45,46 @@ export default class CanvasIndexPage extends React.Component {
         });
     };
 
+    handlePrintBefore = async () => {
+        let x = await new Promise((res, _rej) => {
+            this.setState({
+                windowWidth: 1920,
+                windowHeight: 1440,
+            }, () => {
+                res(true);
+            });
+        })
+        return x;
+    };
+
+    handleAfterPrint = async () => {
+        let x = await new Promise((res, _rej) => {
+            this.setState({
+                windowWidth: window.innerWidth,
+                windowHeight: window.innerHeight,
+            }, () => {
+                res(true);
+            });
+        })
+        return x;
+    }
+
     componentDidMount() {
         this.handleResize();
+        this.handlePrintBefore();
+        this.handleAfterPrint();
         window.addEventListener('resize', this.handleResize);
+        window.addEventListener('beforeprint', this.handlePrintBefore);
+        window.addEventListener('afterprint', this.handleAfterPrint);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.handleResize)
+        window.removeEventListener('beforeprint', this.handlePrintBefore);
+        window.removeEventListener('afterprint', this.handleAfterPrint);
+        window.removeEventListener('resize', this.handleResize);
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log(this.state, nextState, nextProps)
+    shouldComponentUpdate(_nextProps, nextState) {
         if (isMobile && this.state.windowWidth === nextState.windowHeight) {
             return false;
         }
@@ -84,13 +115,13 @@ export default class CanvasIndexPage extends React.Component {
     xPos = (type) => {
         switch (type) {
             case '1-userExperience':
-                return this.state.windowWidth > 800 ? ((((this.state.windowWidth - 100) * 0.25) - 200) / 2) : 0;
+                return this.state.windowWidth > 800 ? ((((this.state.windowWidth - 100) * 0.25) - 200) / 2) : 0 ;
             case '2-marketSense':
-                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.25) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 100;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.25) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 200 ;
             case '3-technologyExcellence':
-                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.5) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 200;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.5) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 400;
             case '4-customerSuccess':
-                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.75) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 300;
+                return this.state.windowWidth > 800 ? (((this.state.windowWidth - 100) * 0.75) + ((((this.state.windowWidth - 100) * 0.25) - 200) / 2)) : 600;
             default:
                 return 0;
         }
@@ -121,11 +152,22 @@ export default class CanvasIndexPage extends React.Component {
         }
     }
 
-    complexChart = () => {
+    onBeforeGetContent = () => {
+        return new Promise((res, _rej) => {
+            this.setState({
+                windowWidth: 1920,
+                windowHeight: 1440,
+                shouldRender: 1920 * 1449
+            }, () => {
+                res(true)
+            })
+        });
+    }
 
+    complexChart = () => {
         nodes.sort((current, next) => (current.group > next.group) ? 1 : (current.group === next.group) ? ((current.type > next.type) ? 1 : ((current.order > next.order) ? 1 : -1)) : -1);
 
-        nodes.map((node, i) => {
+        nodes.map((node) => {
 
             // node structure
             let colorType = this.color(node.type);
@@ -203,26 +245,6 @@ export default class CanvasIndexPage extends React.Component {
             rotateButtonName: this.state.fliped ? "vertical-button" : "horizontal-button"
         });
     }
-    printDocument = async () => {
-        const input = document.getElementById('divToPrint');
-        const jsPDF = require('jspdf');
-        const html2canvas = require('html2canvas');
-        const Wwidth = input.getBoundingClientRect().width;
-        const Wheight = input.getBoundingClientRect().height;
-        const scaleX = 1920 / Wwidth;
-        const scaleY = 13580 / Wheight;
-        input.style.transformOrigin = 'top left';
-        input.style.transform = `scale(${scaleX}, ${scaleY})`;
-        const ratio = 792 / Wwidth;
-        const ratioY = 6600 / Wheight;
-        input.style.transform = `scale(${ratio}, ${ratioY})`;
-        const canvas = await html2canvas(input, ({ foreignObjectRendering: true, y: 0, x: 0 }));
-        const imgData = canvas.toDataURL('image/png');
-        input.style.transform = 'scale(1,1)';
-        const pdf = new jsPDF('p', 'mm', [600, 5000]);
-        pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.save("download.pdf");
-    }
 
     render() {
 
@@ -234,7 +256,7 @@ export default class CanvasIndexPage extends React.Component {
                 stroke: "black !important"
             },
             left: {
-                width: `${this.state.windowWidth - 100}px`
+                width: `${this.state.windowWidth > 800 ? this.state.windowWidth - 100 : 800 }px`
             },
             right: {
                 width: '100px'
@@ -337,18 +359,22 @@ export default class CanvasIndexPage extends React.Component {
                                 <button className={this.state.rotateButtonName} onClick={this.onClicked}>{this.state.rotateClassName}</button>
                             </div>
                         </div>
-                        <div className="button-container rightAlign">
-                            <div className="button-flipper hide textAlign">
-                                <button onClick={this.printDocument} className="front-button">Print</button>
-                                <button className="back-button">Print</button>
-                            </div>
-                        </div>
+                        <ReactToPrint
+                            trigger={() => <div className="button-container rightAlign">
+                                <div className="hide textAlign">
+                                    <button onClick={this.awaitTillPrint} className="front-button">Print</button>
+                                </div>
+                            </div>}
+                            content={() => this.componentRef}
+                            pageStyle={print}
+                            onBeforeGetContent={this.onBeforeGetContent}
+                        />
                     </div>
-                    <div id="divToPrint" className={this.state.rotateClass}>
-                        <div className="background">
-                            <div className="toggleColor">
+                    <div className={this.state.rotateClass}>
+                        <div className="background" ref={el => (this.componentRef = el)}>
+                            <div className="toggleColor printHelper">
                                 <div key={this.state.shouldRender} style={style.row}  >
-                                    <div id="getTheWidth" style={style.left} >
+                                    <div style={style.left} >
                                         <div className="zoomCanvas" style={style.tags}>
                                             <div className="canvasFont" style={style.userExpireence}>User Experience</div>
                                             <div className="canvasFont" style={style.marketSense}>Market Sense</div>

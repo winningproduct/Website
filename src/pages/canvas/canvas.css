@@ -4,11 +4,6 @@ path {
   stroke-width: 2;
 }
 
-page[size="A4"] {  
-  width: 21cm;
-  height: 29.7cm; 
-}
-
 path:hover {
   stroke: crimson !important;
   pointer-events: all;
@@ -18,7 +13,6 @@ path:hover {
 .buttonBox {
   display: flex ;
   margin: 10px ;
-  justify-content: flex-end ;
   margin-right: 100px;
 }
 
@@ -151,10 +145,7 @@ path:hover {
   }
 }
 .leftAlign {
-  width: 10%;
-}
-.rightAlign {
-  width: 10%;
+  margin-left: auto;
 }
 
 .textAlign {
@@ -207,4 +198,9 @@ path:hover {
   }
   .notRotate  {
     transform: none
+  }
+
+  .printHelper {
+    display: flex;
+    overflow-x: scroll;
   }
