@@ -85,7 +85,7 @@ export default class CanvasIndexPage extends React.Component {
     }
 
     shouldComponentUpdate(_nextProps, nextState) {
-        if (isMobile && this.state.windowWidth === nextState.windowHeight) {
+        if (isMobile && this.state.windowHeight === nextState.windowHeight) {
             return false;
         }
         if (this.state.fliped !== nextState.fliped) {
