@@ -47,36 +47,29 @@ collections:
                   label: "Id of the page",
                   name: id,
                   widget: string,
-                  required: true,
                 }
               - {
                   label: "Default group",
                   name: group,
                   widget: string,
-                  required: true,
                 }
               - {
                   label: "Default type",
                   name: type,
                   widget: string,
-                  required: true,
                 }
               - {
                   label: "Order",
                   name: order,
                   widget: number,
                   min: 1,
-                  required: true,
                 }
               - {
                   label: "Url to file",
                   name: url,
                   widget: string,
-                  required: true,
                 }
-              - {
-                  label: "linked files",
-                  name: to,
-                  widget: string,
-                  required: true,
-                }
+              - label: "linked files"
+                name: to
+                widget: list
+                
