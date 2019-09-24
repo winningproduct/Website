@@ -27,3 +27,48 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+  - name: "CanvasData"
+    label: "CanvasData"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: "data"
+        label: "Site data"
+        file: "src/pages/canvas/data.json"
+        description: "General Site data"
+        fields:
+          - label: "nodes"
+            name: nodes
+            widget: "list"
+            fields:
+              - {
+                  label: "Id of the page",
+                  name: id,
+                  widget: string,
+                }
+              - {
+                  label: "Default group",
+                  name: group,
+                  widget: string,
+                }
+              - {
+                  label: "Default type",
+                  name: type,
+                  widget: string,
+                }
+              - {
+                  label: "Order",
+                  name: order,
+                  widget: number,
+                  min: 1,
+                }
+              - {
+                  label: "Url to file",
+                  name: url,
+                  widget: string,
+                }
+              - label: "linked files"
+                name: to
+                widget: list
+                
