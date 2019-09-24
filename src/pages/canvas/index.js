@@ -91,7 +91,7 @@ export default class CanvasIndexPage extends React.Component {
         if (this.state.fliped !== nextState.fliped) {
             return true;
         }
-        if (this.state.shouldRender === nextState.shouldRende) {
+        if (this.state.shouldRender === nextState.shouldRender) {
             return false;
         }
         return true
@@ -353,7 +353,7 @@ export default class CanvasIndexPage extends React.Component {
                     </Helmet>
                 </div>
                 <div>
-                    <div className="buttonBox">
+                    <div className="buttonBox hide">
                         <div className="button-container leftAlign">
                             <div className="hide textAlign">
                                 <button className={this.state.rotateButtonName} onClick={this.onClicked}>{this.state.rotateClassName}</button>
