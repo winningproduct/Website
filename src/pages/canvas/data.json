@@ -768,12 +768,11 @@
     },
     {
       "id": "test",
-      "group": "9-retier",
-      "type": "1-userExpirence",
+      "group": "9-Retire",
+      "type": "",
       "order": 9,
       "url": "none",
-      "to": [
-      ]
+      "to": []
     }
   ]
 }

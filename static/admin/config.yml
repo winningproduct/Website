@@ -46,24 +46,28 @@ collections:
                   label: "Id of the page",
                   name: id,
                   widget: string,
-                  required: false
+                  required: false,
+                  default: "test"
                 }
               - {
                   label: "Default group",
                   name: group,
                   widget: string,
-                  required: false
+                  required: false,
+                  default: "9-Retire"
                 }
               - {
                   label: "Default type",
                   name: type,
                   widget: string,
-                  required: false
+                  required: false,
+                  default: "1-userExperience"
                 }
               - {
                   label: "Order",
                   name: order,
                   widget: number,
+                  default: 1,
                   min: 1,
                   required: false
                 }
@@ -71,10 +75,12 @@ collections:
                   label: "Url to file",
                   name: url,
                   widget: string,
+                  default: "",
                   required: false
                 }
               - label: "linked files"
                 name: to
                 widget: list
-                required: false
+                required: false,
+                default: ["test"]
                 

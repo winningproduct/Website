@@ -148,7 +148,7 @@ export default class CanvasIndexPage extends React.Component {
             case '9-Retire':
                 return { y: 11800 };
             default:
-                return null;
+                return 0;
         }
     }
 
