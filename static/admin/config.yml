@@ -43,7 +43,6 @@ collections:
             name: nodes
             widget: "list"
             fields:
-              [
               - {
                   label: "Id of the page",
                   name: id,
@@ -81,4 +80,3 @@ collections:
                   widget: string,
                   required: true,
                 }
-              ]
