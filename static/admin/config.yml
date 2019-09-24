@@ -41,7 +41,7 @@ collections:
         fields:
           - label: "nodes"
             name: nodes
-            widget: "object"
+            widget: "list"
             fields:
               - {
                   label: "Id of the page",
