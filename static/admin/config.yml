@@ -81,6 +81,6 @@ collections:
               - label: "linked files"
                 name: to
                 widget: list
-                required: false,
+                required: false
                 default: ["test"]
                 
