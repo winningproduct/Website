@@ -772,7 +772,10 @@
       "type": "",
       "order": 9,
       "url": "none",
-      "to": []
+      "to": [
+        "test",
+        "west"
+      ]
     }
   ]
 }
