@@ -21,6 +21,10 @@
     font-size: 25px !important;
     font-weight: 600 !important;
   }
+  .lh {
+    text-align: center;
+    line-height: 110px;
+  }
   .toggleColor {
     zoom: 0.405;
     background: linear-gradient(

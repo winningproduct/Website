@@ -11,8 +11,8 @@ path:hover {
   stroke-width: 10px;
 }
 .buttonBox {
-  display: flex ;
-  margin: 10px ;
+  display: flex;
+  margin: 10px;
   margin-right: 100px;
 }
 
@@ -71,7 +71,7 @@ path:hover {
   cursor: pointer;
   width: 150px;
   height: 40px;
-  background-color: #26C281;
+  background-color: #26c281;
   border: none;
   border-radius: 2rem;
   font-size: 1em;
@@ -102,7 +102,7 @@ path:hover {
   cursor: pointer;
   width: 150px;
   height: 40px;
-  background-color: #26C281;
+  background-color: #26c281;
   border: none;
   border-radius: 2rem;
   font-size: 1em;
@@ -133,7 +133,7 @@ path:hover {
     cursor: pointer;
     width: 75px;
     height: 20px;
-    background-color: #26C281;
+    background-color: #26c281;
     border: none;
     border-radius: 2rem;
     font-size: 1em;
@@ -144,63 +144,69 @@ path:hover {
     box-shadow: 0px 8px 12px #ccc;
   }
 }
+
+.row {
+  display: flex;
+}
 .leftAlign {
   margin-left: auto;
 }
 
-.textAlign {
-  text-align: center
+.text-align-center {
+  text-align: center;
 }
 
-.contentExplore {
-    height: 950px;
-    text-align: center;
-  }
-  .contentFocus {
-    height: 1050px;
-    text-align: center;
-  }
-  .contentImmerse {
-    height: 1200px;
-    text-align: center;
-  }
-  .contentPlan {
-    height: 1650px;
-    text-align: center;
-  }
-  .contentBuild {
-    height: 2250px;
-    text-align: center;
-  }
-  .contentStabilize {
-    height: 1950px;
-    text-align: center;
-  }
-  .contentOptimize {
-    height: 1600px;
-    text-align: center;
-  }
-  .contentHarvest {
-    height: 1100px;
-    text-align: center;
-  }
-  .contentRetier {
-    height: 1450px;
-    text-align: center;
-  }
+.rotateDiv {
+  transform-origin: 50% 0%;
+  transform: translate(-50%, 50%) rotate(-90deg) scale(1);
+  overflow: scroll;
+  height: 100vw !important;
+  width: 100vw;
+}
+.notRotate {
+  transform: none;
+}
 
-  .rotateDiv {
-    transform-origin: 50% 0%;
-    transform: translate(-50%, 50%) rotate(-90deg) scale(1);
-    overflow: scroll;
-    height: 100vw !important;
-    width: 100vw;
-  }
-  .notRotate  {
-    transform: none
-  }
+.printHelper {
+  display: flex;
+  overflow-x: scroll;
+}
 
-  .printHelper {
-    display: flex;
-    overflow-x: scroll;
-  }
+.textCanvas {
+  writing-mode: vertical-rl;
+  color: #333333b0;
+  text-orientation: mixed;
+  font-family: sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.userExpireence {
+  background-color: rgb(255, 171, 64);
+}
+.marketSense {
+  background-color: rgb(142, 124, 195);
+}
+.technologyExcellence {
+  background-color: rgb(106, 168, 79);
+}
+.customerSuccess {
+  background-color: rgb(109, 158, 235);
+}
+.mainBarTags {
+  display: flex;
+}
+
+.mainBarCommon {
+  width: 25%;
+  color: white;
+  height: 80px;
+  line-height: 80px;
+  font-size: 20px;
+}
+.right {
+  width: 100px;
+}

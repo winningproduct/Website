@@ -1,0 +1,19 @@
+{
+    "color" : {
+        "1-userExperience" : "rgb(255, 171, 64)",
+        "2-marketSense" : "rgb(142, 124, 195)",
+        "3-technologyExcellence": "rgb(106, 168, 79)",
+        "4-customerSuccess" : "rgb(109, 158, 235)"
+    } ,
+    "type" : [
+        "Explore",
+        "Focus",
+        "Immerse",
+        "Plan",
+        "Build",
+        "Stabilize",
+        "Optimize",
+        "Harvest",
+        "Retire"
+    ]
+}

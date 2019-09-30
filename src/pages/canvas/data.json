@@ -127,7 +127,7 @@
     },
     {
       "id": "Positioning Messages",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "3-technologyExcellence",
       "order": 3,
       "url": "google.com",
@@ -137,7 +137,7 @@
     },
     {
       "id": "Product Market-Fit Validation",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "3-technologyExcellence",
       "order": 7,
       "url": "google.com",
@@ -147,7 +147,7 @@
     },
     {
       "id": "Brand Guide",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "1-userExperience",
       "order": 1,
       "url": "google.com",
@@ -157,7 +157,7 @@
     },
     {
       "id": "High-fidelity Prototype",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "1-userExperience",
       "order": 6,
       "url": "google.com",
@@ -167,7 +167,7 @@
     },
     {
       "id": "Information Architecture",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "1-userExperience",
       "order": 2,
       "url": "google.com",
@@ -178,7 +178,7 @@
     },
     {
       "id": "Product Roadmap",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "4-customerSuccess",
       "order": 8,
       "url": "google.com",
@@ -186,7 +186,7 @@
     },
     {
       "id": "Engineering Estimations",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "3-technologyExcellence",
       "order": 4,
       "url": "google.com",
@@ -196,7 +196,7 @@
     },
     {
       "id": "Operational Estimation",
-      "group": "3-immerse",
+      "group": "3-Immerse",
       "type": "4-customerSuccess",
       "order": 5,
       "url": "google.com",
@@ -305,7 +305,7 @@
       "id": "Lead Capture/CMS",
       "group": "5-Build",
       "type": "1-userExperience",
-      "order": 4,
+      "order": 3,
       "url": "google.com",
       "to": []
     },
@@ -313,7 +313,7 @@
       "id": "User Behaviour Analysis",
       "group": "5-Build",
       "type": "1-userExperience",
-      "order": 9,
+      "order": 8,
       "url": "google.com",
       "to": [
         "Feature Prioritization Process"
@@ -323,7 +323,7 @@
       "id": "Innovation Accounting",
       "group": "5-Build",
       "type": "1-userExperience",
-      "order": 11,
+      "order": 10,
       "url": "google.com",
       "to": []
     },
@@ -331,7 +331,7 @@
       "id": "Product Pricing Plan",
       "group": "5-Build",
       "type": "2-marketSense",
-      "order": 14,
+      "order": 13,
       "url": "google.com",
       "to": [
         "User License Management"
@@ -341,7 +341,7 @@
       "id": "Market Feedback Capture",
       "group": "5-Build",
       "type": "2-marketSense",
-      "order": 6,
+      "order": 5,
       "url": "google.com",
       "to": [
         "Feature Prioritization Process"
@@ -359,7 +359,7 @@
       "id": "Feature Prioritization Process",
       "group": "5-Build",
       "type": "3-technologyExcellence",
-      "order": 10,
+      "order": 9,
       "url": "google.com",
       "to": [
         "Release Gate Reviews"
@@ -369,7 +369,7 @@
       "id": "User License Management",
       "group": "5-Build",
       "type": "3-technologyExcellence",
-      "order": 15,
+      "order": 14,
       "url": "google.com",
       "to": []
     },
@@ -377,7 +377,7 @@
       "id": "Technical Debt Management",
       "group": "5-Build",
       "type": "3-technologyExcellence",
-      "order": 7,
+      "order": 6,
       "url": "google.com",
       "to": []
     },
@@ -385,7 +385,7 @@
       "id": "Team Onboarding & Learning Plan",
       "group": "5-Build",
       "type": "3-technologyExcellence",
-      "order": 12,
+      "order": 11,
       "url": "google.com",
       "to": []
     },
@@ -401,7 +401,7 @@
       "id": "Data Privacy Protection",
       "group": "5-Build",
       "type": "4-customerSuccess",
-      "order": 8,
+      "order": 7,
       "url": "google.com",
       "to": []
     },
@@ -409,7 +409,7 @@
       "id": "Release Gate Reviews",
       "group": "5-Build",
       "type": "4-customerSuccess",
-      "order": 13,
+      "order": 12,
       "url": "google.com",
       "to": []
     },
@@ -417,7 +417,7 @@
       "id": "Visitor Behaviour Analysis",
       "group": "5-Build",
       "type": "1-userExperience",
-      "order": 5,
+      "order": 4,
       "url": "google.com",
       "to": []
     },

@@ -30,7 +30,6 @@ export const ModelPostTemplate = ({
         "https://api.github.com/repos/WPOcanvas/Model/commits?path=" + slug.split('/')[1] + '/' + slug.split('/')[2] + '/' + slug.split('/')[3] + '.md'
       )
       .then(({ data }) => {
-        console.log(data)
         data.map(item => {
          return commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date});
 
