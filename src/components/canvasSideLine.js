@@ -1,6 +1,6 @@
 import React from 'react';
 import '../pages/canvas/canvas.css'
-import Aux from './Hoc/Aux';
+import Aux from './aux';
 import types from "../pages/canvas/types.json";
 import SideCanvasItem from './CanvasSideLineItem';
 const type = types.type;
