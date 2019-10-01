@@ -9,7 +9,6 @@ import ReactToPrint from "react-to-print";
 import SideCanvas from "../../components/canvasSideLine";
 import Canvas from "../../components/Canvas";
 import types from "./types.json";
-import Aux from "../../components/aux";
 import CanvasHeadBar from "../../components/CanvasHeadBar";
 
 let nodes = data.nodes;
