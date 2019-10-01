@@ -2,12 +2,33 @@
   "title": "Plan",
   "nodes": [
     {
-      "id": "Sales Interface",
+      "id": "Go-To-Market Planning",
       "group": "4-Plan",
-      "type": "1-userExperience",
-      "order": 9,
+      "type": "2-marketSense",
+      "order": 1,
       "url": "google.com",
       "to": []
+    },
+    {
+      "id": "Architecture Blueprint in code",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 2,
+      "url": "google.com",
+      "to": [
+        "CI/CD Pipelines",
+        "Product Theme Integration"
+      ]
+    },
+    {
+      "id": "Data Schema Design",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 3,
+      "url": "google.com",
+      "to": [
+        "Architecture Blueprint in code"
+      ]
     },
     {
       "id": "Growth Hacking Plan",
@@ -15,7 +36,35 @@
       "type": "2-marketSense",
       "order": 4,
       "url": "google.com",
-      "to": ["Digital Marketing Plan"]
+      "to": [
+        "Digital Marketing Plan"
+      ]
+    },
+    {
+      "id": "Engineering Process/team structure",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "CI/CD Pipelines",
+      "group": "4-Plan",
+      "type": "4-customerSuccess",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Quality Assurance Plan",
+      "group": "4-Plan",
+      "type": "3-technologyExcellence",
+      "order": 7,
+      "url": "google.com",
+      "to": [
+        "Define Key Metric Tests"
+      ]
     },
     {
       "id": "Digital Marketing Plan",
@@ -26,18 +75,10 @@
       "to": []
     },
     {
-      "id": "Go-To-Market Planning",
+      "id": "Sales Interface",
       "group": "4-Plan",
-      "type": "2-marketSense",
-      "order": 1,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Engineering Process/team structure",
-      "group": "4-Plan",
-      "type": "3-technologyExcellence",
-      "order": 5,
+      "type": "1-userExperience",
+      "order": 9,
       "url": "google.com",
       "to": []
     },
@@ -50,44 +91,14 @@
       "to": []
     },
     {
-      "id": "Architecture Blueprint in code",
-      "group": "4-Plan",
-      "type": "3-technologyExcellence",
-      "order": 2,
-      "url": "google.com",
-      "to": ["CI/CD Pipelines", "Product Theme Integration"]
-    },
-    {
-      "id": "Quality Assurance Plan",
-      "group": "4-Plan",
-      "type": "3-technologyExcellence",
-      "order": 7,
-      "url": "google.com",
-      "to": ["Define Key Metric Tests"]
-    },
-    {
-      "id": "Data Schema Design",
-      "group": "4-Plan",
-      "type": "3-technologyExcellence",
-      "order": 3,
-      "url": "google.com",
-      "to": ["Architecture Blueprint in code"]
-    },
-    {
-      "id": "CI/CD Pipelines",
-      "group": "4-Plan",
-      "type": "4-customerSuccess",
-      "order": 6,
-      "url": "google.com",
-      "to": []
-    },
-    {
       "id": "Define Key Metric Tests",
       "group": "4-Plan",
       "type": "4-customerSuccess",
       "order": 11,
       "url": "google.com",
-      "to": ["Test Automation Setup"]
+      "to": [
+        "Test Automation Setup"
+      ]
     }
   ]
 }
