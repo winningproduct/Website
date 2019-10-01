@@ -2,12 +2,26 @@
   "title": "Focus",
   "nodes": [
     {
-      "id": "Brand Story Development",
+      "id": "Low-ﬁdelity Prototype",
       "group": "2-Focus",
-      "type": "2-marketSense",
-      "order": 4,
+      "type": "1-userExperience",
+      "order": 1,
       "url": "google.com",
-      "to": ["Brand Guide", "Positioning Messages"]
+      "to": [
+        "Problem Solution Fit Testing",
+        "Information Architecture"
+      ]
+    },
+    {
+      "id": "MVP Identiﬁcation",
+      "group": "2-Focus",
+      "type": "3-technologyExcellence",
+      "order": 2,
+      "url": "google.com",
+      "to": [
+        "Problem Solution Fit Testing",
+        "Product Roadmap"
+      ]
     },
     {
       "id": "Business Model Design",
@@ -15,7 +29,31 @@
       "type": "2-marketSense",
       "order": 3,
       "url": "google.com",
-      "to": ["Product Market-Fit Validation"]
+      "to": [
+        "Product Market-Fit Validation"
+      ]
+    },
+    {
+      "id": "Brand Story Development",
+      "group": "2-Focus",
+      "type": "2-marketSense",
+      "order": 4,
+      "url": "google.com",
+      "to": [
+        "Brand Guide",
+        "Positioning Messages"
+      ]
+    },
+    {
+      "id": "Platform Architecture",
+      "group": "2-Focus",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": [
+        "Engineering Estimations",
+        "Operational Estimation"
+      ]
     },
     {
       "id": "Product Architecture",
@@ -23,7 +61,9 @@
       "type": "3-technologyExcellence",
       "order": 6,
       "url": "google.com",
-      "to": ["Engineering Estimations"]
+      "to": [
+        "Engineering Estimations"
+      ]
     },
     {
       "id": "Problem Solution Fit Testing",
@@ -32,30 +72,6 @@
       "order": 7,
       "url": "google.com",
       "to": []
-    },
-    {
-      "id": "Low-ﬁdelity Prototype",
-      "group": "2-Focus",
-      "type": "1-userExperience",
-      "order": 1,
-      "url": "google.com",
-      "to": ["Problem Solution Fit Testing", "Information Architecture"]
-    },
-    {
-      "id": "Platform Architecture",
-      "group": "2-Focus",
-      "type": "3-technologyExcellence",
-      "order": 5,
-      "url": "google.com",
-      "to": ["Engineering Estimations", "Operational Estimation"]
-    },
-    {
-      "id": "MVP Identiﬁcation",
-      "group": "2-Focus",
-      "type": "3-technologyExcellence",
-      "order": 2,
-      "url": "google.com",
-      "to": ["Problem Solution Fit Testing", "Product Roadmap"]
     }
   ]
 }
