@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import data from "./data/data.json";
 import { Helmet } from "react-helmet";
 import "./canvas.css";
 import * as print from "./print.css";
@@ -11,8 +10,9 @@ import Canvas from "../../components/Canvas";
 import types from "./types.json";
 import CanvasHeadBar from "../../components/CanvasHeadBar";
 import Aux from "../../components/hocAux";
+import CanvasData from "../../components/canvasDataHandler";
 
-let nodes = data.nodes;
+let nodes = CanvasData
 let singleNode = {};
 let allLinks = {};
 let bigNode = {};

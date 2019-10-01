@@ -22,8 +22,8 @@ const SideCanvas = (props) => {
     let style = typeGenarator();
 
     const divGenarator = () => {
-        return type.map((type) => {
-            return <SideCanvasItem sideStyle={style[type]} name={type} />
+        return type.map((type, i) => {
+            return <SideCanvasItem key={i} sideStyle={style[type]} name={type} />
         })
     }
     return (
