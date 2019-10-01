@@ -10,6 +10,7 @@ import SideCanvas from "../../components/canvasSideLine";
 import Canvas from "../../components/Canvas";
 import types from "./types.json";
 import CanvasHeadBar from "../../components/CanvasHeadBar";
+import Aux from "../../components/hocAux";
 
 let nodes = data.nodes;
 let singleNode = {};

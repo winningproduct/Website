@@ -1,6 +1,6 @@
 import React from 'react';
 import '../pages/canvas/canvas.css'
-
+import Aux from './hocAux';
 const SideCanvasItem = (props) => {
     return (
         <Aux>
