@@ -2,20 +2,33 @@
   "title": "Explore",
   "nodes": [
     {
-      "id": "Personas",
-      "group": "1-Explore",
-      "type": "1-userExperience",
-      "order": 3,
-      "url": "persona-user-journey",
-      "to": ["Value Proposition Design"]
-    },
-    {
       "id": "Context / Competitor Analysis",
       "group": "1-Explore",
       "type": "2-marketSense",
       "order": 1,
       "url": "context-competitor-analysis",
-      "to": ["Personas", "Commercial Viability"]
+      "to": [
+        "Personas",
+        "Commercial Viability"
+      ]
+    },
+    {
+      "id": "Commercial Viability",
+      "group": "1-Explore",
+      "type": "2-marketSense",
+      "order": 2,
+      "url": "commercial-viability",
+      "to": []
+    },
+    {
+      "id": "Personas",
+      "group": "1-Explore",
+      "type": "1-userExperience",
+      "order": 3,
+      "url": "persona-user-journey",
+      "to": [
+        "Value Proposition Design"
+      ]
     },
     {
       "id": "Value Proposition Design",
@@ -28,14 +41,6 @@
         "Business Model Desing",
         "Service Blueprint / User Journey"
       ]
-    },
-    {
-      "id": "Commercial Viability",
-      "group": "1-Explore",
-      "type": "2-marketSense",
-      "order": 2,
-      "url": "commercial-viability",
-      "to": []
     },
     {
       "id": "Service Blueprint / User Journey",
