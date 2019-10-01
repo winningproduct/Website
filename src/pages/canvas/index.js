@@ -345,7 +345,7 @@ class CanvasIndexPage extends React.Component {
                                     </div>
                                     <div className="textCanvas" className="right">
                                         <Aux>
-                                            <SideCanvas sidelineHeight={typeCount} />
+                                            <SideCanvas sidelineHeight={typeCount} directory={edges} />
                                         </Aux>
                                     </div>
                                 </div>

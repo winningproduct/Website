@@ -1,20 +1,24 @@
 import React from 'react';
 import '../pages/canvas/canvas.css'
-import types from "../pages/canvas/types.json";
 import SideCanvasItem from './CanvasSideLineItem';
 import Aux from './hocAux';
-const type = types.type;
-
 
 const SideCanvas = (props) => {
     let hightTypes = props.sidelineHeight;
+    let edge = props.directory;
+    let directoryNames = [];
+    edge.map((nodesX) => {
+        directoryNames.push(nodesX.node.title)
+    });
+    directoryNames.sort();
+    console.log(directoryNames)
     const typeGenarator = () => {
         let style = {};
-        type.map((type, i) => {
+        directoryNames.map((type, i) => {
             if (i === 0) {
-                style[`${type}`] = { height: `${hightTypes[type] + 150}px` }
+                style[`${type.split('-')[1]}`] = { height: `${hightTypes[type.split('-')[1]] + 150}px` }
             } else {
-                style[`${type}`] = { height: `${hightTypes[type]}px` }
+                style[`${type.split('-')[1]}`] = { height: `${hightTypes[type.split('-')[1]]}px` }
             }
         });
         return style;
@@ -22,8 +26,8 @@ const SideCanvas = (props) => {
     let style = typeGenarator();
 
     const divGenarator = () => {
-        return type.map((type, i) => {
-            return <SideCanvasItem key={i} sideStyle={style[type]} name={type} />
+        return directoryNames.map((type, i) => {
+            return <SideCanvasItem key={i} sideStyle={style[type.split('-')[1]]} name={type.split('-')[1]} />
         })
     }
     return (
