@@ -28,7 +28,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 
-  - name: "CanvasData"
+  - name: "data"
     label: "CanvasData"
     delete: false # Prevent users from deleting documents in this collection
     editor:
@@ -36,6 +36,7 @@ collections:
     folder: "src/pages/canvas/data"
     extension: json
     fields:
+      - { label: "Title", name: "title", widget: "string" }
       - label: "nodes"
         name: nodes
         widget: "list"
