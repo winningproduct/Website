@@ -81,7 +81,6 @@ class CanvasIndexPage extends React.Component {
         window.addEventListener("beforeprint", this.handlePrintBefore);
         window.addEventListener("afterprint", this.handleAfterPrint);
         document.getElementById('backGround').style.setProperty('background', this.getBackgroundFilter(this.props.data.allDataJson.edges));
-
     }
 
     componentWillUnmount() {
