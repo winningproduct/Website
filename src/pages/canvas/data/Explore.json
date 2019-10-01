@@ -1,0 +1,58 @@
+{
+    "nodes": [
+      {
+        "id": "Personas",
+        "group": "1-Explore",
+        "type": "1-userExperience",
+        "order": 3,
+        "url": "persona-user-journey",
+        "to": [
+          "Value Proposition Design"
+        ]
+      },
+      {
+        "id": "Context / Competitor Analysis",
+        "group": "1-Explore",
+        "type": "2-marketSense",
+        "order": 1,
+        "url": "context-competitor-analysis",
+        "to": [
+          "Personas",
+          "Commercial Viability"
+        ]
+      },
+      {
+        "id": "Value Proposition Design",
+        "group": "1-Explore",
+        "type": "2-marketSense",
+        "order": 4,
+        "url": "value-proposition",
+        "to": [
+          "Brand Story Development",
+          "Business Model Desing",
+          "Service Blueprint / User Journey"
+        ]
+      },
+      {
+        "id": "Commercial Viability",
+        "group": "1-Explore",
+        "type": "2-marketSense",
+        "order": 2,
+        "url": "commercial-viability",
+        "to": []
+      },
+      {
+        "id": "Service Blueprint / User Journey",
+        "group": "1-Explore",
+        "type": "4-customerSuccess",
+        "order": 5,
+        "url": "google.com",
+        "to": [
+          "Product Architecture",
+          "Low-fidelity Prototype",
+          "Platform Architecture"
+        ]
+      }
+    ]
+}
+  

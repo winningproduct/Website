@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import data from "./data.json";
+import data from "./data/data.json";
 import { Helmet } from "react-helmet";
 import "./canvas.css";
 import * as print from "./print.css";
