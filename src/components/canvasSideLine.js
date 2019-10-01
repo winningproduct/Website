@@ -11,7 +11,6 @@ const SideCanvas = (props) => {
         directoryNames.push(nodesX.node.title)
     });
     directoryNames.sort();
-    console.log(directoryNames)
     const typeGenarator = () => {
         let style = {};
         directoryNames.map((type, i) => {

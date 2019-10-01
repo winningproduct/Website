@@ -26,7 +26,7 @@ let gapBetween = [];
 let boundaries = []
 
 class CanvasIndexPage extends React.Component {
-    
+
     state = {
         windowWidth: 1920,
         windowHeight: 1440,
@@ -80,7 +80,7 @@ class CanvasIndexPage extends React.Component {
         window.addEventListener("resize", this.handleResize);
         window.addEventListener("beforeprint", this.handlePrintBefore);
         window.addEventListener("afterprint", this.handleAfterPrint);
-        document.getElementById('backGround').style.setProperty('background', this.getBackgroundFilter());
+        document.getElementById('backGround').style.setProperty('background', this.getBackgroundFilter(this.props.data.allDataJson.edges));
 
     }
 
@@ -154,7 +154,7 @@ class CanvasIndexPage extends React.Component {
     complexChart = (edges) => {
         nodes = []
         edges.map((nodesX) => {
-            nodesX.node.nodes.map( node => {
+            nodesX.node.nodes.map(node => {
                 nodes.push(node);
             })
         });
@@ -268,13 +268,18 @@ class CanvasIndexPage extends React.Component {
         });
     };
 
-    getBackgroundFilter = () => {
+    getBackgroundFilter = (edge) => {
+        let directoryNames = [];
+        edge.map((nodesX) => {
+            directoryNames.push(nodesX.node.title)
+        });
+        directoryNames.sort();
         let s = 'linear-gradient(180deg';
-        type.map((type, i) => {
+        directoryNames.map((type, i) => {
             if (i === 0) {
                 return true;
             }
-            let value = boundaries[type] + 150;
+            let value = boundaries[type.split('-')[1]] + 150;
             s = s.concat(`, #fff ${value}px , #f3f3f3 ${value}px`);
         });
         s = s.concat(')');
@@ -361,7 +366,7 @@ class CanvasIndexPage extends React.Component {
 
 export default () => (
     <StaticQuery
-      query={graphql`
+        query={graphql`
       query canvasDataQuery {
         allDataJson {
             edges {
@@ -380,6 +385,6 @@ export default () => (
     }
 }
       `}
-      render={ (data) => <CanvasIndexPage data={data} /> }
+        render={(data) => <CanvasIndexPage data={data} />}
     />
-  )
+)
