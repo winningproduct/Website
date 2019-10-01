@@ -31,6 +31,7 @@ collections:
   - name: "data"
     label: "CanvasData"
     delete: false # Prevent users from deleting documents in this collection
+    create: true
     editor:
       preview: false
     folder: "src/pages/canvas/data"
