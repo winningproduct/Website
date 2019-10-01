@@ -7,9 +7,7 @@
       "type": "1-userExperience",
       "order": 3,
       "url": "persona-user-journey",
-      "to": [
-        "Value Proposition Design"
-      ]
+      "to": ["Value Proposition Design"]
     },
     {
       "id": "Context / Competitor Analysis",
@@ -17,10 +15,7 @@
       "type": "2-marketSense",
       "order": 1,
       "url": "context-competitor-analysis",
-      "to": [
-        "Personas",
-        "Commercial Viability"
-      ]
+      "to": ["Personas", "Commercial Viability"]
     },
     {
       "id": "Value Proposition Design",
@@ -52,16 +47,6 @@
         "Product Architecture",
         "Low-fidelity Prototype",
         "Platform Architecture"
-      ]
-    },
-    {
-      "id": "test",
-      "group": "1-Explore",
-      "type": "1-userExperience",
-      "order": 1,
-      "url": "",
-      "to": [
-        "test"
       ]
     }
   ]

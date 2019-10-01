@@ -1,0 +1,61 @@
+{
+  "title": "Harvest",
+  "nodes": [
+    {
+      "id": "Invent OR Improve Decision",
+      "group": "8-Harvest",
+      "type": "2-marketSense",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Technology Updation/ Migration Plan"]
+    },
+    {
+      "id": "Referrals and Upsales Plan",
+      "group": "8-Harvest",
+      "type": "2-marketSense",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Systems monitoring",
+      "group": "8-Harvest",
+      "type": "4-customerSuccess",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Technology Updation/ Migration Plan",
+      "group": "8-Harvest",
+      "type": "3-technologyExcellence",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Data Migration Plan"]
+    },
+    {
+      "id": "Data Migration Plan",
+      "group": "8-Harvest",
+      "type": "4-customerSuccess",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Stakeholder Retirement Consent",
+      "group": "8-Harvest",
+      "type": "2-marketSense",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Account Migration Plan"]
+    },
+    {
+      "id": "Feature Usage Analysis",
+      "group": "8-Harvest",
+      "type": "1-userExperience",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    }
+  ]
+}

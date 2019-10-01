@@ -1,0 +1,69 @@
+{
+  "title": "Immerse",
+  "nodes": [
+    {
+      "id": "Positioning Messages",
+      "group": "3-Immerse",
+      "type": "3-technologyExcellence",
+      "order": 3,
+      "url": "google.com",
+      "to": ["Sales Interface"]
+    },
+    {
+      "id": "Product Market-Fit Validation",
+      "group": "3-Immerse",
+      "type": "3-technologyExcellence",
+      "order": 7,
+      "url": "google.com",
+      "to": ["Go-To-Market Planning"]
+    },
+    {
+      "id": "Brand Guide",
+      "group": "3-Immerse",
+      "type": "1-userExperience",
+      "order": 1,
+      "url": "google.com",
+      "to": ["High-fidelity Prototype"]
+    },
+    {
+      "id": "High-fidelity Prototype",
+      "group": "3-Immerse",
+      "type": "1-userExperience",
+      "order": 6,
+      "url": "google.com",
+      "to": ["Product Theme Integration"]
+    },
+    {
+      "id": "Information Architecture",
+      "group": "3-Immerse",
+      "type": "1-userExperience",
+      "order": 2,
+      "url": "google.com",
+      "to": ["High-fidelity Prototype", "Data Schema Design"]
+    },
+    {
+      "id": "Product Roadmap",
+      "group": "3-Immerse",
+      "type": "4-customerSuccess",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Engineering Estimations",
+      "group": "3-Immerse",
+      "type": "3-technologyExcellence",
+      "order": 4,
+      "url": "google.com",
+      "to": ["Product Roadmap"]
+    },
+    {
+      "id": "Operational Estimation",
+      "group": "3-Immerse",
+      "type": "4-customerSuccess",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    }
+  ]
+}

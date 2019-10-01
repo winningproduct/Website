@@ -1,0 +1,77 @@
+{
+  "title": "Retire",
+  "nodes": [
+    {
+      "id": "Account Migration Plan",
+      "group": "9-Retire",
+      "type": "3-technologyExcellence",
+      "order": 1,
+      "url": "google.com",
+      "to": ["Digital Data Shredding"]
+    },
+    {
+      "id": "Competitor Analysis",
+      "group": "9-Retire",
+      "type": "",
+      "order": 2,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Digital Data Shredding",
+      "group": "9-Retire",
+      "type": "4-customerSuccess",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Commercial-Viability",
+      "group": "9-Retire",
+      "type": "",
+      "order": 4,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Team Knowledge Transfer Plan",
+      "group": "9-Retire",
+      "type": "3-technologyExcellence",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Persona/ User Journey",
+      "group": "9-Retire",
+      "type": "",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Side-by-side Operation Plan",
+      "group": "9-Retire",
+      "type": "4-customerSuccess",
+      "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Derive UVP",
+      "group": "9-Retire",
+      "type": "",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "test",
+      "group": "9-Retire",
+      "type": "",
+      "order": 9,
+      "url": "none",
+      "to": ["test", "west"]
+    }
+  ]
+}
