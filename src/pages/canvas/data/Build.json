@@ -2,82 +2,10 @@
   "title": "Build",
   "nodes": [
     {
-      "id": "Lead Capture/CMS",
-      "group": "5-Build",
-      "type": "1-userExperience",
-      "order": 3,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "User Behaviour Analysis",
-      "group": "5-Build",
-      "type": "1-userExperience",
-      "order": 8,
-      "url": "google.com",
-      "to": ["Feature Prioritization Process"]
-    },
-    {
-      "id": "Innovation Accounting",
-      "group": "5-Build",
-      "type": "1-userExperience",
-      "order": 10,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Product Pricing Plan",
-      "group": "5-Build",
-      "type": "2-marketSense",
-      "order": 13,
-      "url": "google.com",
-      "to": ["User License Management"]
-    },
-    {
-      "id": "Market Feedback Capture",
-      "group": "5-Build",
-      "type": "2-marketSense",
-      "order": 5,
-      "url": "google.com",
-      "to": ["Feature Prioritization Process"]
-    },
-    {
       "id": "Code Quality Process",
       "group": "5-Build",
       "type": "3-technologyExcellence",
       "order": 1,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Feature Prioritization Process",
-      "group": "5-Build",
-      "type": "3-technologyExcellence",
-      "order": 9,
-      "url": "google.com",
-      "to": ["Release Gate Reviews"]
-    },
-    {
-      "id": "User License Management",
-      "group": "5-Build",
-      "type": "3-technologyExcellence",
-      "order": 14,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Technical Debt Management",
-      "group": "5-Build",
-      "type": "3-technologyExcellence",
-      "order": 6,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Team Onboarding & Learning Plan",
-      "group": "5-Build",
-      "type": "3-technologyExcellence",
-      "order": 11,
       "url": "google.com",
       "to": []
     },
@@ -90,10 +18,80 @@
       "to": []
     },
     {
+      "id": "Lead Capture/CMS",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 3,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Visitor Behaviour Analysis",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 4,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Market Feedback Capture",
+      "group": "5-Build",
+      "type": "2-marketSense",
+      "order": 5,
+      "url": "google.com",
+      "to": [
+        "Feature Prioritization Process"
+      ]
+    },
+    {
+      "id": "Technical Debt Management",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
       "id": "Data Privacy Protection",
       "group": "5-Build",
       "type": "4-customerSuccess",
       "order": 7,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "User Behaviour Analysis",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 8,
+      "url": "google.com",
+      "to": [
+        "Feature Prioritization Process"
+      ]
+    },
+    {
+      "id": "Feature Prioritization Process",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 9,
+      "url": "google.com",
+      "to": [
+        "Release Gate Reviews"
+      ]
+    },
+    {
+      "id": "Innovation Accounting",
+      "group": "5-Build",
+      "type": "1-userExperience",
+      "order": 10,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Team Onboarding & Learning Plan",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 11,
       "url": "google.com",
       "to": []
     },
@@ -106,10 +104,20 @@
       "to": []
     },
     {
-      "id": "Visitor Behaviour Analysis",
+      "id": "Product Pricing Plan",
       "group": "5-Build",
-      "type": "1-userExperience",
-      "order": 4,
+      "type": "2-marketSense",
+      "order": 13,
+      "url": "google.com",
+      "to": [
+        "User License Management"
+      ]
+    },
+    {
+      "id": "User License Management",
+      "group": "5-Build",
+      "type": "3-technologyExcellence",
+      "order": 14,
       "url": "google.com",
       "to": []
     }
