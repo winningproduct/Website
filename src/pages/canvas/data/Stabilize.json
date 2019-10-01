@@ -2,30 +2,6 @@
   "title": "Stabilize",
   "nodes": [
     {
-      "id": "Inbound Marketing Plan",
-      "group": "6-Stabilize",
-      "type": "2-marketSense",
-      "order": 4,
-      "url": "google.com",
-      "to": ["Lead Nurture pipeline", "Adward Design"]
-    },
-    {
-      "id": "Public relations plan",
-      "group": "6-Stabilize",
-      "type": "2-marketSense",
-      "order": 9,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Lead Nurture pipeline",
-      "group": "6-Stabilize",
-      "type": "1-userExperience",
-      "order": 5,
-      "url": "google.com",
-      "to": []
-    },
-    {
       "id": "Architectural Runway",
       "group": "6-Stabilize",
       "type": "3-technologyExcellence",
@@ -34,50 +10,10 @@
       "to": []
     },
     {
-      "id": "Projections and Budgeting",
-      "group": "6-Stabilize",
-      "type": "2-marketSense",
-      "order": 10,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Portfolio Management",
-      "group": "6-Stabilize",
-      "type": "3-technologyExcellence",
-      "order": 6,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Release Management",
-      "group": "6-Stabilize",
-      "type": "3-technologyExcellence",
-      "order": 12,
-      "url": "google.com",
-      "to": ["Projections and Budgeting"]
-    },
-    {
       "id": "Vulnerability Assessment",
       "group": "6-Stabilize",
       "type": "3-technologyExcellence",
       "order": 2,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Error and Exception Handling",
-      "group": "6-Stabilize",
-      "type": "4-customerSuccess",
-      "order": 8,
-      "url": "google.com",
-      "to": []
-    },
-    {
-      "id": "Hotﬁx Process",
-      "group": "6-Stabilize",
-      "type": "3-technologyExcellence",
-      "order": 13,
       "url": "google.com",
       "to": []
     },
@@ -90,6 +26,33 @@
       "to": []
     },
     {
+      "id": "Inbound Marketing Plan",
+      "group": "6-Stabilize",
+      "type": "2-marketSense",
+      "order": 4,
+      "url": "google.com",
+      "to": [
+        "Lead Nurture pipeline",
+        "Adward Design"
+      ]
+    },
+    {
+      "id": "Lead Nurture pipeline",
+      "group": "6-Stabilize",
+      "type": "1-userExperience",
+      "order": 5,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Portfolio Management",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 6,
+      "url": "google.com",
+      "to": []
+    },
+    {
       "id": "IP Rights Protection",
       "group": "6-Stabilize",
       "type": "4-customerSuccess",
@@ -98,10 +61,52 @@
       "to": []
     },
     {
+      "id": "Error and Exception Handling",
+      "group": "6-Stabilize",
+      "type": "4-customerSuccess",
+      "order": 8,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Public relations plan",
+      "group": "6-Stabilize",
+      "type": "2-marketSense",
+      "order": 9,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Projections and Budgeting",
+      "group": "6-Stabilize",
+      "type": "2-marketSense",
+      "order": 10,
+      "url": "google.com",
+      "to": []
+    },
+    {
       "id": "Contingency and Reliability Reviews",
       "group": "6-Stabilize",
       "type": "4-customerSuccess",
       "order": 11,
+      "url": "google.com",
+      "to": []
+    },
+    {
+      "id": "Release Management",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 12,
+      "url": "google.com",
+      "to": [
+        "Projections and Budgeting"
+      ]
+    },
+    {
+      "id": "Hotﬁx Process",
+      "group": "6-Stabilize",
+      "type": "3-technologyExcellence",
+      "order": 13,
       "url": "google.com",
       "to": []
     }
