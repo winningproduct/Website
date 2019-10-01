@@ -10,9 +10,9 @@ import Canvas from "../../components/Canvas";
 import types from "./types.json";
 import CanvasHeadBar from "../../components/CanvasHeadBar";
 import Aux from "../../components/hocAux";
-import CanvasData from "../../components/canvasDataHandler";
+import { graphql, StaticQuery } from 'gatsby'
 
-let nodes = CanvasData
+let nodes = []
 let singleNode = {};
 let allLinks = {};
 let bigNode = {};
@@ -25,7 +25,8 @@ let typeCount = {};
 let gapBetween = [];
 let boundaries = []
 
-export default class CanvasIndexPage extends React.Component {
+class CanvasIndexPage extends React.Component {
+    
     state = {
         windowWidth: 1920,
         windowHeight: 1440,
@@ -150,7 +151,13 @@ export default class CanvasIndexPage extends React.Component {
         }, {})
     }
 
-    complexChart = () => {
+    complexChart = (edges) => {
+        nodes = []
+        edges.map((nodesX) => {
+            nodesX.node.nodes.map( node => {
+                nodes.push(node);
+            })
+        });
         typeCount = [];
         nodes.sort((current, next) =>
             current.group > next.group
@@ -275,6 +282,7 @@ export default class CanvasIndexPage extends React.Component {
     }
 
     render() {
+        const { edges } = this.props.data.allDataJson;
         let style = {
             left: {
                 width: `${
@@ -332,7 +340,7 @@ export default class CanvasIndexPage extends React.Component {
                                     <div style={style.left}>
                                         <CanvasHeadBar />
                                         <Aux>
-                                            <Canvas complexChart={this.complexChart()} />
+                                            <Canvas complexChart={this.complexChart(edges)} />
                                         </Aux>
                                     </div>
                                     <div className="textCanvas" className="right">
@@ -350,3 +358,28 @@ export default class CanvasIndexPage extends React.Component {
 
     }
 }
+
+export default () => (
+    <StaticQuery
+      query={graphql`
+      query canvasDataQuery {
+        allDataJson {
+            edges {
+                node {
+                nodes {
+                    group
+                    id
+                    order
+                    to
+                    type
+                    url
+                }
+                title
+            }
+        }
+    }
+}
+      `}
+      render={ (data) => <CanvasIndexPage data={data} /> }
+    />
+  )

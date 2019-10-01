@@ -19,6 +19,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     `gatsby-plugin-sitemap`,
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -86,6 +87,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img`,
         name: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/canvas/data/`,
+        name: 'data',
       },
     },
     'gatsby-plugin-sharp',
