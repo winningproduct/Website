@@ -64,14 +64,6 @@
       "order": 8,
       "url": "google.com",
       "to": []
-    },
-    {
-      "id": "test",
-      "group": "9-Retire",
-      "type": "",
-      "order": 9,
-      "url": "none",
-      "to": ["test", "west"]
     }
   ]
 }

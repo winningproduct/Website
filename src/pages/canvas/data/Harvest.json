@@ -62,16 +62,6 @@
       "order": 7,
       "url": "google.com",
       "to": []
-    },
-    {
-      "id": "nothing",
-      "group": "8-Harvest",
-      "type": "1-userExperience",
-      "order": 6,
-      "url": "google.lk",
-      "to": [
-        "test"
-      ]
     }
   ]
 }
