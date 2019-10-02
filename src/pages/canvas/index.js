@@ -9,9 +9,9 @@ import Canvas from "../../components/Canvas";
 import CanvasHeadBar from "../../components/CanvasHeadBar";
 import Aux from "../../components/hocAux";
 import types from "./types.json";
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby';
 
-let nodes = []
+let nodes = [];
 let singleNode = {};
 let allLinks = {};
 let bigNode = {};
@@ -21,7 +21,7 @@ const color = types.color;
 
 let typeCount = {};
 let gapBetween = [];
-let boundaries = []
+let boundaries = [];
 
 class CanvasIndexPage extends React.Component {
 
@@ -35,6 +35,7 @@ class CanvasIndexPage extends React.Component {
         fliped: false
     };
 
+    // resize the view acording to window width and height
     handleResize = () => {
         this.setState({
             windowWidth: window.innerWidth,
@@ -43,6 +44,7 @@ class CanvasIndexPage extends React.Component {
         });
     };
 
+    // set window for fixed size 
     handlePrintBefore = async () => {
         return new Promise((res, _rej) => {
             this.setState(
@@ -78,6 +80,7 @@ class CanvasIndexPage extends React.Component {
         window.addEventListener("resize", this.handleResize);
         window.addEventListener("beforeprint", this.handlePrintBefore);
         window.addEventListener("afterprint", this.handleAfterPrint);
+        // set background filter lines
         document.getElementById('backGround').style.setProperty('background', this.getBackgroundFilter(this.props.data.allDataJson.edges));
     }
 
@@ -88,18 +91,24 @@ class CanvasIndexPage extends React.Component {
     }
 
     shouldComponentUpdate(_nextProps, nextState) {
+        // if mobile dont change the rendering , in zoomin and zoomout
         if (isMobile && this.state.windowHeight === nextState.windowHeight) {
             return false;
         }
+        // check either state in vertical or horizontal
         if (this.state.fliped !== nextState.fliped) {
             return true;
         }
+        // check it the window size dosent change so , it should not render
         if (this.state.shouldRender === nextState.shouldRender) {
             return false;
         }
         return true;
     }
 
+    // x posision of each chart node
+    // limited to min width 800px
+    // after 800px it wont change if you minimize the window
     xPos = type => {
         switch (type) {
             case "userExperience":
@@ -126,6 +135,9 @@ class CanvasIndexPage extends React.Component {
         }
     };
 
+    // on before the print happen (using print button)
+    // make window size fixed
+    // zoom out for a a4 size then print
     onBeforeGetContent = () => {
         return new Promise((res, _rej) => {
             this.setState(
@@ -141,6 +153,7 @@ class CanvasIndexPage extends React.Component {
         });
     };
 
+    // a polyfil for es9 feature Object.fromEntries
     formEntries = (iterable) => {
         return [...iterable].reduce((obj, [key, val]) => {
             obj[key] = val
@@ -148,10 +161,14 @@ class CanvasIndexPage extends React.Component {
         }, {})
     }
 
+    // the graph genarator 
     complexChart = (edges) => {
         let directoryNames = [];
         typeCount = [];
         nodes = []
+
+        // push each data from json files to nodes array
+        // push each titles of json files to directoryNames
         edges.map((nodesX) => {
             directoryNames.push(nodesX.node.title)
             nodesX.node.nodes.map(node => {
@@ -161,6 +178,7 @@ class CanvasIndexPage extends React.Component {
             return true;
         });
 
+        // sort the nodes , and directory names
         directoryNames.sort();
         nodes.sort((current, next) =>
             current.group > next.group
@@ -174,11 +192,14 @@ class CanvasIndexPage extends React.Component {
                     : -1
         );
 
+        // get the no of similar nodes in each directory
+        // ex -> 1-explore has 5 nodes
         nodes.map(node => {
             typeCount[node.group.split('-')[0] - 1] = (typeCount[node.group.split('-')[0] - 1] + 150) || 150;
             return true;
         })
 
+        // calculate the hight of each directory 
         typeCount.reduce((acc, curentVal, i) => {
             if (i === 0) {
                 gapBetween[i] = acc;
@@ -188,16 +209,23 @@ class CanvasIndexPage extends React.Component {
             return acc + curentVal;
         }, 0);
 
+        // update types and its count to object array
         typeCount = this.formEntries(directoryNames.map((_, i) => [directoryNames[i].split('-')[1], typeCount[i]]));
 
+        // update the boundaries to an object array
         boundaries = this.formEntries(directoryNames.map((_, i) => [directoryNames[i].split('-')[1], gapBetween[i]]));
 
+        // genarating the main structure of the graph
         nodes.map(node => {
             // node structure
+            // get color schema for each node by its node type
             let colorType = color[node.type];
+
+            // get the y position of each node
             let pos = boundaries[node.group.split('-')[1]] - boundaries[directoryNames[0].split('-')[1]];
             let ports = {};
 
+            // 1st port 
             let out = {
                 port1: {
                     id: "port1",
@@ -206,14 +234,18 @@ class CanvasIndexPage extends React.Component {
             };
             ports = Object.assign(ports, out);
 
+            // 2nd port
             let input = {
                 port2: {
                     id: "port2",
                     type: "input"
                 }
             };
+
+            // add ports 
             ports = Object.assign(ports, input);
 
+            // making a structure of a single node acording to react-flow-chart
             singleNode = {
                 id: node.id,
                 title: node.title,
@@ -227,6 +259,7 @@ class CanvasIndexPage extends React.Component {
                 ports: ports
             };
 
+            // add all nodes to a single array of bigNode
             bigNode[`${node.id}`] = singleNode;
 
             // link structure
@@ -243,11 +276,14 @@ class CanvasIndexPage extends React.Component {
                     }
                 };
                 linkCount++;
+                // add all links to allLinks
                 allLinks[`link${linkCount}`] = linkd;
                 return true;
             });
             return true;
         });
+
+        // complete graph node structure 
         return {
             offset: {
                 x: 0,
@@ -260,6 +296,7 @@ class CanvasIndexPage extends React.Component {
         };
     };
 
+    // trigger when vertical | horizontal button clicked
     onClicked = () => {
         this.setState({
             fliped: !this.state.fliped,
@@ -271,6 +308,7 @@ class CanvasIndexPage extends React.Component {
         });
     };
 
+    // set background filtering lines according to directory hight
     getBackgroundFilter = (edge) => {
         let directoryNames = [];
         edge.map((nodesX) => {
@@ -278,17 +316,18 @@ class CanvasIndexPage extends React.Component {
             return true;
         });
         directoryNames.sort();
-        let s = 'linear-gradient(180deg';
+        // this is a css style that genarate dynamixcly acording to the width of directories
+        let backgroundString = 'linear-gradient(180deg';
         directoryNames.map((type, i) => {
             if (i === 0) {
                 return true;
             }
             let value = boundaries[type.split('-')[1]] + 150;
-            s = s.concat(`, #fff ${value}px , #f3f3f3 ${value}px`);
+            backgroundString = backgroundString.concat(`, #fff ${value}px , #f3f3f3 ${value}px`);
             return true;
         });
-        s = s.concat(')');
-        return s;
+        backgroundString = backgroundString.concat(')');
+        return backgroundString;
     };
 
     render() {
@@ -347,10 +386,10 @@ class CanvasIndexPage extends React.Component {
                             <div className='printHelper'>
                                 <div key={this.state.shouldRender} className="row">
                                     <div style={style.left}>
+                                    <Aux>
                                         <CanvasHeadBar />
-                                        <Aux>
-                                            <Canvas complexChart={this.complexChart(edges)} />
-                                        </Aux>
+                                        <Canvas complexChart={this.complexChart(edges)} />
+                                    </Aux>
                                     </div>
                                     <div className="right">
                                         <Aux>
@@ -368,6 +407,7 @@ class CanvasIndexPage extends React.Component {
     }
 }
 
+// get all the json files from canvas/data
 export default () => (
     <StaticQuery
         query={graphql`
