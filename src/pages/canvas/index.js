@@ -80,8 +80,6 @@ class CanvasIndexPage extends React.Component {
         window.addEventListener("resize", this.handleResize);
         window.addEventListener("beforeprint", this.handlePrintBefore);
         window.addEventListener("afterprint", this.handleAfterPrint);
-        // set background filter lines
-        document.getElementById('backGround').style.setProperty('background', this.getBackgroundFilter(this.props.data.allDataJson.edges));
     }
 
     componentWillUnmount() {
@@ -201,11 +199,7 @@ class CanvasIndexPage extends React.Component {
 
         // calculate the hight of each directory 
         typeCount.reduce((acc, curentVal, i) => {
-            if (i === 0) {
                 gapBetween[i] = acc;
-            } else {
-                gapBetween[i] = acc + 50;
-            }
             return acc + curentVal;
         }, 0);
 
@@ -337,6 +331,9 @@ class CanvasIndexPage extends React.Component {
                 width: `${
                     this.state.windowWidth > 800 ? this.state.windowWidth - 100 : 800
                     }px`
+            },
+            background: {
+                background: this.getBackgroundFilter(this.props.data.allDataJson.edges)
             }
         };
 
@@ -382,7 +379,7 @@ class CanvasIndexPage extends React.Component {
                         </div>
                     )}
                     <div className={this.state.rotateClass}>
-                        <div id="backGround" className="toggleZoom" ref={el => (this.componentRef = el)}>
+                        <div className="toggleZoom" style={style.background} ref={el => (this.componentRef = el)}>
                             <div className='printHelper'>
                                 <div key={this.state.shouldRender} className="row">
                                     <div style={style.left}>
