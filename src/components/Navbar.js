@@ -70,7 +70,7 @@ const Navbar = class extends React.Component {
                 Canvas
               </Link>
               <Link className="navbar-item" to="/learning">
-                Learning
+                Learning & Certification
               </Link>
               <Link className="navbar-item" to="/about">
                 About
