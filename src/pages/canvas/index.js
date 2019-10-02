@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../../components/Layout";
 import { Helmet } from "react-helmet";
 import "./canvas.css";
-import * as print from "./print.css";
 import { isMobile } from "react-device-detect";
 import ReactToPrint from "react-to-print";
 import SideCanvas from "../../components/canvasSideLine";
@@ -313,7 +312,6 @@ class CanvasIndexPage extends React.Component {
                     </Helmet>
                 </div>
                 <div>
-                <button className={this.props.classes.button}>jhi</button>
                     {isMobile ? null : (
                         <div className="buttonBox hide">
                             <div className="button-container leftAlign">
@@ -340,14 +338,13 @@ class CanvasIndexPage extends React.Component {
                                     </div>
                                 )}
                                 content={() => this.componentRef}
-                                pageStyle={print}
                                 onBeforeGetContent={this.onBeforeGetContent}
                             />
                         </div>
                     )}
                     <div className={this.state.rotateClass}>
-                        <div id="backGround" ref={el => (this.componentRef = el)}>
-                            <div className='toggleColor printHelper'>
+                        <div id="backGround" className="toggleZoom" ref={el => (this.componentRef = el)}>
+                            <div className='printHelper'>
                                 <div key={this.state.shouldRender} className="row">
                                     <div style={style.left}>
                                         <CanvasHeadBar />
