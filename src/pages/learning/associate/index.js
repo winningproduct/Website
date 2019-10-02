@@ -33,7 +33,7 @@ export default class BlogIndexPage extends React.Component {
                     <div className="column is-10 is-offset-1">
                       <div className="section">
                         <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                          What is Associtate Exam?
+                          What is Associate Exam?
                         </h2>
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the
