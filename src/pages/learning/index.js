@@ -70,12 +70,12 @@ export default class BlogIndexPage extends React.Component {
         </section>
 
        
-        <section className="section">
+        <section className="sectioncourse">
           <div className="container">
             <div className="content"> 
 
             <div style={{display : 'flex'}}>         
-
+            <div className="is-parent column is-4 m-subArticle">
                   <article className="blog-list-item tile is-child box notification m-article is-featured">
                     <header>
                       <div className="featured-thumbnail"></div>
@@ -95,8 +95,9 @@ export default class BlogIndexPage extends React.Component {
                       </p>
                     </header>
                   </article>
+                  </div>
 
-
+                  <div className="is-parent column is-4 m-subArticle">
                   <article className="blog-list-item tile is-child box notification m-article is-featured">
                     <header>
                       <div className="featured-thumbnail"></div>
@@ -116,7 +117,9 @@ export default class BlogIndexPage extends React.Component {
                       </p>
                     </header>
                   </article>
+                  </div>
 
+                  <div className="is-parent column is-4 m-subArticle">
                   <article className="blog-list-item tile is-child box notification m-article is-featured">
                     <header>
                       <div className="featured-thumbnail"></div>
@@ -136,6 +139,7 @@ export default class BlogIndexPage extends React.Component {
                       </p>
                     </header>
                   </article>
+                  </div>
                     </div>
              
             </div>
