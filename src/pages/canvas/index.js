@@ -7,9 +7,9 @@ import { isMobile } from "react-device-detect";
 import ReactToPrint from "react-to-print";
 import SideCanvas from "../../components/canvasSideLine";
 import Canvas from "../../components/Canvas";
-import types from "./types.json";
 import CanvasHeadBar from "../../components/CanvasHeadBar";
 import Aux from "../../components/hocAux";
+import types from "./types.json";
 import { graphql, StaticQuery } from 'gatsby'
 
 let nodes = []
@@ -19,7 +19,6 @@ let bigNode = {};
 let linkCount = 0;
 
 const color = types.color;
-const type = types.type;
 
 let typeCount = {};
 let gapBetween = [];
@@ -151,13 +150,19 @@ class CanvasIndexPage extends React.Component {
     }
 
     complexChart = (edges) => {
+        let directoryNames = [];
+        typeCount = [];
         nodes = []
         edges.map((nodesX) => {
+            directoryNames.push(nodesX.node.title)
             nodesX.node.nodes.map(node => {
                 nodes.push(node);
+                return true;
             })
+            return true;
         });
-        typeCount = [];
+
+        directoryNames.sort();
         nodes.sort((current, next) =>
             current.group > next.group
                 ? 1
@@ -172,7 +177,7 @@ class CanvasIndexPage extends React.Component {
 
         nodes.map(node => {
             typeCount[node.group.split('-')[0] - 1] = (typeCount[node.group.split('-')[0] - 1] + 150) || 150;
-
+            return true;
         })
 
         typeCount.reduce((acc, curentVal, i) => {
@@ -184,14 +189,14 @@ class CanvasIndexPage extends React.Component {
             return acc + curentVal;
         }, 0);
 
-        typeCount = this.formEntries(type.map((_, i) => [type[i], typeCount[i]]));
+        typeCount = this.formEntries(directoryNames.map((_, i) => [directoryNames[i].split('-')[1], typeCount[i]]));
 
-        boundaries = this.formEntries(type.map((_, i) => [type[i], gapBetween[i]]));
+        boundaries = this.formEntries(directoryNames.map((_, i) => [directoryNames[i].split('-')[1], gapBetween[i]]));
 
         nodes.map(node => {
             // node structure
             let colorType = color[node.type];
-            let pos = boundaries[node.group.split('-')[1]] - boundaries[type[0]];
+            let pos = boundaries[node.group.split('-')[1]] - boundaries[directoryNames[0].split('-')[1]];
             let ports = {};
 
             let out = {
@@ -270,7 +275,8 @@ class CanvasIndexPage extends React.Component {
     getBackgroundFilter = (edge) => {
         let directoryNames = [];
         edge.map((nodesX) => {
-            directoryNames.push(nodesX.node.title)
+            directoryNames.push(nodesX.node.title);
+            return true;
         });
         directoryNames.sort();
         let s = 'linear-gradient(180deg';
@@ -280,10 +286,11 @@ class CanvasIndexPage extends React.Component {
             }
             let value = boundaries[type.split('-')[1]] + 150;
             s = s.concat(`, #fff ${value}px , #f3f3f3 ${value}px`);
+            return true;
         });
         s = s.concat(')');
         return s;
-    }
+    };
 
     render() {
         const { edges } = this.props.data.allDataJson;
@@ -306,6 +313,7 @@ class CanvasIndexPage extends React.Component {
                     </Helmet>
                 </div>
                 <div>
+                <button className={this.props.classes.button}>jhi</button>
                     {isMobile ? null : (
                         <div className="buttonBox hide">
                             <div className="button-container leftAlign">
@@ -339,7 +347,7 @@ class CanvasIndexPage extends React.Component {
                     )}
                     <div className={this.state.rotateClass}>
                         <div id="backGround" ref={el => (this.componentRef = el)}>
-                            <div className="toggleColor printHelper">
+                            <div className='toggleColor printHelper'>
                                 <div key={this.state.shouldRender} className="row">
                                     <div style={style.left}>
                                         <CanvasHeadBar />
@@ -347,7 +355,7 @@ class CanvasIndexPage extends React.Component {
                                             <Canvas complexChart={this.complexChart(edges)} />
                                         </Aux>
                                     </div>
-                                    <div className="textCanvas" className="right">
+                                    <div className="right">
                                         <Aux>
                                             <SideCanvas sidelineHeight={typeCount} directory={edges} />
                                         </Aux>
