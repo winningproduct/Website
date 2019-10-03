@@ -32,16 +32,19 @@ class CanvasIndexPage extends React.Component {
         rotateClassName: "Vertical",
         rotateButtonName: "vertical-button",
         rotateClass: "notRotate",
-        fliped: false
+        fliped: false,
+        isOnPrint: false
     };
 
     // resize the view acording to window width and height
-    handleResize = () => {
-        this.setState({
-            windowWidth: window.innerWidth,
-            windowHeight: window.innerHeight,
-            shouldRender: window.innerHeight * window.innerWidth
-        });
+    handleResize = async () => {
+        if (!this.state.isOnPrint) {
+            this.setState({
+                windowWidth: window.innerWidth,
+                windowHeight: window.innerHeight,
+                shouldRender: window.innerHeight * window.innerWidth
+            });
+        }
     };
 
     // set window for fixed size 
@@ -50,7 +53,9 @@ class CanvasIndexPage extends React.Component {
             this.setState(
                 {
                     windowWidth: 1920,
-                    windowHeight: 1440
+                    windowHeight: 1440,
+                    shouldRender: 100,
+                    isOnPrint: true
                 },
                 () => {
                     res(true);
@@ -64,7 +69,9 @@ class CanvasIndexPage extends React.Component {
             this.setState(
                 {
                     windowWidth: window.innerWidth,
-                    windowHeight: window.innerHeight
+                    windowHeight: window.innerHeight,
+                    shouldRender: window.innerHeight * window.innerWidth,
+                    isOnPrint: false
                 },
                 () => {
                     res(true);
@@ -93,14 +100,17 @@ class CanvasIndexPage extends React.Component {
         if (isMobile && this.state.windowHeight === nextState.windowHeight) {
             return false;
         }
+
         // check either state in vertical or horizontal
-        if (this.state.fliped !== nextState.fliped) {
+        if (this.state.fliped !== nextState.fliped || this.state.shouldRender !== nextState.shouldRender || this.state.isOnPrint !== nextState.isOnPrint) {
             return true;
         }
+
         // check it the window size dosent change so , it should not render
         if (this.state.shouldRender === nextState.shouldRender) {
             return false;
         }
+
         return true;
     }
 
@@ -199,7 +209,7 @@ class CanvasIndexPage extends React.Component {
 
         // calculate the hight of each directory 
         typeCount.reduce((acc, curentVal, i) => {
-                gapBetween[i] = acc;
+            gapBetween[i] = acc;
             return acc + curentVal;
         }, 0);
 
@@ -383,10 +393,10 @@ class CanvasIndexPage extends React.Component {
                             <div className='printHelper'>
                                 <div key={this.state.shouldRender} className="row">
                                     <div style={style.left}>
-                                    <Aux>
-                                        <CanvasHeadBar />
-                                        <Canvas complexChart={this.complexChart(edges)} />
-                                    </Aux>
+                                        <Aux>
+                                            <CanvasHeadBar />
+                                            <Canvas complexChart={this.complexChart(edges)} />
+                                        </Aux>
                                     </div>
                                     <div className="right">
                                         <Aux>
