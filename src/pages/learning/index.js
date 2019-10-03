@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
 import { Link } from "gatsby";
+import PreviewCompatibleImage from '../../components/PreviewCompatibleImage'
 
 export default class BlogIndexPage extends React.Component {
   render() {
@@ -60,25 +61,25 @@ export default class BlogIndexPage extends React.Component {
                         Letraset sheets containing Lorem Ipsum passages, and
                         more recently with desktop publishing software like
                         Aldus PageMaker including versions of Lorem Ipsum
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </section>
+                        <br/>
+                        <br/>
 
-       
-        <section className="sectioncourse">
+                        <section className="sectioncourse">
           <div className="container">
             <div className="content"> 
 
             <div style={{display : 'flex'}}>         
             <div className="is-parent column is-4 m-subArticle">
-                  <article className="blog-list-item tile is-child box notification m-article is-featured">
+                  <article className="blog-list-item tile is-child box ">
                     <header>
-                      <div className="featured-thumbnail"></div>
+                      <div className="featured-thumbnail">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: '/img/bronzemedal.png',
+                         
+                        }}
+                      />
+                      </div>
 
                       <p className="post-meta">
                         {/* <Link
@@ -91,6 +92,8 @@ export default class BlogIndexPage extends React.Component {
                         <span className="subtitle is-size-5 is-block">
                           Associate
                         </span>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                           Lorem Ipsum has been the industry's standard</p>
                         <Link to="/learning/associate">Read More</Link>
                       </p>
                     </header>
@@ -98,9 +101,16 @@ export default class BlogIndexPage extends React.Component {
                   </div>
 
                   <div className="is-parent column is-4 m-subArticle">
-                  <article className="blog-list-item tile is-child box notification m-article is-featured">
+                  <article className="blog-list-item tile is-child box">
                     <header>
-                      <div className="featured-thumbnail"></div>
+                      <div className="featured-thumbnail">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: '/img/silvermedal.png',
+                         
+                        }}
+                      />
+                      </div>
 
                       <p className="post-meta">
                         {/* <Link
@@ -113,6 +123,8 @@ export default class BlogIndexPage extends React.Component {
                         <span className="subtitle is-size-5 is-block">
                           Proffesional
                         </span>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                           Lorem Ipsum has been the industry's standard</p>
                         <Link to="/learning/proffesional">Read More</Link>
                       </p>
                     </header>
@@ -120,21 +132,23 @@ export default class BlogIndexPage extends React.Component {
                   </div>
 
                   <div className="is-parent column is-4 m-subArticle">
-                  <article className="blog-list-item tile is-child box notification m-article is-featured">
+                  <article className="blog-list-item tile is-child box">
                     <header>
-                      <div className="featured-thumbnail"></div>
+                      <div className="featured-thumbnail">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: '/img/goldmedal.png',
+                         
+                        }}
+                      />
+                      </div>
 
                       <p className="post-meta">
-                        {/* <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link> */}
-
                         <span className="subtitle is-size-5 is-block">
                           Guru
                         </span>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                           Lorem Ipsum has been the industry's standard</p>
                         <Link to="/learning/guru">Read More</Link>
                       </p>
                     </header>
@@ -146,6 +160,17 @@ export default class BlogIndexPage extends React.Component {
           </div>
 
         </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+       
+
          
         
       </Layout>
