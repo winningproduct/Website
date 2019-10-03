@@ -7,22 +7,6 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
-            backgroundImage: `url('/img/proffesionalexam.jpg')`
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              color: "black",
-              padding: "1rem"
-            }}
-          >
-            Proffesional Exam
-          </h1>
-        </div>
 
         <section className="section">
           <div className="container">
@@ -59,6 +43,35 @@ export default class BlogIndexPage extends React.Component {
                         Letraset sheets containing Lorem Ipsum passages, and
                         more recently with desktop publishing software like
                         Aldus PageMaker including versions of Lorem Ipsum
+                        <br/>
+                        <br/>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum
+                        <br/>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum
+                        <br/>
+                        <br/>
+
+                        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Register for the WPO proffesional Exam</a>
                       </div>
                     </div>
                   </div>
