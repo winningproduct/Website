@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import ExampleComponent from "react-rounded-image";
 import axios from 'axios';
+import ModalLayout from '../components/ModalLayout';
 
 export const ModelPostTemplate = ({
   content,
@@ -31,7 +32,7 @@ export const ModelPostTemplate = ({
       )
       .then(({ data }) => {
         data.map(item => {
-         return commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date});
+          return commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date });
 
         })
 
@@ -45,73 +46,74 @@ export const ModelPostTemplate = ({
             .filter(e => arr[e]).map(e => arr[e]);
           return unique;
         }
-            //setAuthors(commiters)
-          setAuthors(getUnique(commiters, 'name'))
+        //setAuthors(commiters)
+        setAuthors(getUnique(commiters, 'name'))
 
       });
-  },[]);
-  
- 
+  }, []);
+
+
   return (
-    <section className="section">
-      {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light m-capitalize">
-              {title.replace(/[0-9]*-/g, '')}
-            </h1>
-            <h6>
-              {type}
-            </h6>
-            <PostContent content={content} />
-            <br/>
+      <section className="section">
+        {helmet || ''}
+        <div className="container content">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light m-capitalize">
+                {title.replace(/[0-9]*-/g, '')}
+              </h1>
+              <h6>
+                {type}
+              </h6>
+              <PostContent content={content} />
+              <br />
 
-            <h4>Contributors</h4>
-            <div class="topContainer">
-              {authors.map(author => <div class="contributorCards">
-
-
-                <a href={author.url} target="_blank" rel="noopener noreferrer">
-                  <div class="roundedImage">
-                  <ExampleComponent
-                    image={author.img}
-                    roundedSize="0"
-                    imageWidth="60"
-                    imageHeight="60"
-                    href="#"
-                  />
-                  </div>
-            
-                </a>
-                <br/>
-                {author.name}
-                <br/>
-                {author.date.split("T")[0]}
-               
-               
-
-              </div>)}
-
-            </div>
+              <h4>Contributors</h4>
+              <div className="topContainer">
+                {authors.map((author,i) => <div key={i} className="contributorCards">
 
 
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link className="btn" style={style.btn} to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
+                  <a href={author.url} target="_blank" rel="noopener noreferrer">
+                    <div className="roundedImage">
+                      <ExampleComponent
+                        image={author.img}
+                        roundedSize="0"
+                        imageWidth="60"
+                        imageHeight="60"
+                        href="#"
+                      />
+                    </div>
+
+                  </a>
+                  <br />
+                  {author.name}
+                  <br />
+                  {author.date.split("T")[0]}
+
+
+
+                </div>)}
+
               </div>
-            ) : null}
+
+
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }}>
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map(tag => (
+                      <li key={tag + `tag`}>
+                        <Link className="btn" style={style.btn} to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
   )
 }
 
@@ -138,7 +140,7 @@ const ModelPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    <ModalLayout>
       <ModelPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -160,7 +162,7 @@ const ModelPost = ({ data }) => {
       // what={post.frontmatter.what}
       // how={post.frontmatter.how}
       />
-    </Layout>
+      </ModalLayout>
   )
 }
 

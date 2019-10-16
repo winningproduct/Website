@@ -3,7 +3,8 @@ import '../pages/canvas/canvas.css'
 import '../pages/canvas/print.css';
 import { FlowChartWithState } from "@mrblenny/react-flow-chart";
 import { CanvasInnerCustom, Outer } from './styleComponents';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Link } from 'gatsby'
 
 const NodeInnerCustom = ({ node }) => {
     if (node.type) {
@@ -11,7 +12,13 @@ const NodeInnerCustom = ({ node }) => {
             <Outer style={{ background: `linear-gradient(to bottom , ${node.color} , white )` }}>
                 {node.id.replace(/_/g, ' ')}
                 <br />
-                <a href={`../models/explore/${node.url}`}>Read More</a>
+                <Link to={`/models/explore/${node.url}`}
+                    state={{
+                        modal: true
+                    }}
+                >
+                    Read More
+                </Link>
             </Outer>
         )
     }
@@ -40,7 +47,7 @@ const Canvas = (props) => {
 `;
     return (
         <div>
-        {console.log()}
+            {console.log()}
             <FlowChartWithState config={{ readonly: true }} Components={{
                 NodeInner: NodeInnerCustom,
                 CanvasOuter: CanvasOuterCustom,

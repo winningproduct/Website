@@ -95,24 +95,24 @@ class CanvasIndexPage extends React.Component {
         window.removeEventListener("resize", this.handleResize);
     }
 
-    shouldComponentUpdate(_nextProps, nextState) {
-        // if mobile dont change the rendering , in zoomin and zoomout
-        if (isMobile && this.state.windowHeight === nextState.windowHeight) {
-            return false;
-        }
+    // shouldComponentUpdate(_nextProps, nextState) {
+    //     // if mobile dont change the rendering , in zoomin and zoomout
+    //     if (isMobile && this.state.windowHeight === nextState.windowHeight) {
+    //         return false;
+    //     }
 
-        // check either state in vertical or horizontal
-        if (this.state.fliped !== nextState.fliped || this.state.shouldRender !== nextState.shouldRender || this.state.isOnPrint !== nextState.isOnPrint) {
-            return true;
-        }
+    //     // check either state in vertical or horizontal
+    //     if (this.state.fliped !== nextState.fliped || this.state.shouldRender !== nextState.shouldRender || this.state.isOnPrint !== nextState.isOnPrint) {
+    //         return true;
+    //     }
 
-        // check it the window size dosent change so , it should not render
-        if (this.state.shouldRender === nextState.shouldRender) {
-            return false;
-        }
+    //     // check it the window size dosent change so , it should not render
+    //     if (this.state.shouldRender === nextState.shouldRender) {
+    //         return false;
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 
     // x posision of each chart node
     // limited to min width 800px
