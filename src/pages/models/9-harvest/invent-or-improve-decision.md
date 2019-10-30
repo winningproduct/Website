@@ -1,7 +1,7 @@
 ---
 templateKey: "model-post"
 indexingField: 10-Harvest
-title: "8-User issue tracking"
+title: "4-Invent or improve decision"
 subtitle: "Max word count (140)"
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
@@ -10,7 +10,7 @@ description: "Max word count (160)"
 
 tags:
   - Harvest
-  - User issue tracking
+  - Invent or improve decision
   - Winning Product Canvas
 ---
 

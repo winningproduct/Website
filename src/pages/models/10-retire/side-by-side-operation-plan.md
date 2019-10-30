@@ -1,7 +1,7 @@
 ---
 templateKey: "model-post"
-indexingField: 10-Harvest
-title: "8-User issue tracking"
+indexingField: 11-Retier
+title: "4-Side by side operation plan"
 subtitle: "Max word count (140)"
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
@@ -9,8 +9,8 @@ featuredimage: "/img/<content-main-image>.jpeg"
 description: "Max word count (160)"
 
 tags:
-  - Harvest
-  - User issue tracking
+  - Retier
+  - Side by side operation plan
   - Winning Product Canvas
 ---
 
