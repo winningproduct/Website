@@ -18,7 +18,8 @@ tags:
   - Winning Product Canvas
 ---
 
-![flavor wheel](/img/valueprop.jpg)
+![flavor wheel](/img/valueprop1.jpg)
+Ref.Masterful-marketing
 
 ##Why Is a Value Proposition?
 
