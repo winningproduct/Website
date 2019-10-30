@@ -1,7 +1,7 @@
 ---
 templateKey: "model-post"
-indexingField: 6-Plan
-title: '8-digital marketing design'
+indexingField: 5-Immerse
+title: '5-product market fit validation'
 subtitle: "Max word count (140)"
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
@@ -9,8 +9,8 @@ featuredimage: "/img/<your-image-name>.jpeg"
 description: "Max word count (160)"
 
 tags:
-  - Plan
-  - digital marketing plan
+  - Immerse
+  - product market fit validation
   - Winning Product Canvas
 ---
 
