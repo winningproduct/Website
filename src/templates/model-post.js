@@ -14,6 +14,7 @@ export const ModelPostTemplate = ({
   contentComponent,
   description,
   type,
+  subtitle,
   slug,
   tags,
   title,
@@ -62,16 +63,17 @@ export const ModelPostTemplate = ({
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light m-capitalize">
                 {title.replace(/[0-9]*-/g, '')}
               </h1>
+              <h3>{subtitle}</h3>
               <h6>
                 {type}
               </h6>
+              <p>{description}</p>
               <PostContent content={content} />
               <br />
 
               <h4>Contributors</h4>
               <div className="topContainer">
                 {authors.map((author,i) => <div key={i} className="contributorCards">
-
 
                   <a href={author.url} target="_blank" rel="noopener noreferrer">
                     <div className="roundedImage">
@@ -129,6 +131,7 @@ ModelPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  subtitle: PropTypes.string,
   type: PropTypes.string,
   helmet: PropTypes.object,
   // why: PropTypes.string,
@@ -156,6 +159,7 @@ const ModelPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        subtitle = {post.frontmatter.subtitle}
         type={post.frontmatter.type}
         slug={post.fields.slug}
       // why={post.frontmatter.why}
@@ -182,6 +186,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        subtitle
         type
         description
         tags
