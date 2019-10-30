@@ -1,7 +1,7 @@
 ---
 templateKey: "model-post"
+title: "4-Value Proposition"
 indexingField: 3-Explore
-title: "2-Commercial Viability"
 subtitle: "Max word count (140)"
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
@@ -10,7 +10,7 @@ description: "Max word count (160)"
 
 tags:
   - Explore
-  - Commercial Viability
+  - Value Proposition
   - Winning Product Canvas
 ---
 
@@ -28,4 +28,4 @@ tags:
 refernces/further readings(links)
 
 [Reference-name](http://website.com)
-ex-[Reference](https://www.sciencedirect.com/topics/computer-science/platform-architecture)
+ex-[Reference](https://www.sciencedirect.co

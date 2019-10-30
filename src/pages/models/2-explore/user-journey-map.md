@@ -1,7 +1,7 @@
 ---
 templateKey: "model-post"
 indexingField: 3-Explore
-title: "2-Commercial Viability"
+title: "5-User journey map"
 subtitle: "Max word count (140)"
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
@@ -10,7 +10,7 @@ description: "Max word count (160)"
 
 tags:
   - Explore
-  - Commercial Viability
+  - Persona/User Journey
   - Winning Product Canvas
 ---
 
