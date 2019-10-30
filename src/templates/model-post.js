@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import ExampleComponent from "react-rounded-image";
 import axios from 'axios';
@@ -70,7 +69,6 @@ export const ModelPostTemplate = ({
               <p>{description}</p>
               <PostContent content={content} />
               <br />
-
               <h4>Contributors</h4>
               <div className="topContainer">
                 {authors.map((author,i) => <div key={i} className="contributorCards">
@@ -85,20 +83,13 @@ export const ModelPostTemplate = ({
                         href="#"
                       />
                     </div>
-
                   </a>
                   <br />
                   {author.name}
                   <br />
                   {author.date.split("T")[0]}
-
-
-
                 </div>)}
-
               </div>
-
-
               {tags && tags.length ? (
                 <div style={{ marginTop: `4rem` }}>
                   <h4>Tags</h4>

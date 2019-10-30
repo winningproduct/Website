@@ -8,7 +8,7 @@ featuredpost: true
 featuredimage: "/img/<your-image-name>.jpeg"
 description: "
 Let's think of a product's USP (Unique Selling Points). Why do companies come up with this? Why is it necessary to define this?
- 
+
 Simple because, in a crowded market, customers get overwhelmed with so many reasons why they should buy a certain product or a service. In order to make this less complicated and more simple, so that the customer can link their needs/wants to what is offered in a product or service, organizations define the most unique selling points. These unique selling points are derived from a product/service value proposition.
 "
 
