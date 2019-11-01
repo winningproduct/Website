@@ -26,14 +26,15 @@ export const ModelPostTemplate = ({
   let commiters = [];
   useEffect(() => {
     //API call for getting commits for the particular model post
-    axios
+    try {
+      axios
       .get(
         "https://api.github.com/repos/WPOcanvas/Model/commits?path=" + slug.split('/')[1] + '/' + slug.split('/')[2] + '/' + slug.split('/')[3] + '.md'
       )
       .then(({ data }) => {
         data.map(item => {
-          return commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date });
-
+          console.log(item);
+          return item.author && commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date });
         })
 
         // get unique author by commits
@@ -50,6 +51,10 @@ export const ModelPostTemplate = ({
         setAuthors(getUnique(commiters, 'name'))
 
       });
+    } catch (err) {
+      console.log(err);
+    }
+    
   }, []);
 
 

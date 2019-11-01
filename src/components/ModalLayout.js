@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, ModalRoutingContext } from 'gatsby-plugin-modal-routing'
-import hocAux from "./hocAux"
+import HocAux from "./hocAux"
 
 const ModalLayout = ({ children, ...rest }) => (
   <ModalRoutingContext.Consumer>
@@ -13,9 +13,9 @@ const ModalLayout = ({ children, ...rest }) => (
           {children}
         </React.Fragment>
       ) : (
-        <hocAux { ...rest }>
+        <HocAux { ...rest }>
           {children}
-        </hocAux>
+        </HocAux>
       )
     )}
   </ModalRoutingContext.Consumer>
