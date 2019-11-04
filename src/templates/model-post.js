@@ -33,7 +33,6 @@ export const ModelPostTemplate = ({
       )
       .then(({ data }) => {
         data.map(item => {
-          console.log(item);
           return item.author && commiters.push({ name: item.author.login, url: item.author.html_url, img: item.author.avatar_url, date: item.commit.author.date });
         })
 
