@@ -26,6 +26,7 @@ export const ModelPostTemplate = ({
   let commiters = [];
   useEffect(() => {
     //API call for getting commits for the particular model post
+
     try {
       axios
         .get(
@@ -92,7 +93,7 @@ export const ModelPostTemplate = ({
                 >
                   <img
                     src={
-                      "https://www.numipage.com/wp-content/uploads/2016/10/github-logo-1024x340.png"
+                      "https://github.githubassets.com/images/modules/open_graph/github-mark.png"
                     }
                     height="70"
                     width="70"
