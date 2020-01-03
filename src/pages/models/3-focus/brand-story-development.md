@@ -1,12 +1,12 @@
 ---
-templateKey: "model-post"
+templateKey: 'model-post'
 indexingField: 4-Focus
-title: "4-brand story development"
-subtitle: "Max word count (140)"
+title: '6-brand story development'
+subtitle: 'Brand Story Development'
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
-featuredimage: "/img/business-model.png"
-description: "A business model is a visualization of how a company plans to operate and make money. In other words, it answers the question of how a company creates value for itself while delivering products or services for customers. The traditional business model consists of nine cells that capture all aspects of a business. These nine cells can be used to describe any company from a startup to a large enterprise. Refer to the business model canvas lined in reference."
+featuredimage: '/img/golden-circle.png'
+description: "People don't buy products, people buy brands. Therefore it is very much important to develop a brand story that triggers the positive decisions on your stakeholders."
 
 tags:
   - Focus
@@ -14,33 +14,39 @@ tags:
   - Winning Product Canvas
 ---
 
-![flavor wheel](/img/business-model.png)
+![flavor wheel](/img/golden-circle.png)
 
-##WHY
-It is crucial to understand how a business operates to understand the complexity of its operation. This understanding enables managers to fine-tune their offerings to maximize profitability. For a startup, the business model serves as a base document to explain how the company plans to make a profit, thus attracting investors. In essence business model is used to evaluate if the business idea is viable and understanding what it takes to operate the business.
+## What
+A brand for an organization is analogous to a child and a parent. Similar to what a parent feeds the child, teaches the child, what core values are influenced on the child and etc would at the end of the day define how the child is perceived by the community. Similarly creating an identity which enables the stakeholders of an organization to perceive the entity in a given way is considered as a Brand story development. Therefore at the core of Brand story development is sharing “Why” or “The purpose” of the entity to exist. As a result of successful Brand Story Development, the stakeholders could feel at an emotional level what the entity represents, for instance, Apple - “To Think Different”, Volkswagen - “Safety”, Facebook - “Connecting people” and so on.
 
-##HOW
-Building a business model follows a procedure of filling in each cell in the canvas in a predefined order, as mentioned below. When filling in each cell, one must answer some critical questions.
 
-- **Value Proposition**: What are you building for who? What pain are you solving, and what gain are you creating? This is the place you list all of your features, products, or services.
+## Why
+“People don't buy What you do; they buy Why you do it. And What you do simply proves what you Believe.” - By Simon Sinek. According to his “Golden Circle” principle by Simon Sinek, gives guidance on how to logically explain a product or a service to the customer which highly incorporates the neurological decision making aspects. Therefore it is very important that when designing a brand story the approach triggers the limbic brain which is in control of the emotional (empathy) aspect of decision making. For instance when a decision maker is given two options to take which has identical physical properties, the decision goes towards the one which triggers the emotional aspect (Gut feeling/ by intuition). Therefore designing a brand story which adheres to such factors could make promising results.
 
-- **Customer Segments**: Who are my customers? What are the geographic, social characteristics, and demographics? List down the persona of all of your customers.
+On the other hand, as Steve Jobs mentioned “Marketing is about values. It’s a complicated and noisy world, and we’re not going to get a chance to get people to remember much about us. No company is. So we have to be really clear about what we want them to know about us.”
 
-- **Channels**: How do you get your product or service to customers. In the product development context, channels could be a web application, mobile app, etc..
 
-- **Customer Relationships**: It answers the question – How do I get, keep, and grow customers. This differs based on the channel adopted.
 
-- **Revenue Stream**: How do you make money by selling your services or products to your customer segments. What is the strategy or the revenue model is adopted to make money? Example: freemium, razor-razor blade model, franchising, etc.
+## How
+**“Start with a Why”**
+According to the “Golden Circle principle” there are 3 components as follows :
 
-- **Key Resources**: What assets and resources are required to run the business? E.g., Financial assets, credit line, physical factories, intellectual properties, human capital (Software engineers, EX, QA). What precisely you need to keep these people, and who are they?
+- **Why** : Is how you explain your purpose and the reason you exist and behave as you do.
+- **How** : How do to do things.
+- **What** : What sort of things to do.
 
-- **Key Partners**: Who do we need to outside our business to help us operate the business. E.g.: suppliers, software vendors, cloud infrastructure managers, etc.
+The following image elaborates further on the “Golden Circle” concept and it is highly recommended to follow the video which the concept is conducted by the author himself.
 
-- **Key Activities**: What are the most important things that need to be done to make the business model work? What are the key activities you must be an expert at?
+- [Start with why - How Great Leaders inspire action | Simon Sinek | TEDxPugetSound
+  ](https://www.youtube.com/watch?v=u4ZoJKF_VuA)
 
-- **Cost Structure**: What are the costs and expenses to operate the business. What are the essential costs? What are the valuable resources? What activities are most expensive?
+## References
 
-##REFERENCES
+- [Start with why - How Great Leaders inspire action | Simon Sinek | TEDxPugetSound
+  ](https://www.youtube.com/watch?v=u4ZoJKF_VuA)
 
-- [What is a business model](https://www.investopedia.com/terms/b/businessmodel.asp)
-- [Definition of business model ](https://www.dummies.com/business/start-a-business/business-plans/defining-your-business-model)
+- [Steve Jobs Presents "Think Different"](https://www.youtube.com/watch?v=MrZKoWgcZVg)
+
+- [Start with Why: Creating a value proposition with the Golden Circle model](https://www.smartinsights.com/digital-marketing-strategy/online-value-proposition/start-with-why-creating-a-value-proposition-with-the-golden-circle-model/)
+
+- [Starbucks strategy](https://www.youtube.com/watch?v=YXFL7TcPG_Q)
