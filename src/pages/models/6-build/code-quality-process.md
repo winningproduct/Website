@@ -61,3 +61,4 @@ refernces/further readings(links)
 [Code Reviews and Pair Programming](https://medium.com/@andreigridnev/code-reviews-and-pair-programming-68a5ca8ba90c)
 [What Is Code Quality? And How to Improve It](https://www.perforce.com/blog/sca/what-code-quality-and-how-improve-it)
 [Code Review Checklist – To Perform Effective Code Reviews](https://www.evoketechnologies.com/blog/code-review-checklist-perform-effective-code-reviews/)
+
