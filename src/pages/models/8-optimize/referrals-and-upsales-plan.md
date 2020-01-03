@@ -5,7 +5,7 @@ title: "6-Referrals and upsales plan"
 subtitle: "Referral marketing is the method of promoting products or services to new customers through referrals, usually word of mouth. You can upsell your product by creating a referral marketing plan""
 date: 2019-07-25T15:04:10.000Z
 featuredpost: true
-featuredimage: "img/8-optimize-referral-marketting.jpg"
+featuredimage: "/img/8-optimize-referral-marketting.jpg"
 description: "A referral is a trusted recommendation from another individual. As a business owner, customer engagement specialist, or marketer, you want to ensure that when people are asking about your services, your current customers are quick to recommend you.
 Either people can agree or disagree, referrals are one of the most crucial components of a successful inbound sales strategy. In fact, there’s no more reliable way to grow any business than through sourcing referrals, but only if it's done in a systematic, smart way.
 
@@ -18,7 +18,7 @@ tags:
   - Winning Product Canvas
 ---
 
-![flavor wheel](img/8-optimize-referral-marketting.jpg)
+![flavor wheel](/img/8-optimize-referral-marketting.jpg)
 
 ##why
 Referral marketing works because everyone trusts the opinions of real people who have used a product or a service more than they trust traditional advertising. In fact researchers says that people are four times more likely to buy a product or service when it’s referred by a friend. While referrals usually come from friends and acquaintances, but now a days it doesn't have to be that only. In fact, influencer marketing is considered a form of referral marketing, as influencers often share their favorite products with followers via organic sharing and sponsored posts. Referral marketing can come from friends, influencers, celebrities, and even online reviews.
@@ -52,11 +52,11 @@ When considering referral marketing we can identify customer and partner referra
       - Figure out how many referrals you'd need to sell to at least break even (compared to time and effort spent marketing, and managing the program).
       - Using break even point and a 10% conversion rate, calculate how many referrals your advocates would have to make to fuel your funnel.
 
-refernces/further readings(links)
+#References
 
-[8 Follow Up Sales Strategies to Boost Your Referrals](https://blog.closeriq.com/2018/10/increase-sales-referrals-follow-up/)
-[Referral Marketing: What It Is and Why It Works](https://www.springboard.com/blog/referral-marketing-what-it-is-and-why-it-works/)
-[The Epic Guide to Referral Rewards and Referral Incentives](https://referralrock.com/blog/5-customer-incentives-referral-programs/)
-[8 Powerful Referral Strategies That Will Double Your Sales](https://blog.hubspot.com/sales/referral-strategies-double-sales)
-[The Referral Marketing Handbook: Best Practices to Boost Sales](https://www.getambassador.com/blog/referral-marketing-best-practices-handbook)
-[5 Quick Tips to Building a Customer Referral Program](https://blog.hubspot.com/customers/building-customer-referral-program)
+- [8 Follow Up Sales Strategies to Boost Your Referrals](https://blog.closeriq.com/2018/10/increase-sales-referrals-follow-up/)
+- [Referral Marketing: What It Is and Why It Works](https://www.springboard.com/blog/referral-marketing-what-it-is-and-why-it-works/)
+- [The Epic Guide to Referral Rewards and Referral Incentives](https://referralrock.com/blog/5-customer-incentives-referral-programs/)
+- [8 Powerful Referral Strategies That Will Double Your Sales](https://blog.hubspot.com/sales/referral-strategies-double-sales)
+- [The Referral Marketing Handbook: Best Practices to Boost Sales](https://www.getambassador.com/blog/referral-marketing-best-practices-handbook)
+- [5 Quick Tips to Building a Customer Referral Program](https://blog.hubspot.com/customers/building-customer-referral-program)
