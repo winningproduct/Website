@@ -55,7 +55,6 @@ It is quite difficult to handle and pay attention to all research conducted in a
   Since not all of your users share the same pain points but they may need the same goal, it helps you differentiate, select, and prioritize who you will design for. Identifying correct persona is critical when creating customer journey maps and to validate a MVP (Minimum Viable Product) scope for product engineers.
 
 ## References
-
 - [Talebook](https://talebook.io/)
 
 - [How To Create A Persona In 7 Steps](https://uxpressia.com/blog/how-to-create-persona-guide-examples)
