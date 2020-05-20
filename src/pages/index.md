@@ -3,7 +3,7 @@ templateKey: index-page
 title: Winning Product Office
 image: /img/blank-composition-data-373076.jpg
 heading: WPO
-subheading: Support sustainable farming while enjoying a cup
+subheading: Winning Product Toolkit
 mainpitch:
   title: WPO
   description: >
